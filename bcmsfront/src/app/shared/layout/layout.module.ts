@@ -1,0 +1,38 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HeaderComponent } from './components/header/header.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatIconModule } from '@angular/material/icon';
+import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { LogoComponent } from './components/logo/logo.component';
+import { MatButtonModule } from '@angular/material/button';
+import { NavListComponent } from './components/nav-list/nav-list.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
+const MATERIAL_MODULES = [
+  MatToolbarModule,
+  MatIconModule,
+  MatButtonModule,
+  MatSidenavModule
+];
+
+@NgModule({
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    LayoutPageComponent,
+    LogoComponent,
+    NavListComponent
+  ],
+  imports: [
+    CommonModule,
+    FlexLayoutModule,
+    ...MATERIAL_MODULES,
+  ],
+  exports: [
+    LayoutPageComponent
+  ],
+})
+export class LayoutModule {}

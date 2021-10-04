@@ -1,0 +1,17 @@
+.nav-item {
+    background-color: transparent;
+    &:hover {
+        color: #424242;
+    }
+}
+.nav-menu-items {
+    height: 100%;
+}
+.nav-list-column {
+    .nav-item {
+      width: 100%;
+      &:hover{
+          color:blue;
+      }
+    }
+}

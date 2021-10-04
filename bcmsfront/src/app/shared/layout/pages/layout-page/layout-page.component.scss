@@ -1,0 +1,21 @@
+.content {
+    min-height: calc(100vh - 72px - 64px);
+    max-width: 1300px;
+    width: 100%;
+}
+.content-container {
+    padding: 0 16px;
+}
+.sidenav {
+    width: 50vw;
+    box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24);
+    position: fixed;
+    top: 64px;
+}
+.sidenav-logo {
+    height: 64px;
+    font-weight: 400;
+    font-size: 20px;
+    padding:15px;
+    background-color: red;
+}

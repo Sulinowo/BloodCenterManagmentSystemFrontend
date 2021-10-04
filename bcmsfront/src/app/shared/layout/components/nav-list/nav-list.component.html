@@ -1,0 +1,13 @@
+<div
+    class="nav-menu-items"
+    [class.nav-list-column]="isColumnDirection"
+    [fxLayout] = "direction"
+    [fxLayoutAlign] = "isColumnDirection ? 'start start' : 'center center'" 
+>
+    <button class="nav-item" mat-flat-button>Strona Główna</button>
+    <button class="nav-item" mat-flat-button>Kontakt</button>
+    <button class="nav-item" mat-flat-button>Potrzebna krew</button>
+    <button class="nav-item" mat-flat-button>Informacje</button>
+    <button class="nav-item" mat-flat-button>Proces oddawania krwii</button>
+    <button class="nav-item" mat-flat-button>Zaloguj się</button>
+</div>
