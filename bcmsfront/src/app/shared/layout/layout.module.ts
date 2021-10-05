@@ -10,6 +10,7 @@ import { LogoComponent } from './components/logo/logo.component';
 import { MatButtonModule } from '@angular/material/button';
 import { NavListComponent } from './components/nav-list/nav-list.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { RouterModule } from '@angular/router';
 
 const MATERIAL_MODULES = [
   MatToolbarModule,
@@ -29,6 +30,7 @@ const MATERIAL_MODULES = [
   imports: [
     CommonModule,
     FlexLayoutModule,
+    RouterModule,
     ...MATERIAL_MODULES,
   ],
   exports: [
