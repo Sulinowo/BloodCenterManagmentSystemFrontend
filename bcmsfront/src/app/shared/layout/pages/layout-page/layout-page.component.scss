@@ -1,10 +1,12 @@
 .content {
     min-height: calc(100vh - 128px);
-    max-width: 1300px;
+    max-width: 1200px;
     width: 100%;
 }
 .content-container {
     padding: 0 16px;
+    background-color: white;
+    color: black;
 }
 .sidenav {
     width: 50vw;
