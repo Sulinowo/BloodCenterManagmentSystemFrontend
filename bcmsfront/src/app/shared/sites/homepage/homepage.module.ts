@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { HomepagePageComponent } from './pages/homepage-page/homepage-page.component';
 import { HomepageRoutingModule } from './homepage-routing.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { HomepageRoutingModule } from './homepage-routing.module';
   ],
   imports: [
     CommonModule,
-    HomepageRoutingModule
+    HomepageRoutingModule,
+    FlexLayoutModule
   ]
 })
 export class HomepageModule { }

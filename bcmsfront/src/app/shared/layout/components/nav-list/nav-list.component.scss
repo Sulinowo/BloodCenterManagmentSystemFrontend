@@ -8,10 +8,13 @@
     height: 100%;
 }
 .nav-list-column {
+    background-color: white;
+    height: calc(100vh - 64px);
     .nav-item {
-      width: 100%;
-      &:hover{
-          color:blue;
-      }
+        width: 50vw;
+        color:black;
+        &:hover{
+            color:#c9c9c9;
+        }
     }
 }
