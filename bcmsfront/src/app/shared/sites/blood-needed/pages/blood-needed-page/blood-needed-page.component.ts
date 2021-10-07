@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { BloodNeededFacadeService } from './blood-needed-facade.service';
 
 @Component({
   selector: 'app-blood-needed-page',
@@ -6,4 +7,14 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./blood-needed-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BloodNeededPageComponent {}
+export class BloodNeededPageComponent implements OnInit {
+  public bloodAmount$ = this.bloodNeededFacade.bloodAmount$;
+
+  constructor(
+    private bloodNeededFacade: BloodNeededFacadeService
+  ){}
+
+  public ngOnInit(): void {
+    this.bloodNeededFacade.loadBloodAmountData();
+  }
+}

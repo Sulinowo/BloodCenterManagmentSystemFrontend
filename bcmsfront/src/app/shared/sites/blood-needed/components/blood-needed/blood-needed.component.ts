@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { BloodType } from 'src/app/core/models/blood-type';
 
 @Component({
   selector: 'app-blood-needed',
@@ -6,4 +7,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./blood-needed.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BloodNeededComponent {}
+export class BloodNeededComponent {
+  @Input() bloodAmount:any;
+
+}
