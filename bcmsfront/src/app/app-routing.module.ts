@@ -44,6 +44,20 @@ const routes: Routes = [
         (m) => m.LoginModule
       )
   },
+  {
+    path: 'register',
+    loadChildren: () => 
+      import('./shared/sites/register/register.module').then(
+        (m) => m.RegisterModule
+      )
+  },
+  {
+    path: 'setpassword',
+    loadChildren: () =>
+      import('./shared/sites/set-password/set-password.module').then(
+        (m) => m.SetPasswordModule
+      )
+  },
 ];
 
 @NgModule({

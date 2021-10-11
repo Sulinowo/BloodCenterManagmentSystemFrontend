@@ -1,0 +1,13 @@
+<form [formGroup]="sendMailForm">
+    <mat-form-field>
+        <mat-label>E-mail</mat-label>
+        <input matInput type="email" formControlName="email" />
+    </mat-form-field>
+    <button
+        mat-flat-button
+        [disabled]="sendMailForm.invalid"
+        (click)="onEmailClicked()"
+    >
+        <span>Prześlij</span>
+    </button>
+</form>

@@ -6,7 +6,7 @@ import { BloodAmountPipe } from './pipe/blood-amount.pipe';
 
 @NgModule({
   declarations: [
-    BloodAmountPipe
+    BloodAmountPipe,
   ],
   imports: [
     CommonModule,
@@ -17,4 +17,4 @@ import { BloodAmountPipe } from './pipe/blood-amount.pipe';
     BloodAmountPipe
   ]
 })
-export class SharedModule { }
+export class SharedModule {}
