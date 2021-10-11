@@ -1,8 +1,7 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VerifyEmail } from 'src/app/core/models/verify-email';
-import { RegisterFacadeService } from './register-facade.service';
 
 @Component({
   selector: 'app-register',
@@ -11,16 +10,17 @@ import { RegisterFacadeService } from './register-facade.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RegisterComponent implements OnInit {
+  @Output() onEmailClicked = new EventEmitter<string>();
+
   public sendMailForm: FormGroup;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    public registerFacade: RegisterFacadeService,
     private formBuilder: FormBuilder) {
       this.sendMailForm = this.formBuilder.group({
         email: [
-          null, 
+          null,
           [Validators.required, Validators.email]
       ]});
     }
@@ -33,8 +33,7 @@ export class RegisterComponent implements OnInit {
     // });
   }
 
-  public onEmailClicked(): void {
-    console.log(this.sendMailForm.value);
-    this.registerFacade.sendMail(this.sendMailForm.value);
+  public onEmailClick(): void {
+    this.onEmailClicked.emit(this.sendMailForm.value.email);
   }
 }

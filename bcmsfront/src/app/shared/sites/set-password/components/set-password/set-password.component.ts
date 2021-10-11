@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component, Output, EventEmitter} from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 
 @Component({
@@ -8,9 +8,11 @@ import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SetPasswordComponent {
+  @Output() onSetPasswordClicked = new EventEmitter<string>();
+
   public setPasswordForm: FormGroup;
 
-  
+
 
   constructor(private formBuilder: FormBuilder){
     this.setPasswordForm = this.formBuilder.group({
@@ -18,9 +20,9 @@ export class SetPasswordComponent {
       confirmPassword: [''],
     });
   }
-  
 
-  public onSetPasswordClicked(): void {
 
+  public onSetPasswordClick(): void {
+    this.onSetPasswordClicked.emit(this.setPasswordForm.value.password);
   }
 }

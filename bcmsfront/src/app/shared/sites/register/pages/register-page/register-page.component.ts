@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RegisterFacadeService } from '../../components/register/register-facade.service';
+import { RegisterFacadeService } from './register-facade.service';
 
 @Component({
   selector: 'app-register-page',
@@ -12,5 +12,8 @@ export class RegisterPageComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+
+  public onEmailClicked(email: string): void {
+    this.registerFacade.sendMail(email);
+  }
 }
