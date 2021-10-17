@@ -4,6 +4,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   selector: 'app-donation-process',
   templateUrl: './donation-process.component.html',
   styleUrls: ['./donation-process.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DonationProcessComponent {}

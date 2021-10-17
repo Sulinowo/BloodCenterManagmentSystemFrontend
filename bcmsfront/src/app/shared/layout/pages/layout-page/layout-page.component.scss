@@ -1,23 +1,23 @@
 .content {
-    min-height: calc(100vh - 128px);
-    max-width: 1200px;
-    width: 100%;
+  min-height: calc(100vh - 128px);
+  max-width: 1200px;
+  width: 100%;
 }
 .content-container {
-    padding: 0 16px;
-    background-color: white;
-    color: black;
+  padding: 0 16px;
+  background-color: white;
+  color: black;
 }
 .sidenav {
-    width: 50vw;
-    box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24);
-    position: fixed;
-    top: 64px;
+  width: 50vw;
+  box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24);
+  position: fixed;
+  top: 64px;
 }
 .sidenav-logo {
-    height: 64px;
-    font-weight: 400;
-    font-size: 20px;
-    padding:15px;
-    background-color: red;
+  height: 64px;
+  font-weight: 400;
+  font-size: 20px;
+  padding: 15px;
+  background-color: red;
 }

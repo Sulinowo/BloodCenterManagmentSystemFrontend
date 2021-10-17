@@ -2,12 +2,9 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { BloodType } from '../../../../core/models/blood-type';
 
-
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class BloodNeededService {
   public bloodAmount$ = new BehaviorSubject<BloodType[]>([]);
 

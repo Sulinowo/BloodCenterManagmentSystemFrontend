@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VerifyEmail } from 'src/app/core/models/verify-email';
@@ -7,7 +13,7 @@ import { VerifyEmail } from 'src/app/core/models/verify-email';
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegisterComponent implements OnInit {
   @Output() onEmailClicked = new EventEmitter<string>();
@@ -17,13 +23,12 @@ export class RegisterComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private formBuilder: FormBuilder) {
-      this.sendMailForm = this.formBuilder.group({
-        email: [
-          null,
-          [Validators.required, Validators.email]
-      ]});
-    }
+    private formBuilder: FormBuilder
+  ) {
+    this.sendMailForm = this.formBuilder.group({
+      email: [null, [Validators.required, Validators.email]],
+    });
+  }
 
   ngOnInit(): void {
     // this.route.queryParams.subscribe((queryParams: VerifyEmail) => {

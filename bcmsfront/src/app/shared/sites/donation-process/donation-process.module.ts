@@ -4,16 +4,8 @@ import { DonationProcessComponent } from './components/donation-process/donation
 import { DonationProcessPageComponent } from './pages/donation-process-page/donation-process-page.component';
 import { DonationProcessRoutingModule } from './donation-process-routing.module';
 
-
-
 @NgModule({
-  declarations: [
-    DonationProcessComponent,
-    DonationProcessPageComponent
-  ],
-  imports: [
-    CommonModule,
-    DonationProcessRoutingModule
-  ]
+  declarations: [DonationProcessComponent, DonationProcessPageComponent],
+  imports: [CommonModule, DonationProcessRoutingModule],
 })
-export class DonationProcessModule { }
+export class DonationProcessModule {}

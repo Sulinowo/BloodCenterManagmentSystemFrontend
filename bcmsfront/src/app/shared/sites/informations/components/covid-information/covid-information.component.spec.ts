@@ -8,9 +8,8 @@ describe('CovidInformationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CovidInformationComponent ]
-    })
-    .compileComponents();
+      declarations: [CovidInformationComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

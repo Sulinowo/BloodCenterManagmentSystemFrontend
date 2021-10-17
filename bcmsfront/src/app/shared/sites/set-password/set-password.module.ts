@@ -10,10 +10,7 @@ import { SetPasswordPageComponent } from './pages/set-password-page/set-password
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
-  declarations: [
-    SetPasswordComponent,
-    SetPasswordPageComponent
-  ],
+  declarations: [SetPasswordComponent, SetPasswordPageComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -22,6 +19,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatFormFieldModule,
     SetPasswordRoutingModule,
     MatTooltipModule,
-  ]
+  ],
 })
-export class SetPasswordModule { }
+export class SetPasswordModule {}

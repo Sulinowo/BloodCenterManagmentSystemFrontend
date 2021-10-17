@@ -1,15 +1,18 @@
 <mat-sidenav-container fxFlexFill>
-    <mat-sidenav #sidenav>
-        <app-logo fxLayoutAlign="center center" class="sidenav-logo"></app-logo>
-        <app-nav-list direction="column" fxHide.gt-sm></app-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content fxFlexFill>
-        <app-header (menuClicked)="sidenav.toggle()"></app-header>
-        <div class="content-container" fxLayoutAlign="center">
-            <div class="content">
-                <ng-content></ng-content>
-            </div>
-        </div>
-        <app-footer fxLayout="column" fxLayoutAlign="end"></app-footer>
-    </mat-sidenav-content>
+  <mat-sidenav #sidenav>
+    <app-logo fxLayoutAlign="center center" class="sidenav-logo"></app-logo>
+    <app-nav-list direction="column" fxHide.gt-sm></app-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content fxFlexFill>
+    <app-header
+      (menuClicked)="sidenav.toggle()"
+      [loggedIn]="loggedIn"
+    ></app-header>
+    <div class="content-container" fxLayoutAlign="center">
+      <div class="content">
+        <ng-content></ng-content>
+      </div>
+    </div>
+    <app-footer fxLayout="column" fxLayoutAlign="end"></app-footer>
+  </mat-sidenav-content>
 </mat-sidenav-container>

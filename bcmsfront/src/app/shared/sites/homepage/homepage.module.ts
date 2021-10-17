@@ -6,14 +6,7 @@ import { HomepageRoutingModule } from './homepage-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
-  declarations: [
-    HomepagePageComponent,
-    HomepageComponent
-  ],
-  imports: [
-    CommonModule,
-    HomepageRoutingModule,
-    FlexLayoutModule
-  ]
+  declarations: [HomepagePageComponent, HomepageComponent],
+  imports: [CommonModule, HomepageRoutingModule, FlexLayoutModule],
 })
-export class HomepageModule { }
+export class HomepageModule {}

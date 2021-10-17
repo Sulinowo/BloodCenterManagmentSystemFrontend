@@ -1,67 +1,69 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => 
+    loadChildren: () =>
       import('./shared/sites/homepage/homepage.module').then(
         (m) => m.HomepageModule
-      )
+      ),
   },
   {
     path: 'contact',
-    loadChildren: () => 
+    loadChildren: () =>
       import('./shared/sites/contact/contact.module').then(
         (m) => m.ContactModule
-      )
+      ),
+    canActivate: [AuthGuard],
   },
   {
     path: 'bloodneeded',
-    loadChildren: () => 
+    loadChildren: () =>
       import('./shared/sites/blood-needed/blood-needed.module').then(
         (m) => m.BloodNeededModule
-      )
+      ),
+    canActivate: [AuthGuard],
   },
   {
     path: 'informations',
-    loadChildren: () => 
+    loadChildren: () =>
       import('./shared/sites/informations/informations.module').then(
         (m) => m.InformationsModule
-      )
+      ),
+    canActivate: [AuthGuard],
   },
   {
     path: 'donationprocess',
-    loadChildren: () => 
+    loadChildren: () =>
       import('./shared/sites/donation-process/donation-process.module').then(
         (m) => m.DonationProcessModule
-      )
+      ),
   },
   {
     path: 'login',
-    loadChildren: () => 
-      import('./shared/sites/login/login.module').then(
-        (m) => m.LoginModule
-      )
+    loadChildren: () =>
+      import('./shared/sites/login/login.module').then((m) => m.LoginModule),
   },
   {
     path: 'register',
-    loadChildren: () => 
+    loadChildren: () =>
       import('./shared/sites/register/register.module').then(
         (m) => m.RegisterModule
-      )
+      ),
   },
   {
     path: 'setpassword',
     loadChildren: () =>
       import('./shared/sites/set-password/set-password.module').then(
         (m) => m.SetPasswordModule
-      )
+      ),
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

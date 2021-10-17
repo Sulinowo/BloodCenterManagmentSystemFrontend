@@ -4,6 +4,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   selector: 'app-registration-hours',
   templateUrl: './registration-hours.component.html',
   styleUrls: ['./registration-hours.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegistrationHoursComponent {}

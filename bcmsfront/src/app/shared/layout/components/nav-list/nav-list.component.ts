@@ -8,6 +8,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class NavListComponent {
   @Input() direction: 'row' | 'column' = 'row';
+  @Input() loggedIn = false;
 
   get isColumnDirection() {
     return this.direction === 'column';

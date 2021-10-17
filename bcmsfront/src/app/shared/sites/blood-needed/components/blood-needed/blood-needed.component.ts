@@ -5,9 +5,8 @@ import { BloodType } from 'src/app/core/models/blood-type';
   selector: 'app-blood-needed',
   templateUrl: './blood-needed.component.html',
   styleUrls: ['./blood-needed.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BloodNeededComponent {
-  @Input() bloodAmount:any;
-
+  @Input() bloodAmount: any;
 }

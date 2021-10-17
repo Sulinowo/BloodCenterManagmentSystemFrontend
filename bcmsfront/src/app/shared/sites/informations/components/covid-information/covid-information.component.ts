@@ -4,6 +4,6 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   selector: 'app-covid-information',
   templateUrl: './covid-information.component.html',
   styleUrls: ['./covid-information.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CovidInformationComponent {}

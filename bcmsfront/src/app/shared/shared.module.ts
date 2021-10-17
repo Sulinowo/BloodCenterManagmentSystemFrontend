@@ -5,16 +5,8 @@ import { LayoutPageComponent } from './layout/pages/layout-page/layout-page.comp
 import { BloodAmountPipe } from './pipe/blood-amount.pipe';
 
 @NgModule({
-  declarations: [
-    BloodAmountPipe,
-  ],
-  imports: [
-    CommonModule,
-    LayoutModule,
-  ],
-  exports: [
-    LayoutPageComponent,
-    BloodAmountPipe
-  ]
+  declarations: [BloodAmountPipe],
+  imports: [CommonModule, LayoutModule],
+  exports: [LayoutPageComponent, BloodAmountPipe],
 })
 export class SharedModule {}

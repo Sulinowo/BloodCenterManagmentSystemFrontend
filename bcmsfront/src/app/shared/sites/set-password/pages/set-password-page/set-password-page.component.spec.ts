@@ -8,9 +8,8 @@ describe('SetPasswordComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SetPasswordPageComponent ]
-    })
-    .compileComponents();
+      declarations: [SetPasswordPageComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

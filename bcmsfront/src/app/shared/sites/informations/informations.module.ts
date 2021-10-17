@@ -7,18 +7,13 @@ import { RegistrationHoursComponent } from './components/registration-hours/regi
 import { CovidInformationComponent } from './components/covid-information/covid-information.component';
 import { TripsComponent } from './components/trips/trips.component';
 
-
 @NgModule({
   declarations: [
     InformationsPageComponent,
     RegistrationHoursComponent,
     CovidInformationComponent,
-    TripsComponent
+    TripsComponent,
   ],
-  imports: [
-    CommonModule,
-    InformationsRoutingModule,
-    FlexLayoutModule
-  ]
+  imports: [CommonModule, InformationsRoutingModule, FlexLayoutModule],
 })
-export class InformationsModule { }
+export class InformationsModule {}

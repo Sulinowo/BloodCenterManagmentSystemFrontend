@@ -4,14 +4,12 @@ import { RegisterFacadeService } from './register-facade.service';
 @Component({
   selector: 'app-register-page',
   templateUrl: './register-page.component.html',
-  styleUrls: ['./register-page.component.scss']
+  styleUrls: ['./register-page.component.scss'],
 })
 export class RegisterPageComponent implements OnInit {
+  constructor(public registerFacade: RegisterFacadeService) {}
 
-  constructor(public registerFacade: RegisterFacadeService) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   public onEmailClicked(email: string): void {
     this.registerFacade.sendMail(email);

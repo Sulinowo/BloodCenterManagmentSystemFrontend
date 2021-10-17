@@ -7,15 +7,7 @@ import { SharedModule } from '../../shared.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
-  declarations: [
-    BloodNeededComponent,
-    BloodNeededPageComponent
-  ],
-  imports: [
-    CommonModule,
-    BloodNeededRouting,
-    SharedModule,
-    FlexLayoutModule
-  ]
+  declarations: [BloodNeededComponent, BloodNeededPageComponent],
+  imports: [CommonModule, BloodNeededRouting, SharedModule, FlexLayoutModule],
 })
-export class BloodNeededModule { }
+export class BloodNeededModule {}

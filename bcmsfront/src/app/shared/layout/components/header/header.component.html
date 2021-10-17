@@ -8,5 +8,10 @@
     <mat-icon (click)="onMenuClicked()">menu</mat-icon>
   </div>
   <app-logo class="logo" fxLayoutAlign="start center"></app-logo>
-  <app-nav-list direction="row" fxShow="true" fxHide.lt-md></app-nav-list>
+  <app-nav-list
+    direction="row"
+    fxShow="true"
+    fxHide.lt-md
+    [loggedIn]="loggedIn"
+  ></app-nav-list>
 </mat-toolbar>

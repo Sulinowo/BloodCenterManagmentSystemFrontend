@@ -3,7 +3,7 @@ import { BloodNeededClientService } from '../../client/blood-needed-client.servi
 import { BloodNeededService } from '../../services/blood-needed.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BloodNeededFacadeService {
   public bloodAmount$ = this.bloodNeededService.bloodAmount$;

@@ -1,25 +1,36 @@
 <div
-    class="nav-menu-items"
-    [class.nav-list-column]="isColumnDirection"
-    [fxLayout] = "direction"
-    [fxLayoutAlign] = "isColumnDirection ? 'start start' : 'center center'" 
+  class="nav-menu-items"
+  [class.nav-list-column]="isColumnDirection"
+  [fxLayout]="direction"
+  [fxLayoutAlign]="isColumnDirection ? 'start start' : 'center center'"
 >
-    <a routerLink="/">
-        <button class="nav-item" mat-flat-button>Strona Główna</button>
-    </a>
-    <a routerLink="/contact">
-        <button class="nav-item" mat-flat-button>Kontakt</button>
-    </a>
-    <a routerLink="/bloodneeded">
-        <button class="nav-item" mat-flat-button>Potrzebna krew</button>
-    </a>
-    <a routerLink="/informations">
-        <button class="nav-item" mat-flat-button>Informacje</button>
-    </a>
-    <a routerLink="/donationprocess">
-        <button class="nav-item" mat-flat-button>Proces oddawania krwii</button>
-    </a>
+  <a routerLink="/">
+    <button class="nav-item" mat-flat-button>Strona Główna</button>
+  </a>
+  <a routerLink="/contact">
+    <button class="nav-item" mat-flat-button>Kontakt</button>
+  </a>
+  <a routerLink="/bloodneeded">
+    <button class="nav-item" mat-flat-button>Potrzebna krew</button>
+  </a>
+  <a routerLink="/informations">
+    <button class="nav-item" mat-flat-button>Informacje</button>
+  </a>
+  <a routerLink="/donationprocess">
+    <button class="nav-item" mat-flat-button>Proces oddawania krwii</button>
+  </a>
+
+  <ng-container *ngIf="loggedIn; then user; else guest"></ng-container>
+
+  <ng-template #guest>
     <a routerLink="/login">
-        <button class="nav-item" mat-flat-button>Zaloguj się</button>
+      <button class="nav-item" mat-flat-button>Zaloguj się</button>
     </a>
+  </ng-template>
+
+  <ng-template #user>
+    <a routerLink="/">
+      <button class="nav-item" mat-flat-button>Wyloguj się</button>
+    </a>
+  </ng-template>
 </div>

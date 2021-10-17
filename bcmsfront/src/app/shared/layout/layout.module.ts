@@ -16,7 +16,7 @@ const MATERIAL_MODULES = [
   MatToolbarModule,
   MatIconModule,
   MatButtonModule,
-  MatSidenavModule
+  MatSidenavModule,
 ];
 
 @NgModule({
@@ -25,16 +25,9 @@ const MATERIAL_MODULES = [
     FooterComponent,
     LayoutPageComponent,
     LogoComponent,
-    NavListComponent
+    NavListComponent,
   ],
-  imports: [
-    CommonModule,
-    FlexLayoutModule,
-    RouterModule,
-    ...MATERIAL_MODULES,
-  ],
-  exports: [
-    LayoutPageComponent
-  ],
+  imports: [CommonModule, FlexLayoutModule, RouterModule, ...MATERIAL_MODULES],
+  exports: [LayoutPageComponent],
 })
 export class LayoutModule {}

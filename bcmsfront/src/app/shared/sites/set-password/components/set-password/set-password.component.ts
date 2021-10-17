@@ -1,5 +1,14 @@
-import {ChangeDetectionStrategy, Component, Output, EventEmitter} from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Output,
+  EventEmitter,
+} from '@angular/core';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-set-password',
@@ -12,15 +21,12 @@ export class SetPasswordComponent {
 
   public setPasswordForm: FormGroup;
 
-
-
-  constructor(private formBuilder: FormBuilder){
+  constructor(private formBuilder: FormBuilder) {
     this.setPasswordForm = this.formBuilder.group({
       password: ['', [Validators.required]],
       confirmPassword: [''],
     });
   }
-
 
   public onSetPasswordClick(): void {
     this.onSetPasswordClicked.emit(this.setPasswordForm.value.password);
