@@ -22,7 +22,7 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    const logged = ['informations', 'contact'];
+    const logged = ['informations', 'contact','login'];
     if (logged.includes(route.url.toString())) {
       if (!this.auth.loggedIn()) {
         alert('sign in!');

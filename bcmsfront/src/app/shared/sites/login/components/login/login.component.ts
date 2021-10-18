@@ -17,7 +17,6 @@ export class LoginComponent implements OnInit {
         null,
         [
           Validators.required,
-          // Validators.email
         ],
       ],
       password: [null, Validators.required],

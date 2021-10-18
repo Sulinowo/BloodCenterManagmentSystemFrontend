@@ -28,10 +28,10 @@ export class AuthService {
     }
   }
 
-  public login(id: string, password: string): Observable<void> {
+  public login(email: string, password: string): Observable<void> {
     return this.http
       .post<ShitResponse>('/api/auth', {
-        id: parseInt(id),
+        email,
         password,
       })
       .pipe(
@@ -39,6 +39,7 @@ export class AuthService {
           this.readToken(user);
           this.startRefreshToken();
           console.log('login', user, this.user.value);
+          this.router.navigate(['/']).then();
         })
       );
   }
