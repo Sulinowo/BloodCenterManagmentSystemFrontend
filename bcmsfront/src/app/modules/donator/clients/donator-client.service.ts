@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { Donation } from 'src/app/core/models/donation';
 import { DonationDetails } from 'src/app/core/models/donation-details';
 import { Donator } from 'src/app/core/models/donator';
-import { Examination, ExaminationPatch } from 'src/app/core/models/examination';
 import { UserData } from 'src/app/core/models/user-data';
 
 @Injectable({
@@ -27,15 +26,7 @@ export class DonatorClientService {
     return this.httpClient.get<DonationDetails>(`http://localhost:4200/api/donations/${donationId}/details`);
   }
 
-  public addExamination(data: Examination): Observable<Examination>{
-    return this.httpClient.post<Examination>(`http://localhost:4200/api/examinations`,{...data});
-  }
-
-  public addExaminationPatch(data: ExaminationPatch): Observable<ExaminationPatch>{
-    return this.httpClient.patch<ExaminationPatch>(`http://localhost:4200/api/examinations`,{...data});
-  }
-
-  public updateProfileData(data:UserData): Observable<UserData>{
+  public updateProfileData(data: UserData): Observable<UserData>{
     return this.httpClient.patch<UserData>(`http://localhost:4200/api/Users`,{...data});
   }
 }

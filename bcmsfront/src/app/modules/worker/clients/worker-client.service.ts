@@ -2,10 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BloodStorage } from 'src/app/core/models/bloodstorage';
+import { Donation } from 'src/app/core/models/donation';
 import { DonationDetails } from 'src/app/core/models/donation-details';
 import { DonationFull, DonationGet } from 'src/app/core/models/donation-full';
 import { DonationPatch } from 'src/app/core/models/donation-patch';
 import { Donator } from 'src/app/core/models/donator';
+import { Examination, ExaminationPatch } from 'src/app/core/models/examination';
 import { UserData } from 'src/app/core/models/user-data';
 
 @Injectable({
@@ -25,6 +27,10 @@ export class WorkerClientService {
 
   public addDonator(data: Donator): Observable<Donator>{
     return this.httpClient.post<Donator>(`http://localhost:4200/api/blooddonators`,{data});
+  }
+
+  public getBloodDonatorDonations(userId: number): Observable<Donation[]>{
+    return this.httpClient.get<Donation[]>(`http://localhost:4200/api/blooddonators/${userId}/donations`);
   }
 
   public addBloodUnitToStorage(dontaionId:number, isAfterCovid:boolean): Observable<BloodStorage>{
@@ -74,6 +80,14 @@ export class WorkerClientService {
 
   public getDonation(donationId: number): Observable<DonationFull>{
     return this.httpClient.get<DonationFull>(`http://localhost:4200/api/donations/${donationId}`);
+  }
+
+  public addExamination(data: Examination): Observable<Examination>{
+    return this.httpClient.post<Examination>(`http://localhost:4200/api/examinations`,{...data});
+  }
+
+  public addExaminationPatch(data: ExaminationPatch): Observable<ExaminationPatch>{
+    return this.httpClient.patch<ExaminationPatch>(`http://localhost:4200/api/examinations`,{...data});
   }
 
   public updateProfileData(data:UserData): Observable<UserData>{
