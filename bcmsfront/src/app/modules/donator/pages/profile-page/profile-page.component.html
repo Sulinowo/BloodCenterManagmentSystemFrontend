@@ -1,1 +1,26 @@
-<p>profile-page works!</p>
+<div class="profile-page-container">
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="Dane użytkownika">
+        <app-user-data
+            [state]="donator$ | async"
+            (profileEdit)="onProfileEdit($event)"
+        ></app-user-data>
+      </mat-tab>
+      <mat-tab label="Donacje" *ngIf="donations$ | async as donations">
+        <div class="donations-list-container">
+          <!-- <app-user-donations
+            [data]="donations"
+            (donationClick)="onDonationClick($event)"
+            [fxHide]="donations.length === 0"
+          ></app-user-donations> -->
+        </div>
+        <h1
+          fxLayoutAlign="center center"
+          [fxShow]="donations.length === 0"
+          class="no-donations"
+        >
+          No donations :c
+        </h1>
+      </mat-tab>
+    </mat-tab-group>
+</div>

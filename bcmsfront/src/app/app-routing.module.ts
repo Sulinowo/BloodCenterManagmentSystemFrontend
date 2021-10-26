@@ -60,6 +60,24 @@ const routes: Routes = [
         (m) => m.SetPasswordModule
       ),
   },
+
+  //donator
+  {
+    path: 'profile',
+    loadChildren: () =>
+      import('./modules/donator/donator.module').then(
+        (m) => m.DonatorModule
+      ),
+  },
+
+  //worker
+  {
+    path: 'bloodDonator',
+    loadChildren: () =>
+      import('./modules/worker/worker.module').then(
+        (m) => m.WorkerModule
+      ),
+  },
 ];
 
 @NgModule({

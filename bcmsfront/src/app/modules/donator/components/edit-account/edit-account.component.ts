@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-edit-account',
   templateUrl: './edit-account.component.html',
-  styleUrls: ['./edit-account.component.scss']
+  styleUrls: ['./edit-account.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class EditAccountComponent implements OnInit {
+export class EditAccountComponent {
+  @Output() editClicked = new EventEmitter<void>();
 
-  constructor() { }
-
-  ngOnInit(): void {
+  public onEditClicked(): void {
+    this.editClicked.emit();
   }
-
 }

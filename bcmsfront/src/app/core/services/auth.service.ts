@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
-interface ShitResponse {
+interface Response {
   token: string;
 }
 
@@ -30,7 +30,7 @@ export class AuthService {
 
   public login(email: string, password: string): Observable<void> {
     return this.http
-      .post<ShitResponse>('/api/auth', {
+      .post<Response>('/api/auth', {
         email,
         password,
       })
@@ -44,7 +44,7 @@ export class AuthService {
       );
   }
 
-  private readToken(user: ShitResponse): void {
+  private readToken(user: Response): void {
     const data = <UserDeatils>JSON.parse(atob(user.token.split('.')[1]));
     this.user.next({ ...this.user.value, access_token: user.token, data });
     localStorage.setItem('user', JSON.stringify(this.user.value));
@@ -85,7 +85,7 @@ export class AuthService {
 
   public refreshToken(next = true): void {
     console.log('start refresh token');
-    this.http.post<ShitResponse>('/api/auth/regeneratetoken', {}).subscribe(
+    this.http.post<Response>('/api/auth/regeneratetoken', {}).subscribe(
       (user) => {
         this.readToken(user);
         console.log('token refresed', user, this.user.value);

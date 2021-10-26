@@ -8,15 +8,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { TokenInterceptor } from './core/interceptors/token.interceptor';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
-import { UserDataComponent } from './modules/donator/components/user-data/user-data.component';
-import { EditAccountComponent } from './modules/donator/components/edit-account/edit-account.component';
-import { UserDonationsComponent } from './modules/donator/components/user-donations/user-donations.component';
-import { DonationDetailsComponent } from './modules/donator/components/donation-details/donation-details.component';
-import { ProfilePageComponent } from './modules/donator/pages/profile-page/profile-page.component';
-import { DonationDetailsPageComponent } from './modules/donator/pages/donation-details-page/donation-details-page.component';
 
 @NgModule({
-  declarations: [AppComponent, UserDataComponent, EditAccountComponent, UserDonationsComponent, DonationDetailsComponent, ProfilePageComponent, DonationDetailsPageComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

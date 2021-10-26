@@ -1,14 +1,14 @@
 export interface Donator {
-    pesel: string;
-    homeAdress: string;
-    phoneNumber: string;
-    ammountOfBloodDonated: number;
-    bloodType: BloodTypeName;
-    user: DonatorDetails;
+    pesel?: string;
+    homeAdress?: string;
+    phoneNumber?: string;
+    ammountOfBloodDonated?: number;
+    bloodType?: BloodTypeName;
+    user?: DonatorDetails;
 }
 
 export interface DonatorDetails {
-    id: number;
+    id?: number;
     email: string;
     firstName: string;
     surname: string;
