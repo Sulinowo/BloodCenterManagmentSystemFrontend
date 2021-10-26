@@ -26,11 +26,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { BloodDonatorDetailsPagesComponent } from './pages/blood-donator-details-pages/blood-donator-details-pages.component';
 import { BloodDonatorDonationsPageComponent } from './pages/blood-donator-donations-page/blood-donator-donations-page.component';
 import { ShowDonationsBloodDonatorComponent } from './components/blood-donator/show-donations-blood-donator/show-donations-blood-donator.component';
+import { EditAccountBloodDonatorComponent } from './components/blood-donator/edit-account-blood-donator/edit-account-blood-donator.component';
+import { UserDetailsBloodDonatorComponent } from './components/blood-donator/user-details-blood-donator/user-details-blood-donator.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [BloodDonatorPagesComponent, BloodStoragePageComponent, ExaminationsPageComponent, DonationPageComponent, AddBloodDonatorComponent,ShowBloodDonatorsComponent
     ,AddBloodUnitComponent, ShowBloodUnitsComponent, BloodUnitForeignComponent, AddExaminationComponent, UpdateExaminationComponent,AddDonationComponent, 
-    ShowAllDonationsComponent, ShowDonationComponent, ShowDonationsQueueComponent, SearchBloodDonatorComponent, BloodDonatorDetailsPagesComponent, BloodDonatorDonationsPageComponent, ShowDonationsBloodDonatorComponent ],
+    ShowAllDonationsComponent, ShowDonationComponent, ShowDonationsQueueComponent, SearchBloodDonatorComponent, BloodDonatorDetailsPagesComponent, BloodDonatorDonationsPageComponent, ShowDonationsBloodDonatorComponent, EditAccountBloodDonatorComponent, UserDetailsBloodDonatorComponent ],
   imports: [
     CommonModule,
     MatTableModule,
@@ -40,7 +43,8 @@ import { ShowDonationsBloodDonatorComponent } from './components/blood-donator/s
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    FlexLayoutModule
   ]
 })
 export class WorkerModule { }
