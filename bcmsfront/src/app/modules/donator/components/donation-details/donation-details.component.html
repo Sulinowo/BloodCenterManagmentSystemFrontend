@@ -1,4 +1,3 @@
-{{ [dataSource] | json }}
 <table
   *ngIf="dataSource !== null"
   mat-table
@@ -106,45 +105,45 @@
   <ng-container matColumnDef="ly">
     <th mat-header-cell *matHeaderCellDef>LY</th>
     <td mat-cell *matCellDef="let donationDetails">
-      {{ donationDetails.resultOfExamination.ly || "Brak" }}
+      {{ donationDetails.resultOfExamination?.ly || "Brak" }}
     </td>
   </ng-container>
 
   <ng-container matColumnDef="mo">
     <th mat-header-cell *matHeaderCellDef>MO</th>
     <td mat-cell *matCellDef="let donationDetails">
-      {{ donationDetails.resultOfExamination.mo || "Brak" }}
+      {{ donationDetails.resultOfExamination?.mo || "Brak" }}
     </td>
   </ng-container>
 
   <ng-container matColumnDef="bloodPressureUpper">
-    <th mat-header-cell *matHeaderCellDef>HB</th>
+    <th mat-header-cell *matHeaderCellDef>Górne ciśnienie krwi</th>
     <td mat-cell *matCellDef="let donationDetails">
-      {{ donationDetails.resultOfExamination.bloodPressureUpper || "Brak" }}
+      {{ donationDetails.resultOfExamination?.bloodPressureUpper || "Brak" }}
     </td>
   </ng-container>
 
   <ng-container matColumnDef="bloodPressureLower">
-    <th mat-header-cell *matHeaderCellDef>HB</th>
+    <th mat-header-cell *matHeaderCellDef>Niższe ciśnienie krwi</th>
     <td mat-cell *matCellDef="let donationDetails">
-      {{ donationDetails.resultOfExamination.bloodPressureLower || "Brak" }}
+      {{ donationDetails.resultOfExamination?.bloodPressureLower || "Brak" }}
     </td>
   </ng-container>
 
   <ng-container matColumnDef="height">
-    <th mat-header-cell *matHeaderCellDef>HB</th>
+    <th mat-header-cell *matHeaderCellDef>Wzrost</th>
     <td mat-cell *matCellDef="let donationDetails">
-      {{ donationDetails.resultOfExamination.height || "Brak" }}
+      {{ donationDetails.resultOfExamination?.height || "Brak" }}
     </td>
   </ng-container>
 
   <ng-container matColumnDef="weight">
-    <th mat-header-cell *matHeaderCellDef>HB</th>
+    <th mat-header-cell *matHeaderCellDef>Waga</th>
     <td mat-cell *matCellDef="let donationDetails">
-      {{ donationDetails.resultOfExamination.weight || "Brak" }}
+      {{ donationDetails.resultOfExamination?.weight || "Brak" }}
     </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="columns"></tr>
-  <tr mat-row *matRowDef="let donation; columns: columns" [routerLink]=""></tr>
+  <tr mat-row *matRowDef="let donation; columns: columns"></tr>
 </table>

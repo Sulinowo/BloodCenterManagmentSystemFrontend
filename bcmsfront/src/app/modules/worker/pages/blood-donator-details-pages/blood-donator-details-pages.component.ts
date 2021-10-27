@@ -24,6 +24,8 @@ export class BloodDonatorDetailsPagesComponent implements OnInit {
   }
 
   public onProfileEdit(user: UserData): void {
-    this.bloodDonatorDetailsFacade.editBloodDonatorData(user);
+    const userId = this.route.snapshot.paramMap.get('id') || '';
+    console.log(parseInt(userId));
+    this.bloodDonatorDetailsFacade.editBloodDonatorData(user,parseInt(userId));
   }
 }

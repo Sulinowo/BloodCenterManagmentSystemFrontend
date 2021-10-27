@@ -28,8 +28,7 @@ export class ProfilePageComponent implements OnInit {
     this.profileFacade.editProfile(user);
   }
 
-  // public onDonationClick({ id: donationId }: Donation) {
-  //   const donationUrl = `/donations/${donationId}`;
-  //   this.router.navigate([donationUrl]);
-  // }
+  public onDonationClick(donation: Donation) {
+    console.log(donation);
+  }
 }

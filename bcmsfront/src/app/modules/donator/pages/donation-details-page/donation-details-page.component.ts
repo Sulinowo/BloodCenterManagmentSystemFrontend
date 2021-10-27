@@ -18,8 +18,12 @@ import { ProfileFacadeService } from '../profile-page/profile-facade.service';
 export class DonationDetailsPageComponent {
   public donationDetails$ = this.profileFacade.donationDetails$;
 
-  constructor(private profileFacade: ProfileFacadeService) {}
+  constructor(
+    private profileFacade: ProfileFacadeService,
+    private route: ActivatedRoute
+  ) {}
   public ngOnInit(): void {
-    this.profileFacade.loadDonationDetails(1);
+    const donationId = this.route.snapshot.paramMap.get('donationId') || '';
+    this.profileFacade.loadDonationDetails(parseInt(donationId) || -1);
   }
 }

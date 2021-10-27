@@ -20,7 +20,7 @@
   <tr
     mat-row
     *matRowDef="let donation; columns: columns"
-    [routerLink]=""
+    [routerLink]="donation.id"
     (click)="donationListClick(donation)"
   ></tr>
 </table>

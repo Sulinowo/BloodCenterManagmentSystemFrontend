@@ -11,6 +11,7 @@
       <div class="donations-list-container">
         <app-user-donations
           [dataSource]="(donations$ | async) || []"
+          (donationClick)="onDonationClick($event)"
         ></app-user-donations>
       </div>
     </mat-tab>

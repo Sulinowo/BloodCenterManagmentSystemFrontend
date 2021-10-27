@@ -25,9 +25,9 @@ export class BloodDonatorDetailsFacadeService {
     this.loadBloodDonatorData(userId);
   }
 
-  public editBloodDonatorData(data: UserData): void {
-    this.workerClient.updateProfileData({ ...data, id: 2 }).subscribe((_) => {
-      this.loadProfile(data.id!);
+  public editBloodDonatorData(data: UserData, userId: number): void {
+    this.workerClient.updateProfileData({ ...data, id: userId }).subscribe((_) => {
+      this.loadProfile(userId);
     });
   }
 }
