@@ -24,8 +24,18 @@ export class WorkerClientService {
     return this.httpClient.get<Donator[]>(`/api/blooddonators`); //
   }
 
-  public addDonator(data: Donator): Observable<Donator> {
-    return this.httpClient.post<Donator>(`/api/blooddonators`, { data }); //
+  public addDonator(data: any): Observable<Donator> {
+    return this.httpClient.post<Donator>(`/api/blooddonators`, {
+      pesel: data.pesel,
+      homeAdress: data.homeAdress,
+      phoneNumber: data.phoneNumber,
+      bloodType: { bloodTypeName: data.bloodTypeName },
+      user: {
+        email: data.email,
+        firstname: data.firstName,
+        surname: data.surname,
+      },
+    }); //
   }
 
   public getBloodDonatorDonations(userId: number): Observable<Donation[]> {

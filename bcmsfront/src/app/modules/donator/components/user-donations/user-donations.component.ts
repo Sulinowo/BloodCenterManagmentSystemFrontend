@@ -15,7 +15,7 @@ import { DonationDetails } from 'src/app/core/models/donation-details';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserDonationsComponent {
-  @Input() dataSource: DonationDetails;
+  @Input() dataSource: Donation[];
   @Output() donationClick = new EventEmitter<Donation>();
 
   columns: string[] = ['dataDonacji', 'etapDonacji', 'powodOdrzuceniaDonacji'];

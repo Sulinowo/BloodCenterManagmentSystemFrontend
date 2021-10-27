@@ -7,7 +7,8 @@ import { BloodDonatorDonationsFacadeService } from './blood-donator-donations-fa
   styleUrls: ['./blood-donator-donations-page.component.scss'],
 })
 export class BloodDonatorDonationsPageComponent implements OnInit {
-  public bloodDonatorDonations$ = this.bloodDonatorDonationsFacade.bloodDonatorDonations$;
+  public bloodDonatorDonations$ =
+    this.bloodDonatorDonationsFacade.bloodDonatorDonations$;
 
   constructor(
     private bloodDonatorDonationsFacade: BloodDonatorDonationsFacadeService

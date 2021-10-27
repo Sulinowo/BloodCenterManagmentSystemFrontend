@@ -7,13 +7,13 @@ import { BloodDonatorPagesComponent } from './pages/blood-donator-pages/blood-do
 
 const routes: Routes = [
   { path: '', component: BloodDonatorPagesComponent },
-  { path: `:?id`, component: BloodDonatorDetailsPagesComponent },
+  { path: `:id`, component: BloodDonatorDetailsPagesComponent },
   {
-    path: `:?userId/donations`,
+    path: `:userId/donations`,
     component: BloodDonatorDonationsPageComponent,
   },
   {
-    path: `?id`,
+    path: `:id/details`,
     component: BloodDonatorDonationDetailsPageComponent,
   },
 ];

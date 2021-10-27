@@ -68,7 +68,7 @@ import { BloodDonatorDonationDetailsPageComponent } from './pages/blood-donator-
     ReactiveFormsModule,
     MatButtonModule,
     FlexLayoutModule,
-    SharedModule
+    SharedModule,
   ],
 })
 export class WorkerModule {}

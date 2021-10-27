@@ -7,7 +7,9 @@ import { Examination, ExaminationPatch } from 'src/app/core/models/examination';
 })
 export class ExaminationsService {
   public examination$ = new BehaviorSubject<Examination>({} as Examination);
-  public examinationPatch$ = new BehaviorSubject<ExaminationPatch>({} as ExaminationPatch);
+  public examinationPatch$ = new BehaviorSubject<ExaminationPatch>(
+    {} as ExaminationPatch
+  );
 
   public addExamination(data: Examination): void {
     this.examination$.next(data);

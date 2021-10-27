@@ -13,9 +13,7 @@ export class DonatorClientService {
   constructor(private httpClient: HttpClient) {}
 
   public getBloodDonatorByID(id: number): Observable<Donator> {
-    return this.httpClient.get<Donator>(
-      `/api/blooddonators/${id}`
-    );
+    return this.httpClient.get<Donator>(`/api/blooddonators/${id}`);
   }
 
   public getBloodDonatorDonations(userId: number): Observable<Donation[]> {

@@ -9,7 +9,9 @@ import { DonationPatch } from 'src/app/core/models/donation-patch';
 export class DonationService {
   public addDonation$ = new BehaviorSubject<DonationFull>({});
   public allDonations$ = new BehaviorSubject(<DonationGet[]>[]);
-  public donationPatch$ = new BehaviorSubject<DonationPatch>({} as DonationPatch);
+  public donationPatch$ = new BehaviorSubject<DonationPatch>(
+    {} as DonationPatch
+  );
   public queue$ = new BehaviorSubject<DonationGet[]>(<DonationGet[]>[]);
   public donation$ = new BehaviorSubject<DonationFull>({} as DonationFull);
 

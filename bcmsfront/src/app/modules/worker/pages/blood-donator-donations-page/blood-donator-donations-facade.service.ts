@@ -6,7 +6,8 @@ import { BloodDonatorService } from '../../services/blood-donator.service';
   providedIn: 'root',
 })
 export class BloodDonatorDonationsFacadeService {
-  public bloodDonatorDonations$ = this.bloodDonationService.bloodDonatorDonations$;
+  public bloodDonatorDonations$ =
+    this.bloodDonationService.bloodDonatorDonations$;
 
   constructor(
     private bloodDonationService: BloodDonatorService,

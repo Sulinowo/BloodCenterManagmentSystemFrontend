@@ -26,7 +26,7 @@ describe('EditAccountComponent', () => {
 
   it('should v alues...', () => {
     expect(component.editClicked).toBeDefined();
-  })
+  });
 
   it('should emit after click', () => {
     component.onEditClicked();

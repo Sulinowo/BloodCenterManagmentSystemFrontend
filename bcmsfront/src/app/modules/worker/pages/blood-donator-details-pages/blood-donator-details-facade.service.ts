@@ -12,7 +12,7 @@ export class BloodDonatorDetailsFacadeService {
 
   constructor(
     private bloodDonatorService: BloodDonatorService,
-    private workerClient: WorkerClientService,  
+    private workerClient: WorkerClientService
   ) {}
 
   public loadBloodDonatorData(id: number): void {
@@ -26,7 +26,7 @@ export class BloodDonatorDetailsFacadeService {
   }
 
   public editBloodDonatorData(data: UserData): void {
-    this.workerClient.updateProfileData({...data,id: 2}).subscribe((_) => {
+    this.workerClient.updateProfileData({ ...data, id: 2 }).subscribe((_) => {
       this.loadProfile(data.id!);
     });
   }

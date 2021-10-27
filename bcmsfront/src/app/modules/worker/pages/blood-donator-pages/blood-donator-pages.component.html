@@ -4,6 +4,8 @@
     </app-show-blood-donators>
   </mat-tab>
   <mat-tab label="Dodawanie krwiodawcy">
-    <app-add-blood-donator></app-add-blood-donator>
+    <app-add-blood-donator
+      (onAddDonator)="kowalskiNaprawBackend($event)"
+    ></app-add-blood-donator>
   </mat-tab>
 </mat-tab-group>

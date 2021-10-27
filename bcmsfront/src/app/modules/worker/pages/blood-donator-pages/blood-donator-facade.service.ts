@@ -8,7 +8,7 @@ import { BloodDonatorService } from '../../services/blood-donator.service';
 })
 export class BloodDonatorFacadeService {
   public donators$ = this.bloodDonatorService.donatorsObservable$;
-   public addDonator$ = this.bloodDonatorService.addDonator$;
+  public addDonator$ = this.bloodDonatorService.addDonator$;
 
   constructor(
     private bloodDonatorService: BloodDonatorService,
@@ -47,7 +47,7 @@ export class BloodDonatorFacadeService {
 
   public addDonator(data: Donator): void {
     this.workerClient.addDonator(data).subscribe((data) => {
-       this.bloodDonatorService.addBloodDonator(data);
+      this.bloodDonatorService.addBloodDonator(data);
       this.loadDonators();
     });
   }

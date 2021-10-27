@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserData } from 'src/app/core/models/user-data';
 import { BloodDonatorDetailsFacadeService } from './blood-donator-details-facade.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-blood-donator-details-pages',
@@ -12,13 +13,17 @@ export class BloodDonatorDetailsPagesComponent implements OnInit {
 
   constructor(
     private bloodDonatorDetailsFacade: BloodDonatorDetailsFacadeService,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.bloodDonatorDetailsFacade.loadProfile(2);
+    console.log(this.route.snapshot.paramMap);
+    const id = this.route.snapshot.paramMap.get('id') || '';
+    console.log(id);
+    this.bloodDonatorDetailsFacade.loadProfile(parseInt(id) || -1);
   }
 
-  public onProfileEdit(user: UserData,): void {
+  public onProfileEdit(user: UserData): void {
     this.bloodDonatorDetailsFacade.editBloodDonatorData(user);
   }
 }

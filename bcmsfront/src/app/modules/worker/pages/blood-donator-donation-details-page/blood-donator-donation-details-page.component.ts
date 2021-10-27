@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-blood-donator-donation-details-page',
   templateUrl: './blood-donator-donation-details-page.component.html',
-  styleUrls: ['./blood-donator-donation-details-page.component.scss']
+  styleUrls: ['./blood-donator-donation-details-page.component.scss'],
 })
 export class BloodDonatorDonationDetailsPageComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

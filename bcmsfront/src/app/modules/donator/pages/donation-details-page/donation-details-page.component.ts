@@ -18,11 +18,8 @@ import { ProfileFacadeService } from '../profile-page/profile-facade.service';
 export class DonationDetailsPageComponent {
   public donationDetails$ = this.profileFacade.donationDetails$;
 
-  constructor(
-    private profileFacade: ProfileFacadeService
-  ) {}
+  constructor(private profileFacade: ProfileFacadeService) {}
   public ngOnInit(): void {
     this.profileFacade.loadDonationDetails(1);
   }
- 
 }

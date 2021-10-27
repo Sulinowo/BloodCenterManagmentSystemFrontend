@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Donator } from 'src/app/core/models/donator';
 
@@ -26,6 +32,13 @@ export class AddBloodDonatorComponent {
   }
 
   public onAddBloodDonator(): void {
+    /*
+
+    {
+      pesel: this.addBloodDonatorFrom.value.pesel,
+
+    }
+     */
     this.onAddDonator.emit(this.addBloodDonatorForm.value);
     console.log(this.addBloodDonatorForm.value);
   }

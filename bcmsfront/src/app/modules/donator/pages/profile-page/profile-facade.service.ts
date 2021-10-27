@@ -38,9 +38,11 @@ export class ProfileFacadeService {
   }
 
   public editProfile(data: UserData): void {
-    this.donatorClient.updateProfileData({...data, id: parseInt(this.auth.getData('UserId'))}).subscribe((_) => {
-      this.loadProfile(this.auth.getData('UserId'));
-    });
+    this.donatorClient
+      .updateProfileData({ ...data, id: parseInt(this.auth.getData('UserId')) })
+      .subscribe((_) => {
+        this.loadProfile(this.auth.getData('UserId'));
+      });
   }
 
   public loadDonationDetails(id: number): void {

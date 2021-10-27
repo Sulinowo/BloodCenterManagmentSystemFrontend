@@ -29,7 +29,7 @@ export class UserDataComponent implements OnChanges {
       homeAdress: [null, [Validators.required]],
       phoneNumber: [null, [Validators.required]],
       ammountOfBloodDonated: [null],
-      bloodTypeName:[null],
+      bloodTypeName: [null],
       email: [null, [Validators.required]],
       firstName: [null],
       surname: [null],
@@ -41,6 +41,7 @@ export class UserDataComponent implements OnChanges {
     this.userDataForm.patchValue({
       ...this.state,
       ...(this.state?.user || {}),
+      bloodTypeName: this.state?.bloodType?.bloodTypeName,
     });
   }
 

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Donation } from 'src/app/core/models/donation';
 import { UserData } from 'src/app/core/models/user-data';
 import { ProfileFacadeService } from './profile-facade.service';
-import {AuthService} from "../../../../core/services/auth.service";
+import { AuthService } from '../../../../core/services/auth.service';
 
 @Component({
   selector: 'app-profile-page',
