@@ -6,10 +6,10 @@ import { DonationDetailsPageComponent } from './pages/donation-details-page/dona
 const routes: Routes = [
   { path: '', component: ProfilePageComponent },
   { path: 'donation/:?donationId', component: DonationDetailsPageComponent },
-]
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports:[RouterModule]
+  exports: [RouterModule],
 })
-export class DonatorRoutingModule { }
+export class DonatorRoutingModule {}

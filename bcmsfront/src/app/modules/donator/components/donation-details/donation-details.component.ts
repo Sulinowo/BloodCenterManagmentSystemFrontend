@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { Donation } from 'src/app/core/models/donation';
 
 @Component({
@@ -8,5 +13,8 @@ import { Donation } from 'src/app/core/models/donation';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DonationDetailsComponent {
-  // @Input() donation: Donation;
+  @Input() dataSource: Donation;
+
+  columns: string[] = ['stage', 'donationDate', 'rejectionReason','hb','ht','rbc','wbc','plt','mch',
+  'mchc','mcv','ne','eo','ba','ly','mo','bloodPressureUpper','bloodPressureLower','height','weight'];
 }

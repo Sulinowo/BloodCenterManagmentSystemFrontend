@@ -1,33 +1,39 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Donator } from 'src/app/core/models/donator';
 import { UserData } from 'src/app/core/models/user-data';
 
 @Component({
   selector: 'app-user-details-blood-donator',
   templateUrl: './user-details-blood-donator.component.html',
-  styleUrls: ['./user-details-blood-donator.component.scss']
+  styleUrls: ['./user-details-blood-donator.component.scss'],
 })
-export class UserDetailsBloodDonatorComponent implements OnInit {
+export class UserDetailsBloodDonatorComponent implements OnChanges {
   @Input() showEditable = false;
+  @Input() state?: Donator | null;
   @Output() profileEdit = new EventEmitter<UserData>();
 
   public userDataForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
     this.userDataForm = this.formBuilder.group({
-      pesel:[null],
-      homeAdress:[null,[Validators.required]],
-      phoneNumber:[null,[Validators.required]],
-      ammountOfBloodDonated:[null],
-      bloodTypeName:[null],
-      email:[null,[Validators.required]],
-      firstName:[null],
-      surname:[null],
+      pesel: [null],
+      homeAdress: [null, [Validators.required]],
+      phoneNumber: [null, [Validators.required]],
+      ammountOfBloodDonated: [null],
+      bloodTypeName: [null],
+      email: [null, [Validators.required]],
+      firstName: [null],
+      surname: [null],
     });
     this.onEditClicked();
   }
 
-  ngOnInit(): void {
+  public ngOnChanges(): void {
+    this.userDataForm.patchValue({
+      ...this.state,
+      ...(this.state?.user || {}),
+    });
   }
 
   public onEditClicked(): void {

@@ -1,6 +1,12 @@
-import {  ChangeDetectionStrategy,Component,EventEmitter,Input,Output,SimpleChanges,OnChanges } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { Donation } from 'src/app/core/models/donation';
-import { MatTableDataSource } from '@angular/material/table';
+import { DonationDetails } from 'src/app/core/models/donation-details';
 
 @Component({
   selector: 'app-user-donations',
@@ -9,33 +15,15 @@ import { MatTableDataSource } from '@angular/material/table';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserDonationsComponent {
-  // @Input() data: Donation[] = [];
-  // @Output() donationClick = new EventEmitter<Donation>();
+  @Input() dataSource: DonationDetails;
+  @Output() donationClick = new EventEmitter<Donation>();
 
-  // donationData = new MatTableDataSource<Partial<Record<keyof Donation, any>>>([]);
+  columns: string[] = ['dataDonacji', 'etapDonacji', 'powodOdrzuceniaDonacji'];
 
-  // public ngOnChanges(changes: SimpleChanges) {
-  //   if (!changes.data.firstChange && changes.data.currentValue) {
-  //     const data = this.data?.map(
-  //       ({
-  //         id,
-  //         donationDate,
-  //         stage,
-  //         rejectionReason,
-  //       }) => ({
-  //         id,
-  //         donationDate,
-  //         stage,
-  //         rejectionReason
-  //       })
-  //     );
-  //     this.donationData = new MatTableDataSource<
-  //     Partial<Record<keyof Donation, any>>
-  //   >(data);
-  // }}
+  constructor() {}
 
-  
-  // public donationListClick(donation: Donation){
-  //   this.donationClick.emit(donation);
-  // }
+  public donationListClick(donation: Donation): void {
+    this.donationClick.emit(donation);
+    console.log('siema', donation);
+  }
 }

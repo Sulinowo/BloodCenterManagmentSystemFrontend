@@ -1,6 +1,6 @@
 export interface Donation {
-    id: number;
-    donationDate: Date;
-    stage: string;
-    rejectionReason: string;
+  id: number;
+  donationDate: Date;
+  stage: string;
+  rejectionReason: string;
 }

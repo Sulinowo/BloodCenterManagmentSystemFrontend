@@ -65,18 +65,14 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () =>
-      import('./modules/donator/donator.module').then(
-        (m) => m.DonatorModule
-      ),
+      import('./modules/donator/donator.module').then((m) => m.DonatorModule),
   },
 
   //worker
   {
-    path: 'bloodDonator',
+    path: 'blooddonator',
     loadChildren: () =>
-      import('./modules/worker/worker.module').then(
-        (m) => m.WorkerModule
-      ),
+      import('./modules/worker/worker.module').then((m) => m.WorkerModule),
   },
 ];
 

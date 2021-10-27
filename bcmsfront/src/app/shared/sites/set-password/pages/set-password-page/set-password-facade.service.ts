@@ -14,7 +14,10 @@ export class SetPasswordFacadeService {
     private setPasswordClient: SetPasswordClientService
   ) {}
 
-  public setOtherDetails(userEmail: string | undefined, code: string | undefined) {
+  public setOtherDetails(
+    userEmail: string | undefined,
+    code: string | undefined
+  ) {
     this.userEmail = userEmail;
     this.code = code;
 

@@ -6,12 +6,12 @@ import { DonationService } from '../../services/donation.service';
 import { ProfileService } from '../../services/profile.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProfileFacadeService {
   public donator$ = this.profileService.donator$;
   public donations$ = this.donationService.donations$;
-  //public donationDetails$ = this.donationService.donationDetails$; 
+  public donationDetails$ = this.donationService.donationDetails$;
 
   constructor(
     private profileService: ProfileService,
@@ -21,7 +21,7 @@ export class ProfileFacadeService {
   ) {}
 
   private loadProfileData(userId: number): void {
-    this.donatorClient.getBloodDonatorByID(userId).subscribe((data) =>{
+    this.donatorClient.getBloodDonatorByID(userId).subscribe((data) => {
       this.profileService.initialize(data);
     });
   }
@@ -38,9 +38,9 @@ export class ProfileFacadeService {
   }
 
   public editProfile(data: UserData): void {
-    this.donatorClient.updateProfileData(data).subscribe((_) => {
-      this.loadProfile(2);
-    })
+    this.donatorClient.updateProfileData({...data, id: parseInt(this.auth.getData('UserId'))}).subscribe((_) => {
+      this.loadProfile(this.auth.getData('UserId'));
+    });
   }
 
   public loadDonationDetails(id: number): void {
@@ -48,8 +48,4 @@ export class ProfileFacadeService {
       this.donationService.setDonationDetails(donation);
     });
   }
-
-  
-
-
 }

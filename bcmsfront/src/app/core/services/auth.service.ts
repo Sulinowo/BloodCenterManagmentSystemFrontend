@@ -104,4 +104,8 @@ export class AuthService {
   public getRole(): string {
     return this.user.value.data!.Role || false;
   }
+
+  public getData(key: keyof UserDeatils): any {
+    return this.user.value.data![key];
+  }
 }

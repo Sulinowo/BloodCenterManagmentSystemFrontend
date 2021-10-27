@@ -1,2 +1,6 @@
 <p>blood-donator-details-pages works!</p>
-<app-user-details-blood-donator></app-user-details-blood-donator>
+<app-user-details-blood-donator
+[state]="bloodDonator$ | async"
+(profileEdit)="onProfileEdit($event)"
+></app-user-details-blood-donator>
+<p>Lista donacji użytkownika</p>

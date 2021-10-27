@@ -1,51 +1,44 @@
 <div>
-    <h2>Wyszukaj krwiodawcę po peselu</h2>
-    <mat-form-field appearance="standard">
-        <mat-label>Pesel</mat-label>
-        <input matInput  #input>
-    </mat-form-field>
+  <h2>Wyszukaj krwiodawcę po peselu</h2>
+  <mat-form-field appearance="standard">
+    <mat-label>Pesel</mat-label>
+    <input matInput #input />
+  </mat-form-field>
 </div>
 <div>
-    <table mat-table class="mat-elevation-z8" [dataSource]="dataSource">
-        <ng-container matColumnDef="imie">
-            <th mat-header-cell *matHeaderCellDef> Imię </th>
-            <td mat-cell *matCellDef="let donators"> {{donators.user.firstName}} </td>
-        </ng-container>
-        <ng-container matColumnDef="nazwisko">
-            <th mat-header-cell *matHeaderCellDef> Nazwisko </th>
-            <td mat-cell *matCellDef="let donators"> {{donators.user.surname}} </td>
-        </ng-container>
-        <ng-container matColumnDef="pesel">
-            <th mat-header-cell *matHeaderCellDef> Pesel </th>
-            <td mat-cell *matCellDef="let donators"> {{donators.pesel}} </td>
-        </ng-container>
-        <ng-container matColumnDef="email">
-            <th mat-header-cell *matHeaderCellDef> Email </th>
-            <td mat-cell *matCellDef="let donators"> {{donators.user.email}} </td>
-        </ng-container>
-        <ng-container matColumnDef="adres">
-            <th mat-header-cell *matHeaderCellDef> Adres </th>
-            <td mat-cell *matCellDef="let donators"> {{donators.homeAdress}} </td>
-        </ng-container>
-        <ng-container matColumnDef="nrTel">
-            <th mat-header-cell *matHeaderCellDef> Nr tel </th>
-            <td mat-cell *matCellDef="let donators"> {{donators.phoneNumber}} </td>
-        </ng-container>
-        <ng-container matColumnDef="grupaKrwii">
-            <th mat-header-cell *matHeaderCellDef> Grupa Krwii </th>
-            <td mat-cell *matCellDef="let donators"> {{donators.bloodType.bloodTypeName}} </td>
-        </ng-container>
-        <ng-container matColumnDef="iloscOddanejKrwii">
-            <th mat-header-cell *matHeaderCellDef> Ilość oddanej krwii </th>
-            <td mat-cell *matCellDef="let donators"> {{donators.ammountOfBloodDonated}} </td>
-        </ng-container>
-        <ng-container matColumnDef="edycja">
-            <th mat-header-cell *matHeaderCellDef> Edytuj </th>
-            <td mat-cell *matCellDef="let donators"> <mat-icon>edit</mat-icon> </td>
-        </ng-container>
-    
-                
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let donator; columns: displayedColumns;" (click)="donatorListClick(donator)"></tr>
-    </table>
+  <!-- {{ dataSource | json }} -->
+  <table mat-table class="mat-elevation-z8" [dataSource]="dataSource">
+    <ng-container matColumnDef="imie">
+      <th mat-header-cell *matHeaderCellDef>Imię</th>
+      <td mat-cell *matCellDef="let donators">
+        {{ donators.user?.firstName || "brak danych" }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="nazwisko">
+      <th mat-header-cell *matHeaderCellDef>Nazwisko</th>
+      <td mat-cell *matCellDef="let donators">
+        {{ donators.user?.surname || "brak danych" }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="pesel">
+      <th mat-header-cell *matHeaderCellDef>Pesel</th>
+      <td mat-cell *matCellDef="let donators">
+        {{ donators.pesel || "brak danych" }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let donators">
+        {{ donators.user?.email || "brak danych" }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr
+      mat-row
+      *matRowDef="let donator; columns: displayedColumns"
+      [routerLink]="donator.user.id"
+      (click)="donatorListClick(donator)"
+    ></tr>
+  </table>
 </div>

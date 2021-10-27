@@ -8,9 +8,8 @@ describe('ShowDonationsQueueComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShowDonationsQueueComponent ]
-    })
-    .compileComponents();
+      declarations: [ShowDonationsQueueComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

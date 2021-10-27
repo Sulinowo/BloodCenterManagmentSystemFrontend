@@ -3,11 +3,11 @@ import { BehaviorSubject } from 'rxjs';
 import { BloodStorage } from 'src/app/core/models/bloodstorage';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BloodStorageService {
   public addBloodUnit$ = new BehaviorSubject<BloodStorage>({});
-  public bloodUnits$ = new BehaviorSubject<BloodStorage[]>([]);
+  public bloodUnits$ = new BehaviorSubject(<BloodStorage[]>[]);
   public addBloodUnitForeign$ = new BehaviorSubject<BloodStorage>({});
   public setBloodUnitNotAvailable$ = new BehaviorSubject<BloodStorage>({});
 

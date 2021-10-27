@@ -9,24 +9,30 @@ import { UserData } from 'src/app/core/models/user-data';
 @Injectable({
   providedIn: 'root',
 })
-
 export class DonatorClientService {
-
   constructor(private httpClient: HttpClient) {}
 
-  public getBloodDonatorByID(id: number): Observable<Donator>{
-    return this.httpClient.get<Donator>(`http://localhost:4200/api/blooddonators/${id}`);
+  public getBloodDonatorByID(id: number): Observable<Donator> {
+    return this.httpClient.get<Donator>(
+      `/api/blooddonators/${id}`
+    );
   }
 
-  public getBloodDonatorDonations(userId: number): Observable<Donation[]>{
-    return this.httpClient.get<Donation[]>(`http://localhost:4200/api/blooddonators/${userId}/donations`);
+  public getBloodDonatorDonations(userId: number): Observable<Donation[]> {
+    return this.httpClient.get<Donation[]>(
+      `/api/blooddonators/${userId}/donations`
+    );
   }
 
-  public getDonationDetails(donationId: number): Observable<DonationDetails>{
-    return this.httpClient.get<DonationDetails>(`http://localhost:4200/api/donations/${donationId}/details`);
+  public getDonationDetails(donationId: number): Observable<DonationDetails> {
+    return this.httpClient.get<DonationDetails>(
+      `/api/donations/${donationId}/details`
+    );
   }
 
-  public updateProfileData(data: UserData): Observable<UserData>{
-    return this.httpClient.patch<UserData>(`http://localhost:4200/api/Users`,{...data});
+  public updateProfileData(data: UserData): Observable<UserData> {
+    return this.httpClient.patch<UserData>(`/api/Users`, {
+      ...data,
+    });
   }
 }

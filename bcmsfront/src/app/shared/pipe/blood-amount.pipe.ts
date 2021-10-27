@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'bloodAmountPipe',
 })
 export class BloodAmountPipe implements PipeTransform {
-  transform(value: number): any {
+  transform(value: number): string {
     if (value >= 0 && value <= 900) {
       return 'https://i.imgur.com/l7rAJeL.png';
     } else if (value >= 901 && value <= 1800) {

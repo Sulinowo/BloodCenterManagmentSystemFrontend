@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-show-donation',
   templateUrl: './show-donation.component.html',
-  styleUrls: ['./show-donation.component.scss']
+  styleUrls: ['./show-donation.component.scss'],
 })
 export class ShowDonationComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

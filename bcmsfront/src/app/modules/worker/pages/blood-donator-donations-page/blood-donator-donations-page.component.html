@@ -1,2 +1,5 @@
 <p>blood-donator-donations-page works!</p>
-<app-show-donations-blood-donator></app-show-donations-blood-donator>
+<h2>Lista Donacji</h2>
+<app-show-donations-blood-donator
+    [dataSource]="(bloodDonatorDonations$ | async) || []"
+></app-show-donations-blood-donator>

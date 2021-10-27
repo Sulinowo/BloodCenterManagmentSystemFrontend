@@ -8,9 +8,8 @@ describe('BloodUnitForeignComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BloodUnitForeignComponent ]
-    })
-    .compileComponents();
+      declarations: [BloodUnitForeignComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

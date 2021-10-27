@@ -8,16 +8,16 @@ export class SetPasswordClientService {
   constructor(private httpClient: HttpClient) {}
 
   public verifyEmail(userEmail: string, code: string, password: string) {
-    return this.httpClient.post(
-      `http://localhost:4200/api/auth/verifyemail`,
-      {userEmail,code,password}
-    );
+    return this.httpClient.post(`http://localhost:4200/api/auth/verifyemail`, {
+      userEmail,
+      code,
+      password,
+    });
   }
 
   public verifyCode(code: string) {
-    return this.httpClient.post(
-      `http://localhost:4200/api/auth/verifycode`,
-      {code}
-    );
+    return this.httpClient.post(`http://localhost:4200/api/auth/verifycode`, {
+      code,
+    });
   }
 }

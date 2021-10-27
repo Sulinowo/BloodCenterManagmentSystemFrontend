@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { distinctUntilChanged, filter, map } from 'rxjs/operators';
@@ -11,30 +16,13 @@ import { ProfileFacadeService } from '../profile-page/profile-facade.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DonationDetailsPageComponent {
-  //public donationDetails$ = this.profileFacade.donationDetails$;
-  // public donationDetailsIdSubscription: Subscription;
+  public donationDetails$ = this.profileFacade.donationDetails$;
 
-  // constructor(
-  //   private route: ActivatedRoute,
-  //   private router: Router,
-  //   private profileFacade: ProfileFacadeService
-  //   ) {}
-
-  // public ngOnInit(): void {
-  //   this.donationDetailsIdSubscription = this.route.params.pipe(
-  //     map((params) => params['?id'] as number),
-  //     filter((id) => !!id),
-  //     distinctUntilChanged()
-  //   ).subscribe((id) => {
-  //     this.profileFacade.loadDonationDetails(id);
-  //   });
-  // }
-
-  // public ngOnDestroy(): void {
-  //   this.donationDetailsIdSubscription.unsubscribe();
-  // }
-
-  // public navigateToProfilePage(){
-  //   this.router.navigate([`/profile`]);
-  // }
+  constructor(
+    private profileFacade: ProfileFacadeService
+  ) {}
+  public ngOnInit(): void {
+    this.profileFacade.loadDonationDetails(1);
+  }
+ 
 }

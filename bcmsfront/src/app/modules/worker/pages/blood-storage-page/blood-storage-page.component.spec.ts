@@ -8,9 +8,8 @@ describe('BloodStoragePageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BloodStoragePageComponent ]
-    })
-    .compileComponents();
+      declarations: [BloodStoragePageComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

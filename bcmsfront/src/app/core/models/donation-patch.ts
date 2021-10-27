@@ -1,5 +1,5 @@
 export interface DonationPatch {
-    id: number;
-    stage: string;
-    rejectionReason: string;
+  id: number;
+  stage: string;
+  rejectionReason: string;
 }

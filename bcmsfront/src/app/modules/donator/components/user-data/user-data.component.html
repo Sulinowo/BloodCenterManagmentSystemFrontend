@@ -1,61 +1,60 @@
 <form [formGroup]="userDataForm" fxLayout="column" class="user-data-form">
-    <div class="edit-data-container" fxLayout="row" fxLayoutAlign="center">
-        <h2>Twoje dane</h2>
-        <app-edit-account
-            (editClicked)="onEditClicked()"
-            fxLayoutAlign="center center"
-            class="edit-button"
-        ></app-edit-account>
+  <div class="edit-data-container" fxLayout="row" fxLayoutAlign="center">
+    <h2>Twoje dane</h2>
+    <app-edit-account
+      (editClicked)="onEditClicked()"
+      fxLayoutAlign="center center"
+      class="edit-button"
+    ></app-edit-account>
+  </div>
 
-    </div>
+  <div class="user-data-container">
+    <mat-form-field>
+      <mat-label>Imię</mat-label>
+      <input matInput formControlName="firstName" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Nazwisko</mat-label>
+      <input matInput formControlName="surname" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Pesel</mat-label>
+      <input matInput formControlName="pesel" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>E-mail</mat-label>
+      <input matInput formControlName="email" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Numer telefonu</mat-label>
+      <input matInput formControlName="phoneNumber" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Adres</mat-label>
+      <input matInput formControlName="homeAdress" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Ilość oddanej krwii</mat-label>
+      <input matInput formControlName="ammountOfBloodDonated" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Grupa krwii</mat-label>
+      <input matInput formControlName="bloodTypeName" />
+    </mat-form-field>
+  </div>
 
-    <div class="user-data-container">
-        <mat-form-field>
-            <mat-label>Imię</mat-label>
-            <input matInput formControlName="firstName" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Nazwisko</mat-label>
-            <input matInput formControlName="surname" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Pesel</mat-label>
-            <input matInput formControlName="pesel" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>E-mail</mat-label>
-            <input matInput formControlName="email" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Numer telefonu</mat-label>
-            <input matInput formControlName="phoneNumber" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Adres</mat-label>
-            <input matInput formControlName="homeAdress" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Ilość oddanej krwii</mat-label>
-            <input matInput formControlName="ammountOfBloodDonated" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Grupa krwii</mat-label>
-            <input matInput formControlName="bloodTypeName" />
-        </mat-form-field>
-    </div>
-
-    <div
-        class="save-edit-button-wrapper"
-        fxLayoutAlign="end"
-        [fxHide]="showEditable"
+  <div
+    class="save-edit-button-wrapper"
+    fxLayoutAlign="end"
+    [fxHide]="showEditable"
+  >
+    <button
+      mat-flat-button
+      color="primary"
+      (click)="onEditProfile()"
+      [disabled]="userDataForm.invalid"
     >
-        <button
-        mat-flat-button
-        color="primary"
-        (click)="onEditProfile()"
-        [disabled]="userDataForm.invalid"
-        >
-        Save
-        </button>
-    </div>
+      Save
+    </button>
+  </div>
 </form>

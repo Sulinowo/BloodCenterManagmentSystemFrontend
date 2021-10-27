@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, Input, Output, EventEmitter } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
@@ -11,9 +17,7 @@ export class NavListComponent {
   @Input() direction: 'row' | 'column' = 'row';
   @Input() loggedIn = false;
 
-  constructor(public authUser:AuthService){
-
-  }
+  constructor(public authUser: AuthService) {}
 
   get isColumnDirection() {
     return this.direction === 'column';

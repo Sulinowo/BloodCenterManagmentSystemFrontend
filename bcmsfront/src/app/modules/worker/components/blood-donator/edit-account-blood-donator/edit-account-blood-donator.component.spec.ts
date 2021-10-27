@@ -8,9 +8,8 @@ describe('EditAccountBloodDonatorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditAccountBloodDonatorComponent ]
-    })
-    .compileComponents();
+      declarations: [EditAccountBloodDonatorComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

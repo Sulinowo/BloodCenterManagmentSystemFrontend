@@ -8,9 +8,8 @@ export class RegisterClientService {
   constructor(private httpClient: HttpClient) {}
 
   public sendMail(email: string) {
-    return this.httpClient.post(
-      `http://localhost:4200/api/auth/sendmail`,
-      {email}
-    );
+    return this.httpClient.post(`http://localhost:4200/api/auth/sendmail`, {
+      email,
+    });
   }
 }

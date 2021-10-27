@@ -29,11 +29,34 @@ import { ShowDonationsBloodDonatorComponent } from './components/blood-donator/s
 import { EditAccountBloodDonatorComponent } from './components/blood-donator/edit-account-blood-donator/edit-account-blood-donator.component';
 import { UserDetailsBloodDonatorComponent } from './components/blood-donator/user-details-blood-donator/user-details-blood-donator.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SharedModule } from '../../shared/shared.module';
+import { BloodDonatorDonationDetailsPageComponent } from './pages/blood-donator-donation-details-page/blood-donator-donation-details-page.component';
 
 @NgModule({
-  declarations: [BloodDonatorPagesComponent, BloodStoragePageComponent, ExaminationsPageComponent, DonationPageComponent, AddBloodDonatorComponent,ShowBloodDonatorsComponent
-    ,AddBloodUnitComponent, ShowBloodUnitsComponent, BloodUnitForeignComponent, AddExaminationComponent, UpdateExaminationComponent,AddDonationComponent, 
-    ShowAllDonationsComponent, ShowDonationComponent, ShowDonationsQueueComponent, SearchBloodDonatorComponent, BloodDonatorDetailsPagesComponent, BloodDonatorDonationsPageComponent, ShowDonationsBloodDonatorComponent, EditAccountBloodDonatorComponent, UserDetailsBloodDonatorComponent ],
+  declarations: [
+    BloodDonatorPagesComponent,
+    BloodStoragePageComponent,
+    ExaminationsPageComponent,
+    DonationPageComponent,
+    AddBloodDonatorComponent,
+    ShowBloodDonatorsComponent,
+    AddBloodUnitComponent,
+    ShowBloodUnitsComponent,
+    BloodUnitForeignComponent,
+    AddExaminationComponent,
+    UpdateExaminationComponent,
+    AddDonationComponent,
+    ShowAllDonationsComponent,
+    ShowDonationComponent,
+    ShowDonationsQueueComponent,
+    SearchBloodDonatorComponent,
+    BloodDonatorDetailsPagesComponent,
+    BloodDonatorDonationsPageComponent,
+    ShowDonationsBloodDonatorComponent,
+    EditAccountBloodDonatorComponent,
+    UserDetailsBloodDonatorComponent,
+    BloodDonatorDonationDetailsPageComponent,
+  ],
   imports: [
     CommonModule,
     MatTableModule,
@@ -44,7 +67,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
-    FlexLayoutModule
-  ]
+    FlexLayoutModule,
+    SharedModule
+  ],
 })
-export class WorkerModule { }
+export class WorkerModule {}

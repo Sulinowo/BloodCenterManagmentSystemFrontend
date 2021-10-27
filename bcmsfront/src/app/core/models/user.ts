@@ -2,7 +2,7 @@ import { Role } from './roles';
 
 export interface UserDeatils {
   unique_name: string;
-  userId: number,
+  UserId: number;
   Role: Role;
   nbf: number;
   exp: number;

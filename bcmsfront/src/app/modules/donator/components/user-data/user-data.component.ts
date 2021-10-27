@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Donator } from 'src/app/core/models/donator';
 import { UserData } from 'src/app/core/models/user-data';
@@ -18,14 +25,14 @@ export class UserDataComponent implements OnChanges {
 
   constructor(private formBuilder: FormBuilder) {
     this.userDataForm = this.formBuilder.group({
-      pesel:[null],
-      homeAdress:[null,[Validators.required]],
-      phoneNumber:[null,[Validators.required]],
-      ammountOfBloodDonated:[null],
+      pesel: [null],
+      homeAdress: [null, [Validators.required]],
+      phoneNumber: [null, [Validators.required]],
+      ammountOfBloodDonated: [null],
       bloodTypeName:[null],
-      email:[null,[Validators.required]],
-      firstName:[null],
-      surname:[null],
+      email: [null, [Validators.required]],
+      firstName: [null],
+      surname: [null],
     });
     this.onEditClicked();
   }
@@ -33,8 +40,8 @@ export class UserDataComponent implements OnChanges {
   public ngOnChanges(): void {
     this.userDataForm.patchValue({
       ...this.state,
-      ...(this.state?.user || {})
-    })
+      ...(this.state?.user || {}),
+    });
   }
 
   public onEditClicked(): void {

@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Donator } from 'src/app/core/models/donator';
 import { BloodDonatorFacadeService } from './blood-donator-facade.service';
 
 @Component({
@@ -10,12 +11,14 @@ import { BloodDonatorFacadeService } from './blood-donator-facade.service';
 export class BloodDonatorPagesComponent implements OnInit {
   public donators$ = this.bloodDonatorFacade.donators$;
 
-  constructor(
-    private bloodDonatorFacade: BloodDonatorFacadeService
-  ) {}
+  constructor(private bloodDonatorFacade: BloodDonatorFacadeService) {}
 
   ngOnInit(): void {
     this.bloodDonatorFacade.loadDonators();
+    this.donators$.subscribe((data) => console.log('nowe dane', data));
   }
 
+  public onAddBloodDonator(data: Donator): void {
+    this.bloodDonatorFacade.addDonator(data);
+  }
 }

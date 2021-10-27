@@ -4,7 +4,7 @@ import { WorkerClientService } from '../../clients/worker-client.service';
 import { ExaminationsService } from '../../services/examinations.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ExaminationsFacadeService {
   public examination$ = this.examinationService.examination$;

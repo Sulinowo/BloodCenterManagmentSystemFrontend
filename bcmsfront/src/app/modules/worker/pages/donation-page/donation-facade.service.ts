@@ -4,10 +4,10 @@ import { DonationService } from 'src/app/modules/worker/services/donation.servic
 import { WorkerClientService } from '../../clients/worker-client.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DonationFacadeService {
-  public addDonation$=this.donationService.addDonation$;
+  public addDonation$ = this.donationService.addDonation$;
   public allDonations$ = this.donationService.allDonations$;
   public donationPatch$ = this.donationService.donationPatch$;
   public queue$ = this.donationService.queue$;
@@ -25,7 +25,7 @@ export class DonationFacadeService {
   }
 
   public getAllDonations(): void {
-    this.workerClient.getAllDonations().subscribe((_)=> {
+    this.workerClient.getAllDonations().subscribe((_) => {
       this.getAllDonations();
     });
   }
