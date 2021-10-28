@@ -16,6 +16,5 @@ export class ShowDonationsBloodDonatorComponent {
 
   public donationListClick(donation: Donation): void {
     this.donationClick.emit(donation);
-    console.log('siema', donation);
   }
 }

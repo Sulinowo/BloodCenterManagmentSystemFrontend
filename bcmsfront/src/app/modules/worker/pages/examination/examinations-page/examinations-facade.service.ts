@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Examination, ExaminationPatch } from 'src/app/core/models/examination';
-import { WorkerClientService } from '../../clients/worker-client.service';
-import { ExaminationsService } from '../../services/examinations.service';
+import { WorkerClientService } from '../../../clients/worker-client.service';
+import { ExaminationsService } from '../../../services/examinations.service';
 
 @Injectable({
   providedIn: 'root',

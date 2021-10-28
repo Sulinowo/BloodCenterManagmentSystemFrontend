@@ -2,9 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   Input,
-  OnInit,
 } from '@angular/core';
-import { Donation } from 'src/app/core/models/donation';
 import { DonationDetails } from '../../../../core/models/donation-details';
 
 @Component({

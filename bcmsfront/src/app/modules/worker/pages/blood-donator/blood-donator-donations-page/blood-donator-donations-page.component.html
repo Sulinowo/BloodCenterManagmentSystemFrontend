@@ -2,4 +2,5 @@
 <h2>Lista Donacji</h2>
 <app-show-donations-blood-donator
   [dataSource]="(bloodDonatorDonations$ | async) || []"
+  (donationClick)="onDonationClick($event)"
 ></app-show-donations-blood-donator>

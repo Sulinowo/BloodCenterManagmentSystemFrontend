@@ -6,6 +6,7 @@ import {
   Output,
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { Donator } from 'src/app/core/models/donator';
 import { UserData } from 'src/app/core/models/user-data';
 
@@ -18,10 +19,11 @@ export class UserDetailsBloodDonatorComponent implements OnChanges {
   @Input() showEditable = false;
   @Input() state?: Donator | null;
   @Output() profileEdit = new EventEmitter<UserData>();
+  @Output() showDonationList = new EventEmitter<number>();
 
   public userDataForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private route: ActivatedRoute) {
     this.userDataForm = this.formBuilder.group({
       pesel: [null],
       homeAdress: [null, [Validators.required]],
@@ -57,5 +59,9 @@ export class UserDetailsBloodDonatorComponent implements OnChanges {
   public onEditProfile(): void {
     this.profileEdit.emit(this.userDataForm.value);
     this.onEditClicked();
+  }
+
+  public onShowDonationListClick() { 
+    this.showDonationList.emit(); 
   }
 }

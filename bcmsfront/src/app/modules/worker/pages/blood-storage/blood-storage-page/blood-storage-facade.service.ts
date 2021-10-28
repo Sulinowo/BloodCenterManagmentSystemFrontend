@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BloodStorage } from 'src/app/core/models/bloodstorage';
-import { WorkerClientService } from '../../clients/worker-client.service';
-import { BloodStorageService } from '../../services/blood-storage.service';
+import { WorkerClientService } from '../../../clients/worker-client.service';
+import { BloodStorageService } from '../../../services/blood-storage.service';
 
 @Injectable({
   providedIn: 'root',

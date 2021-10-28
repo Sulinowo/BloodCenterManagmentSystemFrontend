@@ -16,7 +16,6 @@ export class ProfilePageComponent implements OnInit {
 
   constructor(
     private profileFacade: ProfileFacadeService,
-    private router: Router,
     private auth: AuthService
   ) {}
 

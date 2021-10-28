@@ -2,5 +2,5 @@
 <app-user-details-blood-donator
   [state]="bloodDonator$ | async"
   (profileEdit)="onProfileEdit($event)"
+  (showDonationList)="onShowDonationList()"
 ></app-user-details-blood-donator>
-<p>Lista donacji użytkownika</p>

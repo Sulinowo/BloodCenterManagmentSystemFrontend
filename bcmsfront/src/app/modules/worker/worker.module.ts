@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BloodDonatorPagesComponent } from './pages/blood-donator-pages/blood-donator-pages.component';
-import { BloodStoragePageComponent } from './pages/blood-storage-page/blood-storage-page.component';
-import { ExaminationsPageComponent } from './pages/examinations-page/examinations-page.component';
-import { DonationPageComponent } from './pages/donation-page/donation-page.component';
-import { AddBloodDonatorComponent } from './components/blood-donator/add-blood-donator/add-blood-donator.component';
-import { ShowBloodDonatorsComponent } from './components/blood-donator/show-blood-donators/show-blood-donators.component';
+import { BloodStoragePageComponent } from './pages/blood-storage/blood-storage-page/blood-storage-page.component';
+import { ExaminationsPageComponent } from './pages/examination/examinations-page/examinations-page.component';
+import { DonationPageComponent } from './pages/donation/donation-page/donation-page.component';
 import { AddBloodUnitComponent } from './components/blood-storage/add-blood-unit/add-blood-unit.component';
 import { ShowBloodUnitsComponent } from './components/blood-storage/show-blood-units/show-blood-units.component';
 import { BloodUnitForeignComponent } from './components/blood-storage/blood-unit-foreign/blood-unit-foreign.component';
@@ -21,25 +18,24 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SearchBloodDonatorComponent } from './components/blood-donator/search-blood-donator/search-blood-donator.component';
 import { MatButtonModule } from '@angular/material/button';
-import { BloodDonatorDetailsPagesComponent } from './pages/blood-donator-details-pages/blood-donator-details-pages.component';
-import { BloodDonatorDonationsPageComponent } from './pages/blood-donator-donations-page/blood-donator-donations-page.component';
-import { ShowDonationsBloodDonatorComponent } from './components/blood-donator/show-donations-blood-donator/show-donations-blood-donator.component';
-import { EditAccountBloodDonatorComponent } from './components/blood-donator/edit-account-blood-donator/edit-account-blood-donator.component';
-import { UserDetailsBloodDonatorComponent } from './components/blood-donator/user-details-blood-donator/user-details-blood-donator.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SharedModule } from '../../shared/shared.module';
-import { BloodDonatorDonationDetailsPageComponent } from './pages/blood-donator-donation-details-page/blood-donator-donation-details-page.component';
+import { BloodDonatorModule } from './modules/blood-donator/blood-donator.module';
+
+const MATERIAL_ELEMENTS = [
+  MatTableModule,
+  MatIconModule,
+  MatTabsModule,
+  MatInputModule,
+  MatButtonModule,
+];
 
 @NgModule({
   declarations: [
-    BloodDonatorPagesComponent,
     BloodStoragePageComponent,
     ExaminationsPageComponent,
     DonationPageComponent,
-    AddBloodDonatorComponent,
-    ShowBloodDonatorsComponent,
     AddBloodUnitComponent,
     ShowBloodUnitsComponent,
     BloodUnitForeignComponent,
@@ -49,26 +45,16 @@ import { BloodDonatorDonationDetailsPageComponent } from './pages/blood-donator-
     ShowAllDonationsComponent,
     ShowDonationComponent,
     ShowDonationsQueueComponent,
-    SearchBloodDonatorComponent,
-    BloodDonatorDetailsPagesComponent,
-    BloodDonatorDonationsPageComponent,
-    ShowDonationsBloodDonatorComponent,
-    EditAccountBloodDonatorComponent,
-    UserDetailsBloodDonatorComponent,
-    BloodDonatorDonationDetailsPageComponent,
   ],
   imports: [
-    CommonModule,
-    MatTableModule,
-    MatIconModule,
+    CommonModule, 
     WorkerRoutingModule,
-    MatTabsModule,
-    MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    MatButtonModule,
     FlexLayoutModule,
     SharedModule,
+    MATERIAL_ELEMENTS,
+    BloodDonatorModule
   ],
 })
 export class WorkerModule {}

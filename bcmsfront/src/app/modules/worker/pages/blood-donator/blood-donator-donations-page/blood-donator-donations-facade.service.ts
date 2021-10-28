@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { WorkerClientService } from '../../clients/worker-client.service';
-import { BloodDonatorService } from '../../services/blood-donator.service';
+import { Donation } from 'src/app/core/models/donation';
+import { WorkerClientService } from '../../../clients/worker-client.service';
+import { BloodDonatorService } from '../../../services/blood-donator.service';
 
 @Injectable({
   providedIn: 'root',
