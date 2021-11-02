@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   EventEmitter,
   Input,
@@ -14,6 +15,7 @@ import { UserData } from 'src/app/core/models/user-data';
   selector: 'app-user-details-blood-donator',
   templateUrl: './user-details-blood-donator.component.html',
   styleUrls: ['./user-details-blood-donator.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserDetailsBloodDonatorComponent implements OnChanges {
   @Input() showEditable = false;

@@ -4,11 +4,11 @@ export interface Donator {
   phoneNumber?: string;
   ammountOfBloodDonated?: number;
   bloodType?: BloodTypeName;
-  user?: DonatorDetails;
+  user: DonatorDetails;
 }
 
 export interface DonatorDetails {
-  id?: number;
+  id: number;
   email: string;
   firstName: string;
   surname: string;

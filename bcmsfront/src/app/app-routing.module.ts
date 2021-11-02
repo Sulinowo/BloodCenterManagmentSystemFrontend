@@ -4,7 +4,7 @@ import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'homepage',
     loadChildren: () =>
       import('./shared/sites/homepage/homepage.module').then(
         (m) => m.HomepageModule
@@ -70,7 +70,7 @@ const routes: Routes = [
 
   //worker
   {
-    path: 'blooddonator',
+    path: '',
     loadChildren: () =>
       import('./modules/worker/worker.module').then((m) => m.WorkerModule),
   },

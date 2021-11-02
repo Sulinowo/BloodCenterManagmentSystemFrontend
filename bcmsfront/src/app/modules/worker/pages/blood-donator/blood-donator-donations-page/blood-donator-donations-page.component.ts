@@ -19,7 +19,8 @@ export class BloodDonatorDonationsPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.bloodDonatorDonationsFacade.loadDonationsData(2);
+    const userId = this.route.snapshot.paramMap.get('userId') || '';
+    this.bloodDonatorDonationsFacade.loadDonationsData(parseInt(userId));
   }
   
   public onDonationClick(donation: Donation) {

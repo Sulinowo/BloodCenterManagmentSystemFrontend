@@ -18,7 +18,11 @@ export class BloodDonatorPagesComponent implements OnInit {
     this.donators$.subscribe((data) => console.log('nowe dane', data));
   }
 
-  public kowalskiNaprawBackend(data: Donator): void {
+  public addDonator(data: Donator): void {
     this.bloodDonatorFacade.addDonator(data);
+  }
+
+  public onAddDonationClick(data: Donator): void {
+    this.bloodDonatorFacade.addDonation(data.user.id);
   }
 }

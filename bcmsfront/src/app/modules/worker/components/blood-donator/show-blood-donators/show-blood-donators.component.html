@@ -33,12 +33,37 @@
       </td>
     </ng-container>
 
+    <ng-container matColumnDef="donacja">
+      <th mat-header-cell *matHeaderCellDef>Zarejestruj donacje</th>
+      <td mat-cell *matCellDef="let donators" class="on-hover-td">
+        <mat-icon
+        class="action"
+        (click)="onAddDonationClick(donators)"
+        matTooltip="Zarejestruj tego użytkownika"
+        matTooltipPosition="right"
+        >add</mat-icon
+      >
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="edycja">
+      <th mat-header-cell *matHeaderCellDef>Edytuj użytkownika</th>
+      <td mat-cell *matCellDef="let donators" class="on-hover-td">
+        <mat-icon
+        class="action"
+        [routerLink]="donators.user.id"
+        (click)="donatorListClick(donators)"
+        matTooltip="Edytuj tego użytkownika"
+        matTooltipPosition="right"
+        >edit</mat-icon
+      >
+      </td>
+    </ng-container>
+
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr
       mat-row
-      *matRowDef="let donator; columns: displayedColumns"
-      [routerLink]="donator.user.id"
-      (click)="donatorListClick(donator)"
+      *matRowDef="let donator; columns: displayedColumns"  
     ></tr>
   </table>
 </div>

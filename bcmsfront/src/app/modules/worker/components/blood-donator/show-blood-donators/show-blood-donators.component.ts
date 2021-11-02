@@ -3,7 +3,6 @@ import {
   Component,
   EventEmitter,
   Input,
-  OnInit,
   Output,
 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -15,11 +14,12 @@ import { Donator } from 'src/app/core/models/donator';
   styleUrls: ['./show-blood-donators.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ShowBloodDonatorsComponent implements OnInit {
+export class ShowBloodDonatorsComponent {
   @Input() dataSource: Donator[];
   @Output() donatorClick = new EventEmitter<Donator>();
+  @Output() addDonationClick = new EventEmitter<Donator>();
 
-  displayedColumns: string[] = ['imie', 'nazwisko', 'pesel', 'email'];
+  displayedColumns: string[] = ['imie', 'nazwisko', 'pesel', 'email','donacja','edycja'];
   public searchBloodDonatorForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
@@ -33,5 +33,9 @@ export class ShowBloodDonatorsComponent implements OnInit {
     console.log('siema', donator);
   }
 
-  ngOnInit(): void {}
+  public onAddDonationClick(donator: Donator): void {
+    this.addDonationClick.emit(donator);
+    console.log("hey",donator);
+  }
+
 }

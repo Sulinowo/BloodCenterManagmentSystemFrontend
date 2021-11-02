@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { BloodStorage } from 'src/app/core/models/bloodstorage';
 import { WorkerClientService } from '../../../clients/worker-client.service';
 import { BloodStorageService } from '../../../services/blood-storage.service';
 
@@ -9,7 +8,6 @@ import { BloodStorageService } from '../../../services/blood-storage.service';
 export class BloodStorageFacadeService {
   public addBloodUnit$ = this.bloodStorageService.addBloodUnit$;
   public bloodUnits$ = this.bloodStorageService.bloodUnits$;
-  public addBloodUnitForeign$ = this.bloodStorageService.addBloodUnitForeign$;
   public setBloodUnitNotAvailable$ =
     this.bloodStorageService.setBloodUnitNotAvailable$;
 
@@ -30,24 +28,6 @@ export class BloodStorageFacadeService {
     this.workerClient.getAllAvailableBloodUnit().subscribe((data) => {
       this.bloodStorageService.loadAvailableBloodUnit(data);
     });
-  }
-
-  public addBloodUnitForeign(
-    bloodTypeName: string,
-    foreignBloodUnitId: number,
-    bloodUnitLocation: string,
-    isAfterCovid: boolean
-  ): void {
-    this.workerClient
-      .addBloodUnitFromForeignBloodBank(
-        bloodTypeName,
-        foreignBloodUnitId,
-        bloodUnitLocation,
-        isAfterCovid
-      )
-      .subscribe((data) => {
-        this.bloodStorageService.addBloodUnitForeign(data);
-      });
   }
 
   public setBloodUnitNotAvailable(bloodUnitId: number): void {

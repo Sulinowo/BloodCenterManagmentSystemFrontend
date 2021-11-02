@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Donation } from 'src/app/core/models/donation';
 import { DonationDetails } from 'src/app/core/models/donation-details';
+import { DonationFull } from 'src/app/core/models/donation-full';
 import { Donator } from 'src/app/core/models/donator';
 
 @Injectable({
@@ -15,6 +16,7 @@ export class BloodDonatorService {
     [] as Donation[]
   );
   public donationDetails$ = new BehaviorSubject(<DonationDetails>{});
+  public addDonation$ = new BehaviorSubject<DonationFull>({});
 
   public donatorsObservable$ = this.donators$.asObservable();
 
@@ -36,5 +38,9 @@ export class BloodDonatorService {
 
   public setDonationDetails(donation: DonationDetails): void {
     this.donationDetails$.next(donation);
+  }
+
+  public addDonation(data: DonationFull): void {
+    this.addDonation$.next(data);
   }
 }

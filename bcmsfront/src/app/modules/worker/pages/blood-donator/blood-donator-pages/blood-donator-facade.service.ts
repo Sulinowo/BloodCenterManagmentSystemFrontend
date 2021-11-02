@@ -9,6 +9,7 @@ import { BloodDonatorService } from '../../../services/blood-donator.service';
 export class BloodDonatorFacadeService {
   public donators$ = this.bloodDonatorService.donatorsObservable$;
   public addDonator$ = this.bloodDonatorService.addDonator$;
+  public addDonation$ = this.bloodDonatorService.addDonation$;
 
   constructor(
     private bloodDonatorService: BloodDonatorService,
@@ -51,4 +52,11 @@ export class BloodDonatorFacadeService {
       this.loadDonators();
     });
   }
+
+  public addDonation(userId: number): void {
+    this.workerClient.addDonation(userId).subscribe((data) => {
+      this.bloodDonatorService.addDonation(data);
+    });
+  }
+
 }

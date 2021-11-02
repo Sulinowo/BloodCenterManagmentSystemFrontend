@@ -1,1 +1,40 @@
 <p>blood-unit-foreign works!</p>
+<form
+  [formGroup]="addForeignBloodUnitForm"
+  fxLayout="column"
+  class="add-foreign-blood-unit-form"
+>
+  <h2>Formularz dodawania jednostki krwii</h2>
+
+  <div class="user-data-container">
+    <mat-form-field>
+      <mat-label>Nazwa grupy krwi</mat-label>
+      <input matInput formControlName="bloodTypeName" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Identyfikator banku krwi</mat-label>
+      <input type="number" matInput formControlName="foreignBloodUnitId" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Lokalizacja jednostki krwi</mat-label>
+      <input matInput formControlName="bloodUnitLocation" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Po Covid?</mat-label>
+      <mat-select matNativeControl  formControlName="isAfterCovid">
+        <mat-option *ngFor="let covid of afterCovid" [value]="covid.value">
+          {{covid.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button
+      mat-stroked-button
+      color="primary"
+      (click)="onAddBloodUnit()"
+      [disabled]="addForeignBloodUnitForm.invalid"
+    >
+      Dodaj jednostkę krwii
+    </button>
+  </div>
+</form>

@@ -6,10 +6,10 @@ import { BloodStorage } from 'src/app/core/models/bloodstorage';
   providedIn: 'root',
 })
 export class BloodStorageService {
-  public addBloodUnit$ = new BehaviorSubject<BloodStorage>({});
+  public addBloodUnit$ = new BehaviorSubject(<BloodStorage>{});
   public bloodUnits$ = new BehaviorSubject(<BloodStorage[]>[]);
-  public addBloodUnitForeign$ = new BehaviorSubject<BloodStorage>({});
-  public setBloodUnitNotAvailable$ = new BehaviorSubject<BloodStorage>({});
+  public addBloodUnitForeign$ = new BehaviorSubject(<BloodStorage>{});
+  public setBloodUnitNotAvailable$ = new BehaviorSubject(<BloodStorage>{});
 
   public addBloodUnit(data: BloodStorage): void {
     this.addBloodUnit$.next(data);

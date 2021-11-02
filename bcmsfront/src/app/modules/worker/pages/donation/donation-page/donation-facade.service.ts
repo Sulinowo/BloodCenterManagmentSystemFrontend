@@ -7,7 +7,6 @@ import { WorkerClientService } from '../../../clients/worker-client.service';
   providedIn: 'root',
 })
 export class DonationFacadeService {
-  public addDonation$ = this.donationService.addDonation$;
   public allDonations$ = this.donationService.allDonations$;
   public donationPatch$ = this.donationService.donationPatch$;
   public queue$ = this.donationService.queue$;
@@ -18,11 +17,6 @@ export class DonationFacadeService {
     private workerClient: WorkerClientService
   ) {}
 
-  public addDonation(userId: number): void {
-    this.workerClient.addDonation(userId).subscribe((data) => {
-      this.donationService.addDonation(data);
-    });
-  }
 
   public getAllDonations(): void {
     this.workerClient.getAllDonations().subscribe((_) => {

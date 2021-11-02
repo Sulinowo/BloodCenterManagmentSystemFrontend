@@ -82,7 +82,7 @@ export class WorkerClientService {
   }
 
   public addDonation(userId: number): Observable<DonationFull> {
-    return this.httpClient.post<DonationFull>(`/api/donations`, { userId });
+    return this.httpClient.post<DonationFull>(`/api/donations/${userId}`, { });
   }
 
   public getAllDonations(): Observable<DonationGet[]> {

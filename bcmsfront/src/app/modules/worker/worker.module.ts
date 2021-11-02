@@ -1,11 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BloodStoragePageComponent } from './pages/blood-storage/blood-storage-page/blood-storage-page.component';
 import { ExaminationsPageComponent } from './pages/examination/examinations-page/examinations-page.component';
 import { DonationPageComponent } from './pages/donation/donation-page/donation-page.component';
-import { AddBloodUnitComponent } from './components/blood-storage/add-blood-unit/add-blood-unit.component';
-import { ShowBloodUnitsComponent } from './components/blood-storage/show-blood-units/show-blood-units.component';
-import { BloodUnitForeignComponent } from './components/blood-storage/blood-unit-foreign/blood-unit-foreign.component';
 import { AddExaminationComponent } from './components/examinations/add-examination/add-examination.component';
 import { UpdateExaminationComponent } from './components/examinations/update-examination/update-examination.component';
 import { AddDonationComponent } from './components/donation/add-donation/add-donation.component';
@@ -22,6 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SharedModule } from '../../shared/shared.module';
 import { BloodDonatorModule } from './modules/blood-donator/blood-donator.module';
+import { BloodStorageModule } from './modules/blood-storage/blood-storage.module';
 
 const MATERIAL_ELEMENTS = [
   MatTableModule,
@@ -33,12 +30,8 @@ const MATERIAL_ELEMENTS = [
 
 @NgModule({
   declarations: [
-    BloodStoragePageComponent,
     ExaminationsPageComponent,
     DonationPageComponent,
-    AddBloodUnitComponent,
-    ShowBloodUnitsComponent,
-    BloodUnitForeignComponent,
     AddExaminationComponent,
     UpdateExaminationComponent,
     AddDonationComponent,
@@ -54,7 +47,8 @@ const MATERIAL_ELEMENTS = [
     FlexLayoutModule,
     SharedModule,
     MATERIAL_ELEMENTS,
-    BloodDonatorModule
+    BloodDonatorModule,
+    BloodStorageModule,
   ],
 })
 export class WorkerModule {}
