@@ -1,13 +1,12 @@
 import { Donator, DonatorDonationGet } from './donator';
 
-export interface DonationFull
-  extends Partial<{
+export interface DonationFull {
     id: number;
     donationDate: Date;
     stage: string;
     rejectionReason: string;
     bloodDonator: Donator;
-  }> {}
+}
 
 export interface DonationGet {
   id: number;

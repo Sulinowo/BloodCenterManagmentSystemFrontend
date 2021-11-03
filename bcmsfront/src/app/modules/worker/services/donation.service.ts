@@ -8,11 +8,9 @@ import { DonationPatch } from 'src/app/core/models/donation-patch';
 })
 export class DonationService {
   public allDonations$ = new BehaviorSubject(<DonationGet[]>[]);
-  public donationPatch$ = new BehaviorSubject<DonationPatch>(
-    {} as DonationPatch
-  );
-  public queue$ = new BehaviorSubject<DonationGet[]>(<DonationGet[]>[]);
-  public donation$ = new BehaviorSubject<DonationFull>({} as DonationFull);
+  public donationPatch$ = new BehaviorSubject(<DonationPatch>{});
+  public queue$ = new BehaviorSubject(<DonationGet[]>[]);
+  public donation$ = new BehaviorSubject(<DonationFull>{});
 
   public getAllDonations(data: DonationGet[]): void {
     this.allDonations$.next(data);

@@ -16,7 +16,7 @@ export class BloodDonatorService {
     [] as Donation[]
   );
   public donationDetails$ = new BehaviorSubject(<DonationDetails>{});
-  public addDonation$ = new BehaviorSubject<DonationFull>({});
+  public addDonation$ = new BehaviorSubject(<DonationFull>{});
 
   public donatorsObservable$ = this.donators$.asObservable();
 

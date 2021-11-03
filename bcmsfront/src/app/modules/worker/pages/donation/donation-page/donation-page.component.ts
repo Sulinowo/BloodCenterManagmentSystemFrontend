@@ -1,12 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DonationFull } from 'src/app/core/models/donation-full';
+import { DonationFacadeService } from './donation-facade.service';
 
 @Component({
   selector: 'app-donation-page',
   templateUrl: './donation-page.component.html',
-  styleUrls: ['./donation-page.component.scss'],
+  styleUrls: ['./donation-page.component.scss']
 })
 export class DonationPageComponent implements OnInit {
-  constructor() {}
+  public donation$ = this.donationFacade.donation$;
 
-  ngOnInit(): void {}
+  constructor(
+    private donationFacade : DonationFacadeService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
+
+  ngOnInit(): void {
+    const donationId = this.route.snapshot.paramMap.get('donationId') || '';
+    this.donationFacade.loadDonation(parseInt(donationId) || -1);
+  }
+
+  // public onDonationClick(data: DonationFull): void {
+  //   this.router.navigate([`/donations/${data}/details`]);
+  // }
 }
