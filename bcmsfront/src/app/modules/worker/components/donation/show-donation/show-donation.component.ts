@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { DonationDetails } from 'src/app/core/models/donation-details';
 import { DonationFull } from 'src/app/core/models/donation-full';
 
 @Component({
@@ -9,7 +10,7 @@ import { DonationFull } from 'src/app/core/models/donation-full';
 })
 export class ShowDonationComponent{
   @Input() dataSource: [DonationFull | null];
-  @Output() donationClick = new EventEmitter<DonationFull>();
+  @Output() detailsClick = new EventEmitter();
 
   columns: string[] = [
     'stage',
@@ -19,13 +20,12 @@ export class ShowDonationComponent{
     'firstName',
     'surname',
     'bloodTypeName',
-    'ammountOfBloodDonated',
     'phoneNumber',
     'homeAdress',
-    'rejectionReason'
+    'rejectionReason',
   ];
 
-  public onDonationClick(data: DonationFull): void {
-    this.donationClick.emit(data);
+  public onDetailsClick(): void {
+    this.detailsClick.emit();
   }
 }

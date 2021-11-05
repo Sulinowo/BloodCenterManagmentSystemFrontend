@@ -15,6 +15,9 @@ import { SharedModule } from '../../shared/shared.module';
 import { BloodDonatorModule } from './modules/blood-donator/blood-donator.module';
 import { BloodStorageModule } from './modules/blood-storage/blood-storage.module';
 import { DonationModule } from './modules/donation/donation.module';
+import { ExaminationDoctorPageComponent } from './pages/examination/examination-doctor-page/examination-doctor-page.component';
+import { DonationChangeStatusPageComponent } from './pages/donation/donation-change-status-page/donation-change-status-page.component';
+
 
 const MATERIAL_ELEMENTS = [
   MatTableModule,
@@ -29,6 +32,8 @@ const MATERIAL_ELEMENTS = [
     ExaminationsPageComponent,
     AddExaminationComponent,
     UpdateExaminationComponent,
+    ExaminationDoctorPageComponent,
+    DonationChangeStatusPageComponent,
   ],
   imports: [
     CommonModule, 

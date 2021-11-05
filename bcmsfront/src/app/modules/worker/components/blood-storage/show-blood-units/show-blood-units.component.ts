@@ -11,7 +11,7 @@ export class ShowBloodUnitsComponent {
   @Input() dataSource: BloodStorage[];
   @Output() bloodUnitClick = new EventEmitter<BloodStorage>();
 
-  displayedColumns: string[] = ['lokalizacja', 'dostepnosc', 'covid', 'grupaKrwii'];
+  displayedColumns: string[] = ['lokalizacja', 'dostepnosc', 'covid', 'grupaKrwii','ustawNiedostepny'];
 
   constructor() {}
 

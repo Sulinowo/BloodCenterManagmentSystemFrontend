@@ -1,0 +1,7 @@
+<p>registered-donation-page works!</p>
+<app-donation-registered
+    [dataSource]="[donation$ | async]"
+    (detailsClick)="onDetailsClick()"
+    (examinationAddClick)="onExamiationAddClick()"
+    (statusChangeClick)="onStatusChangeClick()"
+></app-donation-registered>

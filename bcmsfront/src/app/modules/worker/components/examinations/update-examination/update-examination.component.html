@@ -1,1 +1,37 @@
 <p>update-examination works!</p>
+
+<form
+  [formGroup]="addDoctorExaminationForm"
+  fxLayout="column"
+  class="add-examination-form"
+>
+  <h2>Formularz dodawania badań</h2>
+
+  <div class="user-data-container">
+    <mat-form-field>
+      <mat-label>Ciśnienie krwii górne</mat-label>
+      <input type="number" matInput formControlName="bloodPressureUpper" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Ciśnienie krwii dolne</mat-label>
+      <input type="number" matInput formControlName="bloodPressureLower" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Wzrost</mat-label>
+      <input type="number" matInput formControlName="height" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Waga</mat-label>
+        <input type="number" matInput formControlName="weight" />
+    </mat-form-field>
+
+    <button
+      mat-stroked-button
+      color="primary"
+      (click)="onAddDoctorExamination()"
+      [disabled]="addDoctorExaminationForm.invalid"
+    >
+      Dodaj badania
+    </button>
+  </div>
+</form>

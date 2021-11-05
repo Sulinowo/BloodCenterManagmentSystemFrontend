@@ -22,7 +22,12 @@ export class DonationPageComponent implements OnInit {
     this.donationFacade.loadDonation(parseInt(donationId) || -1);
   }
 
+  public onDetailsClick(): void {
+    const donationId = this.route.snapshot.paramMap.get('donationId') || '';
+    this.router.navigate([`/donations/${donationId}/details`]);
+  }
+
   // public onDonationClick(data: DonationFull): void {
-  //   this.router.navigate([`/donations/${data}/details`]);
+  //   
   // }
 }

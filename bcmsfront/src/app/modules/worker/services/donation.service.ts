@@ -9,7 +9,9 @@ import { DonationPatch } from 'src/app/core/models/donation-patch';
 export class DonationService {
   public allDonations$ = new BehaviorSubject(<DonationGet[]>[]);
   public donationPatch$ = new BehaviorSubject(<DonationPatch>{});
-  public queue$ = new BehaviorSubject(<DonationGet[]>[]);
+  public registeredQueue$ = new BehaviorSubject(<DonationGet[]>[]);
+  public bloodExaminedQueue$ = new BehaviorSubject(<DonationGet[]>[]);
+  public qualifiedQueue$ = new BehaviorSubject(<DonationGet[]>[]);
   public donation$ = new BehaviorSubject(<DonationFull>{});
 
   public getAllDonations(data: DonationGet[]): void {
@@ -20,8 +22,16 @@ export class DonationService {
     this.donationPatch$.next(data);
   }
 
-  public getQueue(data: DonationGet[]): void {
-    this.queue$.next(data);
+  public getRegisteredQueue(data: DonationGet[]): void {
+    this.registeredQueue$.next(data);
+  }
+
+  public getBloodExaminedQueue(data: DonationGet[]): void {
+    this.bloodExaminedQueue$.next(data);
+  }
+  
+  public getQualifiedQueue(data: DonationGet[]): void {
+    this.qualifiedQueue$.next(data);
   }
 
   public getDonation(data: DonationFull): void {

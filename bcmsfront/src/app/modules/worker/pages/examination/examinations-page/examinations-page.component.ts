@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Examination } from 'src/app/core/models/examination';
+import { ExaminationsFacadeService } from './examinations-facade.service';
 
 @Component({
   selector: 'app-examinations-page',
@@ -6,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./examinations-page.component.scss'],
 })
 export class ExaminationsPageComponent implements OnInit {
-  constructor() {}
+
+  constructor(private examinationFacade: ExaminationsFacadeService) {}
 
   ngOnInit(): void {}
+
+  public onAddExaminationClick(data: Examination): void {
+    this.examinationFacade.addExamination(data);
+  }
 }

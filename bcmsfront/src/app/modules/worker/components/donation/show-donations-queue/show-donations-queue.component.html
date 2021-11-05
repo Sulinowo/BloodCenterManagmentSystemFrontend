@@ -1,1 +1,44 @@
 <p>show-donations-queue works!</p>
+  <div>
+    <!-- {{ dataSource | json }} -->
+    <table mat-table class="mat-elevation-z8" [dataSource]="dataSource">
+      <ng-container matColumnDef="stage">
+        <th mat-header-cell *matHeaderCellDef>Etap donacji</th>
+        <td mat-cell *matCellDef="let donation">
+          {{ donation.stage | donationsStagePipe }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="donationDate">
+        <th mat-header-cell *matHeaderCellDef>Data donacji</th>
+        <td mat-cell *matCellDef="let donation">
+          {{ donation.donationDate || "Brak" }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="pesel">
+        <th mat-header-cell *matHeaderCellDef>Pesel</th>
+        <td mat-cell *matCellDef="let donation">
+          {{ donation.bloodDonator?.pesel || "Brak" }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="surname">
+        <th mat-header-cell *matHeaderCellDef>Nazwisko</th>
+        <td mat-cell *matCellDef="let donation">
+          {{ donation.bloodDonator?.user?.surname || "Brak" }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef>Imię</th>
+        <td mat-cell *matCellDef="let donation">
+          {{ donation.bloodDonator?.user?.firstName || "Brak"  }}
+        </td>
+      </ng-container>
+
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+        mat-row
+        *matRowDef="let donation; columns: displayedColumns"
+        (click)="onDonationQueueClick(donation)"
+      ></tr>
+    </table>
+  </div>

@@ -1,0 +1,33 @@
+<p>status-donation works!</p>
+<form
+  [formGroup]="changeStatusForm"
+  fxLayout="column"
+  class="add-foreign-blood-unit-form"
+>
+  <h2>Formularz dodawania jednostki krwii</h2>
+
+  <div class="user-data-container">
+    <mat-form-field>
+      <mat-label>Etap donacji</mat-label>
+      <mat-select matNativeControl  formControlName="stage">
+        <mat-option *ngFor="let stages of stage" [value]="stages.value">
+          {{stages.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Powód odrzucenia(jeżeli status )</mat-label>
+        <input matInput formControlName="rejectionReason" />
+    </mat-form-field>
+
+    <button
+      mat-stroked-button
+      color="primary"
+      (click)="onChangeStatus()"
+      [disabled]="changeStatusForm.invalid"
+    >
+      Zmień status
+    </button>
+  </div>
+</form>

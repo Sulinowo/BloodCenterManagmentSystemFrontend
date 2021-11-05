@@ -26,12 +26,24 @@
           {{ bloodUnits.bloodTypeId | bloodTypeNamePipe }}
         </td>
       </ng-container>
+
+      <ng-container matColumnDef="ustawNiedostepny">
+        <th mat-header-cell *matHeaderCellDef>Ustaw na niedostępną</th>
+        <td mat-cell *matCellDef="let donators" class="on-hover-td">
+          <mat-icon
+          class="action"
+          matTooltip="Ustaw jednostkę krwi na niedostępną"
+          matTooltipPosition="right"
+          (click)="bloodUnitListClick(donators)"
+          >clear</mat-icon
+        >
+        </td>
+      </ng-container>
   
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr
         mat-row
         *matRowDef="let bloodUnit; columns: displayedColumns"
-        (click)="bloodUnitListClick(bloodUnit)"
       ></tr>
     </table>
   </div>

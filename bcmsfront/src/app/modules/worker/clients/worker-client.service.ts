@@ -93,12 +93,6 @@ export class WorkerClientService {
     return this.httpClient.patch<DonationPatch>(`/api/donations`, { ...data });
   }
 
-  public getQueue(donationStage: string): Observable<DonationGet[]> {
-    return this.httpClient.get<DonationGet[]>(
-      `/api/donations/queue?donationStage=${donationStage}`
-    );
-  }
-
   public getDonationDetails(donationId: number): Observable<DonationDetails> {
     return this.httpClient.get<DonationDetails>(
       `/api/donations/${donationId}/details`
@@ -123,5 +117,23 @@ export class WorkerClientService {
 
   public updateProfileData(data: UserData): Observable<UserData> {
     return this.httpClient.patch<UserData>(`/api/Users`, { ...data }); //
+  }
+
+  public getRegisteredQueue(): Observable<DonationGet[]> {
+    return this.httpClient.get<DonationGet[]>(
+      `/api/donations/queue?donationStage=registered`
+    );
+  }
+
+  public getBloodExaminedQueue(): Observable<DonationGet[]> {
+    return this.httpClient.get<DonationGet[]>(
+      `/api/donations/queue?donationStage=blood%20examined`
+    );
+  }
+
+  public getQualifiedQueue(): Observable<DonationGet[]> {
+    return this.httpClient.get<DonationGet[]>(
+      `/api/donations/queue?donationStage=qualified`
+    );
   }
 }
