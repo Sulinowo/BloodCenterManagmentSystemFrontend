@@ -14,6 +14,7 @@ import { BloodStorageRoutingModule } from './blood-storage-routing.module';
 import { BloodStorageAddForeignBloodPageComponent } from '../../pages/blood-storage/blood-storage-add-foreign-blood-page/blood-storage-add-foreign-blood-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
+import { BloodStorageEndDonationPageComponent } from '../../pages/blood-storage/blood-storage-end-donation-page/blood-storage-end-donation-page.component';
 
 const MATERIAL_ELEMENTS = [
   MatTableModule,
@@ -31,6 +32,7 @@ const MATERIAL_ELEMENTS = [
     ShowBloodUnitsComponent, 
     BloodUnitForeignComponent,
     BloodStorageAddForeignBloodPageComponent,
+    BloodStorageEndDonationPageComponent,
   ],
   imports: [
     CommonModule,
@@ -45,7 +47,8 @@ const MATERIAL_ELEMENTS = [
     AddBloodUnitComponent, 
     ShowBloodUnitsComponent, 
     BloodUnitForeignComponent,
-    BloodStorageAddForeignBloodPageComponent
+    BloodStorageAddForeignBloodPageComponent,
+    BloodStorageEndDonationPageComponent,
   ],
 })
 export class BloodStorageModule { }

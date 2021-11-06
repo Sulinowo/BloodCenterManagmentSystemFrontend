@@ -22,6 +22,9 @@ import { DonationStatusPageComponent } from '../../pages/donation/donation-statu
 import { ShowDonationsQueueComponent } from '../../components/donation/show-donations-queue/show-donations-queue.component';
 import { RegisteredDonationPageComponent } from '../../pages/donation/registered-donation-page/registered-donation-page.component';
 import { DonationRegisteredComponent } from '../../components/donation/donation-registered/donation-registered.component';
+import { DonationQualifiedComponent } from '../../components/donation/donation-qualified/donation-qualified.component';
+import { DonationChangeStatusPageComponent } from '../../pages/donation/donation-change-status-page/donation-change-status-page.component';
+import { QualifiedDonationPageComponent } from '../../pages/donation/qualified-donation-page/qualified-donation-page.component';
 
 const MATERIAL_ELEMENTS = [
   MatTableModule,
@@ -47,6 +50,9 @@ const MATERIAL_ELEMENTS = [
     DonationStatusPageComponent,
     RegisteredDonationPageComponent,
     DonationRegisteredComponent,
+    DonationQualifiedComponent,
+    DonationChangeStatusPageComponent,
+    QualifiedDonationPageComponent,
   ],
   imports: [
     CommonModule,
@@ -70,6 +76,9 @@ const MATERIAL_ELEMENTS = [
     DonationStatusPageComponent,
     RegisteredDonationPageComponent,
     DonationRegisteredComponent,
+    DonationQualifiedComponent,
+    DonationChangeStatusPageComponent,
+    QualifiedDonationPageComponent,
   ],
 })
 export class DonationModule { }

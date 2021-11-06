@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { BloodStorage, BloodStorageForeign } from 'src/app/core/models/bloodstorage';
+import { BloodStorageForeign } from 'src/app/core/models/bloodstorage';
 
 interface Covid {
   value: boolean;

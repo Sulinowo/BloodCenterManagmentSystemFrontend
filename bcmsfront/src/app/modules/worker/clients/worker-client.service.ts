@@ -45,11 +45,11 @@ export class WorkerClientService {
   }
 
   public addBloodUnitToStorage(
-    dontaionId: number,
+    donationId: number,
     isAfterCovid: boolean
   ): Observable<BloodStorage> {
     return this.httpClient.post<BloodStorage>(`/api/bloodstorages`, {
-      dontaionId,
+      donationId,
       isAfterCovid,
     }); //
   }

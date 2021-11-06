@@ -8,7 +8,6 @@ import { ExaminationsService } from '../../../services/examinations.service';
 })
 export class ExaminationsFacadeService {
   public examination$ = this.examinationService.examination$;
-  public examinationPatch$ = this.examinationService.examinationPatch$;
 
   constructor(
     private examinationService: ExaminationsService,
@@ -18,12 +17,6 @@ export class ExaminationsFacadeService {
   public addExamination(data: Examination): void {
     this.workerClient.addExamination(data).subscribe((data) => {
       this.examinationService.addExamination(data);
-    });
-  }
-
-  public addExaminationPatch(data: ExaminationPatch): void {
-    this.workerClient.addExaminationPatch(data).subscribe((data) => {
-      this.examinationService.addExaminationPatch(data);
     });
   }
 }

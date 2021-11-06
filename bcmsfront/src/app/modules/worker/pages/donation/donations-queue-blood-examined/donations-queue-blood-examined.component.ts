@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DonationGet } from 'src/app/core/models/donation-full';
 import { DonationsQueueBloodExaminedFacadeService } from './donations-queue-blood-examined-facade.service';
 
 @Component({
@@ -17,6 +18,10 @@ export class DonationsQueueBloodExaminedComponent implements OnInit {
 
   ngOnInit(): void {
     this.donationFacade.getBloodExaminedQueue();
+  }
+
+  public onDonationQueueClick(data: DonationGet): void {
+    this.router.navigate([`queue/bloodexamined/${data.id}`]);
   }
 
 }

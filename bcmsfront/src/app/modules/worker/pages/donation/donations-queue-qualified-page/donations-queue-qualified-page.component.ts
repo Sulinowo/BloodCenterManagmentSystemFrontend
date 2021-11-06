@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DonationGet } from 'src/app/core/models/donation-full';
 import { DonationsQueueQualifiedFacadeService } from './donations-queue-qualified-facade.service';
 
 @Component({
@@ -17,6 +18,10 @@ export class DonationsQueueQualifiedPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.donationFacade.getQualifiedQueue();
+  }
+
+  public onDonationQueueClick(data: DonationGet): void {
+    this.router.navigate([`queue/qualified/${data.id}`]);
   }
 
 }
