@@ -18,6 +18,8 @@ import { DonationModule } from './modules/donation/donation.module';
 import { ExaminationDoctorPageComponent } from './pages/examination/examination-doctor-page/examination-doctor-page.component';
 import { BloodExaminedDonationPageComponent } from './pages/donation/blood-examined-donation-page/blood-examined-donation-page.component';
 import { DonationBloodExaminedComponent } from './components/donation/donation-blood-examined/donation-blood-examined.component';
+import { ExaminationEditPageComponent } from './pages/examination/examination-edit-page/examination-edit-page.component';
+import { EditExaminationComponent } from './components/examinations/edit-examination/edit-examination.component';
 
 const MATERIAL_ELEMENTS = [
   MatTableModule,
@@ -35,6 +37,8 @@ const MATERIAL_ELEMENTS = [
     ExaminationDoctorPageComponent,
     BloodExaminedDonationPageComponent,
     DonationBloodExaminedComponent,
+    ExaminationEditPageComponent,
+    EditExaminationComponent,
   ],
   imports: [
     CommonModule, 

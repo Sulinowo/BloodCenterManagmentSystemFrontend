@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Examination, ExaminationPatch } from 'src/app/core/models/examination';
+import { Examination } from 'src/app/core/models/examination';
 import { WorkerClientService } from '../../../clients/worker-client.service';
 import { ExaminationsService } from '../../../services/examinations.service';
 

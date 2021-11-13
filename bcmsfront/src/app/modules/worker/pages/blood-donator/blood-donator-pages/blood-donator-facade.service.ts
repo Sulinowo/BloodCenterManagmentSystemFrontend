@@ -19,7 +19,7 @@ export class BloodDonatorFacadeService {
   public loadDonators(): void {
     this.workerClient.getAllBloodDonators().subscribe(
       (donators: any) => {
-        this.bloodDonatorService.initialize(donators.data);
+        this.bloodDonatorService.initialize(donators);
       },
     );
   }

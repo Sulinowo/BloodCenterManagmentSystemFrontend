@@ -35,4 +35,9 @@ export class RegisteredDonationPageComponent implements OnInit {
     const donationId = this.route.snapshot.paramMap.get('donationId') || '';
     this.router.navigate([`donation/${donationId}/changestatus`]);
   }
+
+  public onExaminationEditClick(): void {
+    const donationId = this.route.snapshot.paramMap.get('donationId') || '';
+    this.router.navigate([`/queue/registered/${donationId}/editexamination`]);
+  }
 }

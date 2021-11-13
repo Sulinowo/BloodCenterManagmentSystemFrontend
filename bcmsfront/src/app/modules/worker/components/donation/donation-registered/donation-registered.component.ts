@@ -11,6 +11,7 @@ export class DonationRegisteredComponent {
   @Output() detailsClick = new EventEmitter();
   @Output() examinationAddClick = new EventEmitter();
   @Output() statusChangeClick = new EventEmitter();
+  @Output() examinationEditClick = new EventEmitter();
 
   columns: string[] = [
     'stage',
@@ -35,5 +36,9 @@ export class DonationRegisteredComponent {
 
   public onStatusChangeClick(): void {
     this.statusChangeClick.emit();
+  }
+
+  public onExamiationEditClick(): void {
+    this.examinationEditClick.emit();
   }
 }

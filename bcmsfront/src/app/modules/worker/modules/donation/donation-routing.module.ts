@@ -11,6 +11,7 @@ import { DonationsQueueQualifiedPageComponent } from '../../pages/donation/donat
 import { QualifiedDonationPageComponent } from '../../pages/donation/qualified-donation-page/qualified-donation-page.component';
 import { RegisteredDonationPageComponent } from '../../pages/donation/registered-donation-page/registered-donation-page.component';
 import { ExaminationDoctorPageComponent } from '../../pages/examination/examination-doctor-page/examination-doctor-page.component';
+import { ExaminationEditPageComponent } from '../../pages/examination/examination-edit-page/examination-edit-page.component';
 import { ExaminationsPageComponent } from '../../pages/examination/examinations-page/examinations-page.component';
 
 const routes: Routes = [
@@ -37,6 +38,10 @@ const routes: Routes = [
   { 
     path: `queue/registered/:donationId/addexamination`, 
     component: ExaminationsPageComponent
+  },
+  { 
+    path: `queue/registered/:donationId/editexamination`, 
+    component: ExaminationEditPageComponent
   },
   { 
     path: `queue/bloodexamined`, 

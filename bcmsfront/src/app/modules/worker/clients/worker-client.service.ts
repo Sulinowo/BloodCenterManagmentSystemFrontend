@@ -7,7 +7,7 @@ import { DonationDetails } from 'src/app/core/models/donation-details';
 import { DonationFull, DonationGet } from 'src/app/core/models/donation-full';
 import { DonationPatch } from 'src/app/core/models/donation-patch';
 import { Donator } from 'src/app/core/models/donator';
-import { Examination, ExaminationPatch } from 'src/app/core/models/examination';
+import { EditExamination, Examination, ExaminationPatch } from 'src/app/core/models/examination';
 import { UserData } from 'src/app/core/models/user-data';
 
 @Injectable({
@@ -113,6 +113,12 @@ export class WorkerClientService {
     return this.httpClient.patch<ExaminationPatch>(`/api/examinations`, {
       ...data,
     }); //
+  }
+
+  public editExamination(data: EditExamination) : Observable<EditExamination> {
+    return this.httpClient.patch<EditExamination>(`/api/examinations/fixbloodexamination`,{
+      ...data,
+    });
   }
 
   public updateProfileData(data: UserData): Observable<UserData> {

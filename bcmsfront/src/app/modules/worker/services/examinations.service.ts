@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Examination, ExaminationPatch } from 'src/app/core/models/examination';
+import { DonationDetails } from 'src/app/core/models/donation-details';
+import { EditExamination, Examination, ExaminationPatch } from 'src/app/core/models/examination';
 
 @Injectable({
   providedIn: 'root',
@@ -10,6 +11,8 @@ export class ExaminationsService {
   public examinationPatch$ = new BehaviorSubject<ExaminationPatch>(
     {} as ExaminationPatch
   );
+  public editExamination$ = new BehaviorSubject<EditExamination>({} as EditExamination);
+  public examinationDetails$ = new BehaviorSubject(<DonationDetails>{});
 
   public addExamination(data: Examination): void {
     this.examination$.next(data);
@@ -17,5 +20,13 @@ export class ExaminationsService {
 
   public addExaminationPatch(data: ExaminationPatch): void {
     this.examinationPatch$.next(data);
+  }
+
+  public editExamination(data: EditExamination): void {
+    this.editExamination$.next(data);
+  }
+
+  public editExaminationInitialize(examination: DonationDetails): void {
+    this.examinationDetails$.next(examination);
   }
 }
