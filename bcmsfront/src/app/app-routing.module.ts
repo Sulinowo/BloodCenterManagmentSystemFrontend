@@ -74,6 +74,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/worker/worker.module').then((m) => m.WorkerModule),
   },
+
+  //admin
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./modules/admin/admin.module').then((m) => m.AdminModule),
+  },
 ];
 
 @NgModule({

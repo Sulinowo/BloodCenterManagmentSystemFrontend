@@ -1,0 +1,36 @@
+<p>add-new-admin works!</p>
+<form
+  [formGroup]="addAdminForm"
+  fxLayout="column"
+  class="add-admin-form"
+>
+  <h2>Formularz dodania Pracownika</h2>
+
+  <div class="add-admin-container">
+    <mat-form-field>
+      <mat-label>E-mail</mat-label>
+      <input matInput formControlName="email" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Hasło</mat-label>
+      <input type="password" matInput formControlName="password" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Imię</mat-label>
+      <input matInput formControlName="firstName" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Nazwisko</mat-label>
+      <input matInput formControlName="surname" />
+    </mat-form-field>
+
+    <button
+      mat-stroked-button
+      color="primary"
+      (click)="onAddAdmin()"
+      [disabled]="addAdminForm.invalid"
+    >
+      Dodaj administratora
+    </button>
+  </div>
+</form>
