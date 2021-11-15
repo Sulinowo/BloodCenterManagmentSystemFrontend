@@ -1,0 +1,46 @@
+<p>show-all-workers works!</p>
+<table mat-table class="mat-elevation-z8" [dataSource]="dataSource">
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>E-mail</th>
+      <td mat-cell *matCellDef="let workers">
+        {{ workers.email || "Brak danych" }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef>Imię</th>
+      <td mat-cell *matCellDef="let workers">
+        {{ workers.firstName || "Brak danych" }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="surname">
+      <th mat-header-cell *matHeaderCellDef>Nazwisko</th>
+      <td mat-cell *matCellDef="let workers">
+        {{ workers.surname || "Brak danych" }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="role">
+      <th mat-header-cell *matHeaderCellDef>Rola</th>
+      <td mat-cell *matCellDef="let workers">
+        {{ workers.role || "Brak danych" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef>Usuń użytkownika</th>
+      <td mat-cell *matCellDef="let workers" class="on-hover-td">
+        <mat-icon
+        class="action"
+        (click)="onDeleteWorkerClick(workers)"
+        matTooltip="Usuń pracownika"
+        matTooltipPosition="right"
+        >delete</mat-icon
+      >
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr
+      mat-row
+      *matRowDef="let donator; columns: displayedColumns"  
+    ></tr>
+  </table>

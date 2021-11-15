@@ -14,6 +14,8 @@ import { AddAdminPageComponent } from './pages/add-admin-page/add-admin-page.com
 import { AddNewWorkerComponent } from './components/add-new-worker/add-new-worker.component';
 import { AddNewAdminComponent } from './components/add-new-admin/add-new-admin.component';
 import { AdminRoutingModule } from './admin-routing.module';
+import { ShowWorkersPageComponent } from './pages/show-workers-page/show-workers-page.component';
+import { ShowAllWorkersComponent } from './components/show-all-workers/show-all-workers.component';
 
 const MATERIAL_MODULES = [
   MatFormFieldModule,
@@ -30,7 +32,9 @@ const MATERIAL_MODULES = [
     AddWorkerPageComponent,
     AddAdminPageComponent,
     AddNewWorkerComponent,
-    AddNewAdminComponent
+    AddNewAdminComponent,
+    ShowWorkersPageComponent,
+    ShowAllWorkersComponent
   ],
   imports: [
     CommonModule,
