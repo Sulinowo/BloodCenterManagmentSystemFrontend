@@ -18,20 +18,17 @@ export class BloodDonatorDetailsPagesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.route.snapshot.paramMap);
     const id = this.route.snapshot.paramMap.get('id') || '';
-    console.log(id);
     this.bloodDonatorDetailsFacade.loadProfile(parseInt(id) || -1);
   }
 
   public onProfileEdit(user: UserData): void {
     const userId = this.route.snapshot.paramMap.get('id') || '';
-    console.log(parseInt(userId));
     this.bloodDonatorDetailsFacade.editBloodDonatorData(user,parseInt(userId));
   }
 
   public onShowDonationList() {
     const id = this.route.snapshot.paramMap.get('id') || '';
-    this.router.navigate([`/blooddonator/${id}/donations`]);
+    this.router.navigate([`worker/blooddonators/${id}/donations`]);
   }
 }

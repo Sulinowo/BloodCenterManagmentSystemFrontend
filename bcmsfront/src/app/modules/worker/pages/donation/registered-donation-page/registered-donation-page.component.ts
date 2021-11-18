@@ -9,7 +9,8 @@ import { RegisteredDonationFacadeService } from './registered-donation-facade.se
 })
 export class RegisteredDonationPageComponent implements OnInit {
   public donation$ = this.registeredDonationFacade.donation$;
-
+  public isExaminationNullable$ = this.registeredDonationFacade.isExaminationNullable$;
+  public isExaminationNullable2$ = this.registeredDonationFacade.isExaminationNullable2$;
   constructor(
     private registeredDonationFacade : RegisteredDonationFacadeService,
     private router: Router,
@@ -23,21 +24,21 @@ export class RegisteredDonationPageComponent implements OnInit {
 
   public onDetailsClick(): void {
     const donationId = this.route.snapshot.paramMap.get('donationId') || '';
-    this.router.navigate([`/donations/${donationId}/details`]);
+    this.router.navigate([`worker/donations/${donationId}/details`]);
   }
 
   public onExamiationAddClick(): void {
     const donationId = this.route.snapshot.paramMap.get('donationId') || '';
-    this.router.navigate([`/queue/registered/${donationId}/addexamination`]);
+    this.router.navigate([`worker/queue/registered/${donationId}/addexamination`]);
   }
 
   public onStatusChangeClick(): void {
     const donationId = this.route.snapshot.paramMap.get('donationId') || '';
-    this.router.navigate([`donation/${donationId}/changestatus`]);
+    this.router.navigate([`worker/donation/${donationId}/changestatus`]);
   }
 
   public onExaminationEditClick(): void {
     const donationId = this.route.snapshot.paramMap.get('donationId') || '';
-    this.router.navigate([`/queue/registered/${donationId}/editexamination`]);
+    this.router.navigate([`worker/queue/registered/${donationId}/editexamination`]);
   }
 }

@@ -13,11 +13,11 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   declarations: [SetPasswordComponent, SetPasswordPageComponent],
   imports: [
     CommonModule,
+    SetPasswordRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
     MatFormFieldModule,
-    SetPasswordRoutingModule,
     MatTooltipModule,
   ],
 })

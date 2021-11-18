@@ -21,7 +21,7 @@ export class DonationsQueueQualifiedPageComponent implements OnInit {
   }
 
   public onDonationQueueClick(data: DonationGet): void {
-    this.router.navigate([`queue/qualified/${data.id}`]);
+    this.router.navigate([`worker/queue/qualified/${data.id}`]);
   }
 
 }

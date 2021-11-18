@@ -9,6 +9,7 @@ import { DonationFull } from 'src/app/core/models/donation-full';
 })
 export class DonationBloodExaminedComponent {
   @Input() dataSource: [DonationFull | null];
+  @Input() mozna = false;
   @Output() detailsClick = new EventEmitter();
   @Output() doctorExamiationAddClick = new EventEmitter();
   @Output() statusChangeClick = new EventEmitter();

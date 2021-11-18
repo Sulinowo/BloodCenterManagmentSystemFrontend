@@ -4,6 +4,10 @@ import { AuthService } from 'src/app/core/services/auth.service';
 import { DonatorClientService } from '../../clients/donator-client.service';
 import { DonationService } from '../../services/donation.service';
 import { ProfileService } from '../../services/profile.service';
+import {Subject} from "rxjs";
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {Router} from "@angular/router";
+import {HttpErrorResponse} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root',
@@ -17,13 +21,15 @@ export class ProfileFacadeService {
     private profileService: ProfileService,
     private donatorClient: DonatorClientService,
     private donationService: DonationService,
-    private auth: AuthService
+    private auth: AuthService,
+    private matSnackBar: MatSnackBar,
+    private router: Router,
   ) {}
 
   private loadProfileData(userId: number): void {
-    this.donatorClient.getBloodDonatorByID(userId).subscribe((data) => {
-      this.profileService.initialize(data);
-    });
+    this.donatorClient.getBloodDonatorByID(userId).subscribe(
+      (data) => this.profileService.initialize(data)
+    );
   }
 
   private loadDonationsData(userId: number): void {

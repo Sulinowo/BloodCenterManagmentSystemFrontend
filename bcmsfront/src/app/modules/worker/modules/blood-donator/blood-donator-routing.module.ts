@@ -5,13 +5,13 @@ import { BloodDonatorDonationsPageComponent } from '../../pages/blood-donator/bl
 import { BloodDonatorDetailsPagesComponent } from '../../pages/blood-donator/blood-donator-details-pages/blood-donator-details-pages.component';
 
 const routes: Routes = [
-  { path: `blooddonator/:id`, component: BloodDonatorDetailsPagesComponent },
+  { path: `blooddonators/:id`, component: BloodDonatorDetailsPagesComponent },
   {
-    path: `blooddonator/:userId/donations`,
+    path: `blooddonators/:userId/donations`,
     component: BloodDonatorDonationsPageComponent,
   },
   {
-    path: `blooddonator/:userId/donations/:donationId/details`,
+    path: `blooddonators/:userId/donations/:donationId/details`,
     component: BloodDonatorDonationDetailsPageComponent,
   },
 ];

@@ -21,7 +21,7 @@ export class DonationsQueueBloodExaminedComponent implements OnInit {
   }
 
   public onDonationQueueClick(data: DonationGet): void {
-    this.router.navigate([`queue/bloodexamined/${data.id}`]);
+    this.router.navigate([`worker/queue/bloodexamined/${data.id}`]);
   }
 
 }

@@ -21,7 +21,7 @@ export class DonationQueueRegisteredComponent implements OnInit {
   }
 
   public onDonationQueueClick(data: DonationGet): void {
-    this.router.navigate([`queue/registered/${data.id}`]);
+    this.router.navigate([`worker/queue/registered/${data.id}`]);
   }
 
 }

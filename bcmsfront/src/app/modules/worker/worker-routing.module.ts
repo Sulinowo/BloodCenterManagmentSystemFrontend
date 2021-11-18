@@ -5,7 +5,7 @@ import { BloodStoragePageComponent } from './pages/blood-storage/blood-storage-p
 import { DonationsPageComponent } from './pages/donation/donations-page/donations-page.component';
 
 const routes: Routes = [
-  { path: 'blooddonator', component: BloodDonatorPagesComponent },
+  { path: 'blooddonators', component: BloodDonatorPagesComponent },
   { path: 'bloodstorage', component: BloodStoragePageComponent },
   { path: 'donations', component: DonationsPageComponent },
 ];

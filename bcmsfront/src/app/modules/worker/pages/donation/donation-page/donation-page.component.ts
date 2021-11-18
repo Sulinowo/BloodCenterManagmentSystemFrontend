@@ -24,10 +24,6 @@ export class DonationPageComponent implements OnInit {
 
   public onDetailsClick(): void {
     const donationId = this.route.snapshot.paramMap.get('donationId') || '';
-    this.router.navigate([`/donations/${donationId}/details`]);
+    this.router.navigate([`worker/donations/${donationId}/details`]);
   }
-
-  // public onDonationClick(data: DonationFull): void {
-  //   
-  // }
 }

@@ -21,6 +21,6 @@ export class DonationsPageComponent implements OnInit {
   }
 
   public onDonationsClick(data: DonationGet): void {
-    this.router.navigate([`/donations/${data.id}`]);
+    this.router.navigate([`worker/donations/${data.id}`]);
   }
 }

@@ -25,7 +25,6 @@ export class BloodDonatorDonationsPageComponent implements OnInit {
   
   public onDonationClick(donation: Donation) {
     const userId = this.route.snapshot.paramMap.get('userId') || '';
-    this.router.navigate([`/blooddonator/${userId}/donations/${donation.id}/details`]);
-    // :userId/donations/:donationId/details
+    this.router.navigate([`worker/blooddonators/${userId}/donations/${donation.id}/details`]);
   }
 }

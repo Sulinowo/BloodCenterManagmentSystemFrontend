@@ -8,6 +8,8 @@ import { DonationFull } from 'src/app/core/models/donation-full';
 })
 export class DonationRegisteredComponent {
   @Input() dataSource: [DonationFull | null];
+  @Input() mozna = false;
+  @Input() mozna2 = false;
   @Output() detailsClick = new EventEmitter();
   @Output() examinationAddClick = new EventEmitter();
   @Output() statusChangeClick = new EventEmitter();
