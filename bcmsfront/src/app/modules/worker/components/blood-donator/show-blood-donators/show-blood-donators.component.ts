@@ -19,7 +19,9 @@ export class ShowBloodDonatorsComponent {
   @Output() donatorClick = new EventEmitter<Donator>();
   @Output() addDonationClick = new EventEmitter<Donator>();
 
-  displayedColumns: string[] = ['imie', 'nazwisko', 'pesel', 'email','donacja','edycja'];
+  searchText: string;
+
+  displayedColumns: string[] = ['imie', 'nazwisko', 'pesel','donacja','edycja'];
   public searchBloodDonatorForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {

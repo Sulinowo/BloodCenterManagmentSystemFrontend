@@ -43,6 +43,7 @@ export class UserDetailsBloodDonatorComponent implements OnChanges {
     this.userDataForm.patchValue({
       ...this.state,
       ...(this.state?.user || {}),
+      bloodTypeName: this.state?.bloodType?.bloodTypeName,
     });
   }
 
