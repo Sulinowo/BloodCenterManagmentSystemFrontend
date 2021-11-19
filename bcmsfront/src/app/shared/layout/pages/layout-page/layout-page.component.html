@@ -4,6 +4,11 @@
     <app-nav-list direction="column" fxHide.gt-sm></app-nav-list>
   </mat-sidenav>
   <mat-sidenav-content fxFlexFill>
+    
+    <div *ngIf="isLoading$ | async" class="spinner-container">
+      <mat-spinner class="spinner"></mat-spinner>
+    </div>
+    
     <app-header
       (menuClicked)="sidenav.toggle()"
       [loggedIn]="loggedIn"

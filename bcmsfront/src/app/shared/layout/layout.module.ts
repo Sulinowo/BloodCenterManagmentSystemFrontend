@@ -11,12 +11,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { NavListComponent } from './components/nav-list/nav-list.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 const MATERIAL_MODULES = [
   MatToolbarModule,
   MatIconModule,
   MatButtonModule,
   MatSidenavModule,
+  MatProgressSpinnerModule
 ];
 
 @NgModule({

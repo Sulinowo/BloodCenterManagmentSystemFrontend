@@ -15,6 +15,7 @@ import { BloodStorageAddForeignBloodPageComponent } from '../../pages/blood-stor
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { BloodStorageEndDonationPageComponent } from '../../pages/blood-storage/blood-storage-end-donation-page/blood-storage-end-donation-page.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 const MATERIAL_ELEMENTS = [
   MatTableModule,
@@ -23,6 +24,7 @@ const MATERIAL_ELEMENTS = [
   MatInputModule,
   MatButtonModule,
   MatSelectModule,
+  MatPaginatorModule
 ];
 
 @NgModule({

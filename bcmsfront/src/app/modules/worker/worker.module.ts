@@ -20,6 +20,7 @@ import { BloodExaminedDonationPageComponent } from './pages/donation/blood-exami
 import { DonationBloodExaminedComponent } from './components/donation/donation-blood-examined/donation-blood-examined.component';
 import { ExaminationEditPageComponent } from './pages/examination/examination-edit-page/examination-edit-page.component';
 import { EditExaminationComponent } from './components/examinations/edit-examination/edit-examination.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 const MATERIAL_ELEMENTS = [
   MatTableModule,
@@ -27,6 +28,7 @@ const MATERIAL_ELEMENTS = [
   MatTabsModule,
   MatInputModule,
   MatButtonModule,
+  MatPaginatorModule,
 ];
 
 @NgModule({
