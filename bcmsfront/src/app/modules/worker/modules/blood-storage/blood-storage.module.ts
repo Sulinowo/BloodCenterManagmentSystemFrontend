@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { BloodStorageEndDonationPageComponent } from '../../pages/blood-storage/blood-storage-end-donation-page/blood-storage-end-donation-page.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const MATERIAL_ELEMENTS = [
   MatTableModule,

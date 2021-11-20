@@ -6,7 +6,9 @@ import {
   Output,
 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Donator } from 'src/app/core/models/donator';
+import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-show-blood-donators',
@@ -24,7 +26,10 @@ export class ShowBloodDonatorsComponent {
   displayedColumns: string[] = ['imie', 'nazwisko', 'pesel','donacja','edycja'];
   public searchBloodDonatorForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private dialog: MatDialog,
+  ) {
     this.searchBloodDonatorForm = this.formBuilder.group({
       pesel: [null],
     });
@@ -40,4 +45,22 @@ export class ShowBloodDonatorsComponent {
     console.log("hey",donator);
   }
 
+
+  onAddDonationDialog(donator: Donator) {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent,{
+      data:{
+        message: 'Czy napewno chcesz zarejestrować donacje dla tego użytkownika?',
+        buttonText: {
+          ok: 'Tak',
+          cancel: 'Anuluj'
+        }
+      }
+    });
+
+    dialogRef.afterClosed().subscribe((confirmed: boolean) => {
+      if (confirmed) {
+        this.addDonationClick.emit(donator);
+      }
+    });
+  }
 }

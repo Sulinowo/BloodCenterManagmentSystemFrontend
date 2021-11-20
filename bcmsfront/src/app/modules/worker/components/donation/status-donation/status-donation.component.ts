@@ -1,7 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { DonationPatch } from 'src/app/core/models/donation-patch';
+import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
 
 interface Stage {
   value:string,
@@ -23,6 +25,7 @@ export class StatusDonationComponent {
   (
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
+    private dialog: MatDialog,
   ) {
     const donationId = this.route.snapshot.paramMap.get('donationId') || '';
 
@@ -33,10 +36,10 @@ export class StatusDonationComponent {
     });
   }
 
-  public onChangeStatus(): void {
-    this.onChangeStatusClick.emit(this.changeStatusForm.value);
-    console.log(this.changeStatusForm.value);
-  }
+  // public onChangeStatus(): void {
+  //   this.onChangeStatusClick.emit(this.changeStatusForm.value);
+  //   console.log(this.changeStatusForm.value);
+  // }
 
   stage: Stage[] = [
     { value:'registered', viewValue:'Zarejestrowany'},
@@ -45,4 +48,22 @@ export class StatusDonationComponent {
     { value:'qualified', viewValue:'Zakwalifikowany' },
     { value:'not qualified', viewValue:'Niezakwalifikowany' },
   ]
+
+  public onChangeStatusDialog(): void {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent,{
+      data:{
+        message: 'Czy napewno chcesz zmienić status donacji?',
+        buttonText: {
+          ok: 'Tak',
+          cancel: 'Anuluj'
+        }
+      }
+    });
+
+    dialogRef.afterClosed().subscribe((confirmed: boolean) => {
+      if (confirmed) {
+        this.onChangeStatusClick.emit(this.changeStatusForm.value);
+      }
+    });
+  }
 }

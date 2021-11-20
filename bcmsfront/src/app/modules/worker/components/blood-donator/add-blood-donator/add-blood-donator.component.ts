@@ -2,11 +2,12 @@ import {
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
-  OnInit,
   Output,
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Donator } from 'src/app/core/models/donator';
+import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-add-blood-donator',
@@ -19,7 +20,10 @@ export class AddBloodDonatorComponent {
 
   public addBloodDonatorForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private dialog: MatDialog,
+  ) {
     this.addBloodDonatorForm = this.formBuilder.group({
       firstName: [null, Validators.required],
       surname: [null, Validators.required],
@@ -31,15 +35,27 @@ export class AddBloodDonatorComponent {
     });
   }
 
-  public onAddBloodDonator(): void {
-    /*
+  // public onAddBloodDonator(): void {
+  //   this.onAddDonator.emit(this.addBloodDonatorForm.value);
+  //   console.log(this.addBloodDonatorForm.value);
+  // }
 
-    {
-      pesel: this.addBloodDonatorFrom.value.pesel,
 
-    }
-     */
-    this.onAddDonator.emit(this.addBloodDonatorForm.value);
-    console.log(this.addBloodDonatorForm.value);
+  onAddBloodDonatorDialog() {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent,{
+      data:{
+        message: 'Czy napewno chcesz dodać użytkownika?',
+        buttonText: {
+          ok: 'Tak',
+          cancel: 'Anuluj'
+        }
+      }
+    });
+
+    dialogRef.afterClosed().subscribe((confirmed: boolean) => {
+      if (confirmed) {
+        this.onAddDonator.emit(this.addBloodDonatorForm.value);
+      }
+    });
   }
 }

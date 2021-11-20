@@ -7,8 +7,10 @@ import {
   Output,
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Donator } from 'src/app/core/models/donator';
 import { UserData } from 'src/app/core/models/user-data';
+import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-user-data',
@@ -23,7 +25,7 @@ export class UserDataComponent implements OnChanges {
 
   public userDataForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private dialog: MatDialog,) {
     this.userDataForm = this.formBuilder.group({
       pesel: [null],
       homeAdress: [null, [Validators.required]],
@@ -57,8 +59,23 @@ export class UserDataComponent implements OnChanges {
     this.userDataForm.get('surname')?.disable();
   }
 
-  public onEditProfile(): void {
-    this.profileEdit.emit(this.userDataForm.value);
-    this.onEditClicked();
+  public onEditProfileDialog(): void {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent,{
+      data:{
+        message: 'Czy napewno chcesz zmienić status donacji?',
+        buttonText: {
+          ok: 'Tak',
+          cancel: 'Anuluj'
+        }
+      }
+    });
+
+    dialogRef.afterClosed().subscribe((confirmed: boolean) => {
+      if (confirmed) {
+        this.profileEdit.emit(this.userDataForm.value);
+      }
+    });
   }
+
+
 }

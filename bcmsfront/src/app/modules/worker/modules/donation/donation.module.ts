@@ -25,6 +25,7 @@ import { DonationRegisteredComponent } from '../../components/donation/donation-
 import { DonationQualifiedComponent } from '../../components/donation/donation-qualified/donation-qualified.component';
 import { DonationChangeStatusPageComponent } from '../../pages/donation/donation-change-status-page/donation-change-status-page.component';
 import { QualifiedDonationPageComponent } from '../../pages/donation/qualified-donation-page/qualified-donation-page.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const MATERIAL_ELEMENTS = [
   MatTableModule,
@@ -33,6 +34,7 @@ const MATERIAL_ELEMENTS = [
   MatInputModule,
   MatButtonModule,
   MatSelectModule,
+  MatDialogModule,
 ];
 
 @NgModule({

@@ -16,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const MATERIAL_MODULES = [
   MatFormFieldModule,
@@ -25,6 +26,7 @@ const MATERIAL_MODULES = [
   MatIconModule,
   MatButtonModule,
   MatTableModule,
+  MatDialogModule,
 ];
 
 @NgModule({

@@ -15,7 +15,6 @@ export class ShowAllDonationsComponent {
     'stage',
     'donationDate',
     'pesel',
-    'email',
     'firstName',
     'surname',
   ];

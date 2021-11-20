@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { BloodStorage } from 'src/app/core/models/bloodstorage';
+import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-show-blood-units',
@@ -13,9 +15,27 @@ export class ShowBloodUnitsComponent {
 
   displayedColumns: string[] = ['lokalizacja', 'dostepnosc', 'covid', 'grupaKrwii','ustawNiedostepny'];
 
-  constructor() {}
+  constructor(private dialog: MatDialog,) {}
 
   public bloodUnitListClick(bloodUnit: BloodStorage): void {
     this.bloodUnitClick.emit(bloodUnit);
+  }
+
+  public bloodUnitListDialog(bloodUnit: BloodStorage): void {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent,{
+      data:{
+        message: 'Czy napewno chcesz ustawić jednostkę krwii na niedostępną?',
+        buttonText: {
+          ok: 'Tak',
+          cancel: 'Anuluj'
+        }
+      }
+    });
+
+    dialogRef.afterClosed().subscribe((confirmed: boolean) => {
+      if (confirmed) {
+        this.bloodUnitClick.emit(bloodUnit);
+      }
+    });
   }
 }

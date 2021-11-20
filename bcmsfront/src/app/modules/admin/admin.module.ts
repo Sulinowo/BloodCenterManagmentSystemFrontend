@@ -16,6 +16,7 @@ import { AddNewAdminComponent } from './components/add-new-admin/add-new-admin.c
 import { AdminRoutingModule } from './admin-routing.module';
 import { ShowWorkersPageComponent } from './pages/show-workers-page/show-workers-page.component';
 import { ShowAllWorkersComponent } from './components/show-all-workers/show-all-workers.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const MATERIAL_MODULES = [
   MatFormFieldModule,
@@ -25,6 +26,7 @@ const MATERIAL_MODULES = [
   MatIconModule,
   MatButtonModule,
   MatTableModule,
+  MatDialogModule,
 ];
 
 @NgModule({

@@ -7,9 +7,11 @@ import {
   Output,
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Donator } from 'src/app/core/models/donator';
 import { UserData } from 'src/app/core/models/user-data';
+import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-user-details-blood-donator',
@@ -25,7 +27,7 @@ export class UserDetailsBloodDonatorComponent implements OnChanges {
 
   public userDataForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private route: ActivatedRoute) {
+  constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private dialog: MatDialog,) {
     this.userDataForm = this.formBuilder.group({
       pesel: [null],
       homeAdress: [null, [Validators.required]],
@@ -59,12 +61,31 @@ export class UserDetailsBloodDonatorComponent implements OnChanges {
     this.userDataForm.get('surname')?.disable();
   }
 
-  public onEditProfile(): void {
-    this.profileEdit.emit(this.userDataForm.value);
-    this.onEditClicked();
-  }
+  // public onEditProfile(): void {
+  //   this.profileEdit.emit(this.userDataForm.value);
+  //   this.onEditClicked();
+  // }
 
   public onShowDonationListClick() { 
     this.showDonationList.emit(); 
+  }
+
+
+  public onEditProfileDialog(): void {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent,{
+      data:{
+        message: 'Czy napewno chcesz edytować użytkownika?',
+        buttonText: {
+          ok: 'Tak',
+          cancel: 'Anuluj'
+        }
+      }
+    });
+
+    dialogRef.afterClosed().subscribe((confirmed: boolean) => {
+      if (confirmed) {
+        this.profileEdit.emit(this.userDataForm.value);
+      }
+    });
   }
 }

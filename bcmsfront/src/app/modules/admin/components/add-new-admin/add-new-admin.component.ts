@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { NewWorker } from 'src/app/core/models/add-worker';
+import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-add-new-admin',
@@ -12,7 +14,7 @@ export class AddNewAdminComponent {
 
   public addAdminForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private dialog: MatDialog,) {
     this.addAdminForm = this.formBuilder.group({
       email: [null, Validators.required],
       password: [null, Validators.required],
@@ -21,8 +23,21 @@ export class AddNewAdminComponent {
     });
   }
 
-  public onAddAdmin(): void {
-    this.addAdmin.emit(this.addAdminForm.value);
-    console.log(this.addAdminForm.value);
+  public onAddAdminDialog(): void {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent,{
+      data:{
+        message: 'Czy napewno chcesz dodać nowego administratora?',
+        buttonText: {
+          ok: 'Tak',
+          cancel: 'Anuluj'
+        }
+      }
+    });
+
+    dialogRef.afterClosed().subscribe((confirmed: boolean) => {
+      if (confirmed) {
+        this.addAdmin.emit(this.addAdminForm.value);
+      }
+    });
   }
 }
