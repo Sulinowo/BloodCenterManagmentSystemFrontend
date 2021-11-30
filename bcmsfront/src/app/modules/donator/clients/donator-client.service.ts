@@ -29,7 +29,7 @@ export class DonatorClientService {
   }
 
   public updateProfileData(data: UserData): Observable<UserData> {
-    return this.httpClient.patch<UserData>(`/api/Users`, {
+    return this.httpClient.patch<UserData>(`/api/blooddonators`, {
       ...data,
     });
   }

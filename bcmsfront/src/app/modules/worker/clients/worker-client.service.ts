@@ -7,6 +7,7 @@ import { DonationDetails } from 'src/app/core/models/donation-details';
 import { DonationFull, DonationGet } from 'src/app/core/models/donation-full';
 import { DonationPatch } from 'src/app/core/models/donation-patch';
 import { Donator } from 'src/app/core/models/donator';
+import { EditWorker, WorkerAccount } from 'src/app/core/models/edit-worker';
 import { EditExamination, Examination, ExaminationPatch } from 'src/app/core/models/examination';
 import { UserData } from 'src/app/core/models/user-data';
 
@@ -122,7 +123,7 @@ export class WorkerClientService {
   }
 
   public updateProfileData(data: UserData): Observable<UserData> {
-    return this.httpClient.patch<UserData>(`/api/Users`, { ...data }); //
+    return this.httpClient.patch<UserData>(`/api/blooddonators`, { ...data }); //
   }
 
   public getRegisteredQueue(): Observable<DonationGet[]> {
@@ -141,5 +142,13 @@ export class WorkerClientService {
     return this.httpClient.get<DonationGet[]>(
       `/api/donations/queue?donationStage=qualified`
     );
+  }
+
+  public getWorkerProfile(userId: number): Observable<WorkerAccount> {
+    return this.httpClient.get<WorkerAccount>(`/api/users/${userId}`)
+  }
+
+  public editWorkerProfile(data: EditWorker): Observable<EditWorker> {
+    return this.httpClient.patch<EditWorker>(`/api/users`, { ...data }); //
   }
 }

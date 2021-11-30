@@ -1,0 +1,43 @@
+<form [formGroup]="workerDataForm" fxLayout="column" class="worker-data-form">
+    <div class="edit-data-container" fxLayout="row" fxLayoutAlign="center">
+      <h2>Twoje dane</h2>
+      <app-edit-worker-profile
+        (editClicked)="onEditClicked()"
+        fxLayoutAlign="center center"
+        class="edit-button"
+      ></app-edit-worker-profile>
+    </div>
+    <div class="worker-data-container">
+      <mat-form-field>
+        <mat-label>E-mail</mat-label>
+        <input matInput formControlName="email" />
+      </mat-form-field>  
+      <mat-form-field>
+        <mat-label>Imię</mat-label>
+        <input matInput formControlName="firstname" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Nazwisko</mat-label>
+        <input matInput formControlName="surname" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Rola</mat-label>
+        <input matInput formControlName="role" />
+      </mat-form-field>
+    </div>
+    
+    <div
+      class="save-edit-button-wrapper"
+      fxLayoutAlign="end"
+      [fxHide]="showEditable"
+    >
+      <button
+        mat-flat-button
+        color="primary"
+        (click)="onEditProfileDialog()"
+        [disabled]="workerDataForm.invalid"
+      >
+        Zapisz
+      </button>
+    </div>
+  </form>

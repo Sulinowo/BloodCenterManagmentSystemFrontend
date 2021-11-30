@@ -17,6 +17,9 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { ShowWorkersPageComponent } from './pages/show-workers-page/show-workers-page.component';
 import { ShowAllWorkersComponent } from './components/show-all-workers/show-all-workers.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { AdminProfilePageComponent } from './pages/admin-profile-page/admin-profile-page.component';
+import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
+import { EditAdminProfileComponent } from './components/edit-admin-profile/edit-admin-profile.component';
 
 const MATERIAL_MODULES = [
   MatFormFieldModule,
@@ -36,7 +39,10 @@ const MATERIAL_MODULES = [
     AddNewWorkerComponent,
     AddNewAdminComponent,
     ShowWorkersPageComponent,
-    ShowAllWorkersComponent
+    ShowAllWorkersComponent,
+    AdminProfilePageComponent,
+    AdminProfileComponent,
+    EditAdminProfileComponent
   ],
   imports: [
     CommonModule,

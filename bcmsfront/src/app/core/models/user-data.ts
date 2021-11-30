@@ -5,4 +5,5 @@ export interface UserData
     password: string;
     homeAdress: string;
     phoneNumber: string;
+    surname: string;
   }> {}

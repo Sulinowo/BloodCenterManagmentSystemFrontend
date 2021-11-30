@@ -1,7 +1,6 @@
 <div class="profile-page-container">
   <mat-tab-group mat-align-tabs="center">
     <mat-tab label="Dane użytkownika">
-      {{ donator$ | async | json }}
       <app-user-data
         [state]="donator$ | async"
         (profileEdit)="onProfileEdit($event)"

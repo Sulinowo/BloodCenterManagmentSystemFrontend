@@ -58,13 +58,7 @@ export class UserDetailsBloodDonatorComponent implements OnChanges {
     this.userDataForm.get('ammountOfBloodDonated')?.disable();
     this.userDataForm.get('bloodTypeName')?.disable();
     this.userDataForm.get('firstName')?.disable();
-    this.userDataForm.get('surname')?.disable();
   }
-
-  // public onEditProfile(): void {
-  //   this.profileEdit.emit(this.userDataForm.value);
-  //   this.onEditClicked();
-  // }
 
   public onShowDonationListClick() { 
     this.showDonationList.emit(); 

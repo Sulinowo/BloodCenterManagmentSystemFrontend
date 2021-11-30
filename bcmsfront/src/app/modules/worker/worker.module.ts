@@ -21,6 +21,9 @@ import { DonationBloodExaminedComponent } from './components/donation/donation-b
 import { ExaminationEditPageComponent } from './pages/examination/examination-edit-page/examination-edit-page.component';
 import { EditExaminationComponent } from './components/examinations/edit-examination/edit-examination.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { WorkerProfilePageComponent } from './pages/worker-profile-page/worker-profile-page.component';
+import { WorkerProfileComponent } from './components/worker-profile/worker-profile.component';
+import { EditWorkerProfileComponent } from './components/edit-worker-profile/edit-worker-profile.component';
 
 const MATERIAL_ELEMENTS = [
   MatTableModule,
@@ -41,6 +44,9 @@ const MATERIAL_ELEMENTS = [
     DonationBloodExaminedComponent,
     ExaminationEditPageComponent,
     EditExaminationComponent,
+    WorkerProfilePageComponent,
+    WorkerProfileComponent,
+    EditWorkerProfileComponent,
   ],
   imports: [
     CommonModule, 

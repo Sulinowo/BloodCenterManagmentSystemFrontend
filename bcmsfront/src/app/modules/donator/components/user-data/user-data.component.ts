@@ -56,13 +56,12 @@ export class UserDataComponent implements OnChanges {
     this.userDataForm.get('ammountOfBloodDonated')?.disable();
     this.userDataForm.get('bloodTypeName')?.disable();
     this.userDataForm.get('firstName')?.disable();
-    this.userDataForm.get('surname')?.disable();
   }
 
   public onEditProfileDialog(): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponent,{
       data:{
-        message: 'Czy napewno chcesz zmienić status donacji?',
+        message: 'Czy napewno chcesz edytować konto?',
         buttonText: {
           ok: 'Tak',
           cancel: 'Anuluj'
