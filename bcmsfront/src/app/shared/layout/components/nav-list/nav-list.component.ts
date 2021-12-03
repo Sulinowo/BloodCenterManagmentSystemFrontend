@@ -2,8 +2,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   Input,
-  Output,
-  EventEmitter,
 } from '@angular/core';
 import { AuthService } from 'src/app/core/services/auth.service';
 

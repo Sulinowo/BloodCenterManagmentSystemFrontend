@@ -20,6 +20,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { AdminProfilePageComponent } from './pages/admin-profile-page/admin-profile-page.component';
 import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
 import { EditAdminProfileComponent } from './components/edit-admin-profile/edit-admin-profile.component';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { AdminPanelPageComponent } from './pages/admin-panel-page/admin-panel-page.component';
 
 const MATERIAL_MODULES = [
   MatFormFieldModule,
@@ -42,7 +44,9 @@ const MATERIAL_MODULES = [
     ShowAllWorkersComponent,
     AdminProfilePageComponent,
     AdminProfileComponent,
-    EditAdminProfileComponent
+    EditAdminProfileComponent,
+    AdminPanelComponent,
+    AdminPanelPageComponent
   ],
   imports: [
     CommonModule,

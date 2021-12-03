@@ -29,10 +29,34 @@
   </ng-template>
 
   <ng-template #user>
+    <!--donator-->
+    <a routerLink="/profile">
+      <button class="nav-item" mat-flat-button>
+        Profil
+      </button>
+    </a>
+    <!--worker-->
+    <a routerLink="/worker/panel">
+      <button class="nav-item" mat-flat-button>
+        Panel pracownika
+      </button>
+    </a>
+    <!--admin-->
+    <a routerLink="/admin/panel">
+      <button class="nav-item" mat-flat-button>
+        Panel administratora 
+      </button>
+    </a>
     <a routerLink="/">
       <button class="nav-item" mat-flat-button (click)="onLogoutClick()">
         Wyloguj się
       </button>
     </a>
   </ng-template>
+
+  
+
+  
+
+  
 </div>

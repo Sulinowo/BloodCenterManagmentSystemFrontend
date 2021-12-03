@@ -24,6 +24,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { WorkerProfilePageComponent } from './pages/worker-profile-page/worker-profile-page.component';
 import { WorkerProfileComponent } from './components/worker-profile/worker-profile.component';
 import { EditWorkerProfileComponent } from './components/edit-worker-profile/edit-worker-profile.component';
+import { WorkerPanelComponent } from './components/worker-panel/worker-panel.component';
+import { WorkerPanelPageComponent } from './pages/worker-panel-page/worker-panel-page.component';
 
 const MATERIAL_ELEMENTS = [
   MatTableModule,
@@ -47,6 +49,8 @@ const MATERIAL_ELEMENTS = [
     WorkerProfilePageComponent,
     WorkerProfileComponent,
     EditWorkerProfileComponent,
+    WorkerPanelComponent,
+    WorkerPanelPageComponent,
   ],
   imports: [
     CommonModule, 
