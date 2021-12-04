@@ -14,11 +14,11 @@ export class UpdateExaminationComponent implements OnInit {
   @Output() onAddDoctorExaminationClick = new EventEmitter<ExaminationPatch>();
 
   public addDoctorExaminationForm: FormGroup;
-  
+
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private dialog: MatDialog,
+    private dialog: MatDialog
   ) {
     const donationId = this.route.snapshot.paramMap.get('donationId') || '';
 
@@ -34,19 +34,21 @@ export class UpdateExaminationComponent implements OnInit {
   ngOnInit(): void {}
 
   public onAddDoctorExaminationDialog(): void {
-    const dialogRef = this.dialog.open(ConfirmDialogComponent,{
-      data:{
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: {
         message: 'Czy napewno chcesz dodać wyniki badania lekarskiego?',
         buttonText: {
           ok: 'Tak',
-          cancel: 'Anuluj'
-        }
-      }
+          cancel: 'Anuluj',
+        },
+      },
     });
 
     dialogRef.afterClosed().subscribe((confirmed: boolean) => {
       if (confirmed) {
-        this.onAddDoctorExaminationClick.emit(this.addDoctorExaminationForm.value);
+        this.onAddDoctorExaminationClick.emit(
+          this.addDoctorExaminationForm.value
+        );
       }
     });
   }

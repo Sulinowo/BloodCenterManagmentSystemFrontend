@@ -8,9 +8,8 @@ describe('BloodStorageAddForeignBloodPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BloodStorageAddForeignBloodPageComponent ]
-    })
-    .compileComponents();
+      declarations: [BloodStorageAddForeignBloodPageComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -25,14 +25,14 @@ const MATERIAL_ELEMENTS = [
   MatInputModule,
   MatButtonModule,
   MatSelectModule,
-  MatPaginatorModule
+  MatPaginatorModule,
 ];
 
 @NgModule({
   declarations: [
-    BloodStoragePageComponent, 
-    AddBloodUnitComponent, 
-    ShowBloodUnitsComponent, 
+    BloodStoragePageComponent,
+    AddBloodUnitComponent,
+    ShowBloodUnitsComponent,
     BloodUnitForeignComponent,
     BloodStorageAddForeignBloodPageComponent,
     BloodStorageEndDonationPageComponent,
@@ -46,12 +46,12 @@ const MATERIAL_ELEMENTS = [
     ReactiveFormsModule,
   ],
   exports: [
-    BloodStoragePageComponent, 
-    AddBloodUnitComponent, 
-    ShowBloodUnitsComponent, 
+    BloodStoragePageComponent,
+    AddBloodUnitComponent,
+    ShowBloodUnitsComponent,
     BloodUnitForeignComponent,
     BloodStorageAddForeignBloodPageComponent,
     BloodStorageEndDonationPageComponent,
   ],
 })
-export class BloodStorageModule { }
+export class BloodStorageModule {}

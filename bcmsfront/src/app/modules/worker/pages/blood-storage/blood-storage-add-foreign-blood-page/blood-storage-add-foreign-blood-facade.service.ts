@@ -3,14 +3,14 @@ import { WorkerClientService } from '../../../clients/worker-client.service';
 import { BloodStorageService } from '../../../services/blood-storage.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BloodStorageAddForeignBloodFacadeService {
   public addBloodUnitForeign$ = this.bloodStorageService.addBloodUnitForeign$;
 
   constructor(
     private bloodStorageService: BloodStorageService,
-    private workerClient: WorkerClientService 
+    private workerClient: WorkerClientService
   ) {}
 
   public addBloodUnitForeign(

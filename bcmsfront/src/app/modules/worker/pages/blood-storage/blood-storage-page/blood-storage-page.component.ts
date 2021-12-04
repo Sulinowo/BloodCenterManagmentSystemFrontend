@@ -10,7 +10,7 @@ import { BloodStorageFacadeService } from './blood-storage-facade.service';
 })
 export class BloodStoragePageComponent implements OnInit {
   public bloodUnits$ = this.bloodStorageFacade.bloodUnits$;
-  
+
   constructor(
     private bloodStorageFacade: BloodStorageFacadeService,
     private router: Router,

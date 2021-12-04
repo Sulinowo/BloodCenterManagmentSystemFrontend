@@ -5,20 +5,19 @@ import { BloodStorageAddForeignBloodFacadeService } from './blood-storage-add-fo
 @Component({
   selector: 'app-blood-storage-add-foreign-blood-page',
   templateUrl: './blood-storage-add-foreign-blood-page.component.html',
-  styleUrls: ['./blood-storage-add-foreign-blood-page.component.scss']
+  styleUrls: ['./blood-storage-add-foreign-blood-page.component.scss'],
 })
-export class BloodStorageAddForeignBloodPageComponent{
-
+export class BloodStorageAddForeignBloodPageComponent {
   constructor(
     private bloodStorageAddBloodFacade: BloodStorageAddForeignBloodFacadeService
-  ) { }
+  ) {}
 
-  public onAddBloodClick(bloodForeign:BloodStorageForeign): void {
+  public onAddBloodClick(bloodForeign: BloodStorageForeign): void {
     this.bloodStorageAddBloodFacade.addBloodUnitForeign(
       bloodForeign.bloodTypeName,
-      bloodForeign.foreignBloodUnitId, 
+      bloodForeign.foreignBloodUnitId,
       bloodForeign.bloodUnitLocation,
-      bloodForeign.isAfterCovid,
+      bloodForeign.isAfterCovid
     );
   }
 }

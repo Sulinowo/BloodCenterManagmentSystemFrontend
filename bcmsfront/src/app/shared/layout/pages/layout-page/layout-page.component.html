@@ -1,17 +1,21 @@
 <mat-sidenav-container fxFlexFill>
   <mat-sidenav #sidenav fxHide.gt-sm>
     <app-logo fxLayoutAlign="center center" class="sidenav-logo"></app-logo>
-    <app-nav-list direction="column" ></app-nav-list>
+    <app-nav-list
+      direction="column"
+      [loggedIn]="loggedIn"
+      [role]="role"
+    ></app-nav-list>
   </mat-sidenav>
   <mat-sidenav-content fxFlexFill>
-    
     <div *ngIf="isLoading$ | async" class="spinner-container">
       <mat-spinner class="spinner"></mat-spinner>
     </div>
-    
+
     <app-header
       (menuClicked)="sidenav.toggle()"
       [loggedIn]="loggedIn"
+      [role]="role"
     ></app-header>
     <div class="content-container" fxLayoutAlign="center">
       <div class="content">

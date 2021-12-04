@@ -16,7 +16,8 @@ export class ProfilePageComponent implements OnInit {
 
   constructor(
     private profileFacade: ProfileFacadeService,
-    private auth: AuthService
+    private auth: AuthService,
+    private router: Router
   ) {}
 
   public ngOnInit(): void {
@@ -29,5 +30,9 @@ export class ProfilePageComponent implements OnInit {
 
   public onDonationClick(donation: Donation) {
     console.log(donation);
+  }
+
+  public setNewPassword() {
+    this.router.navigate(['/admin/resetpassword']);
   }
 }

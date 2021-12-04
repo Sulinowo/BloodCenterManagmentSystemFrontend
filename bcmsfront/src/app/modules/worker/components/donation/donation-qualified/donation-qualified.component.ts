@@ -4,7 +4,7 @@ import { DonationFull } from 'src/app/core/models/donation-full';
 @Component({
   selector: 'app-donation-qualified',
   templateUrl: './donation-qualified.component.html',
-  styleUrls: ['./donation-qualified.component.scss']
+  styleUrls: ['./donation-qualified.component.scss'],
 })
 export class DonationQualifiedComponent {
   @Input() dataSource: [DonationFull | null];
@@ -21,7 +21,7 @@ export class DonationQualifiedComponent {
     'bloodTypeName',
     'phoneNumber',
     'homeAdress',
-    'rejectionReason'
+    'rejectionReason',
   ];
 
   public onDetailsClick(): void {
@@ -31,5 +31,4 @@ export class DonationQualifiedComponent {
   public onDonationEndClick(): void {
     this.donationEndClick.emit();
   }
-
 }

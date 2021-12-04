@@ -8,15 +8,18 @@ import { BloodDonatorDonationDetailsFacadeService } from './blood-donator-donati
   styleUrls: ['./blood-donator-donation-details-page.component.scss'],
 })
 export class BloodDonatorDonationDetailsPageComponent implements OnInit {
-  public donationDetails$ = this.bloodDonatorDonationDetailsFacade.donationDetails$;
+  public donationDetails$ =
+    this.bloodDonatorDonationDetailsFacade.donationDetails$;
 
   constructor(
-    private bloodDonatorDonationDetailsFacade : BloodDonatorDonationDetailsFacadeService,
-    private route: ActivatedRoute 
+    private bloodDonatorDonationDetailsFacade: BloodDonatorDonationDetailsFacadeService,
+    private route: ActivatedRoute
   ) {}
 
   public ngOnInit(): void {
     const donationId = this.route.snapshot.paramMap.get('donationId') || '';
-    this.bloodDonatorDonationDetailsFacade.loadDonationDetails(parseInt(donationId) || -1);
+    this.bloodDonatorDonationDetailsFacade.loadDonationDetails(
+      parseInt(donationId) || -1
+    );
   }
 }

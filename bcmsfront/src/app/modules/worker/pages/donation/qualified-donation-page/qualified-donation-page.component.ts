@@ -5,16 +5,16 @@ import { QualifiedDonationFacadeService } from './qualified-donation-facade.serv
 @Component({
   selector: 'app-qualified-donation-page',
   templateUrl: './qualified-donation-page.component.html',
-  styleUrls: ['./qualified-donation-page.component.scss']
+  styleUrls: ['./qualified-donation-page.component.scss'],
 })
 export class QualifiedDonationPageComponent implements OnInit {
   public donation$ = this.qualifiedDonationFacade.donation$;
 
   constructor(
-    private qualifiedDonationFacade : QualifiedDonationFacadeService,
+    private qualifiedDonationFacade: QualifiedDonationFacadeService,
     private router: Router,
     private route: ActivatedRoute
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     const donationId = this.route.snapshot.paramMap.get('donationId') || '';
@@ -30,5 +30,4 @@ export class QualifiedDonationPageComponent implements OnInit {
     const donationId = this.route.snapshot.paramMap.get('donationId') || '';
     this.router.navigate([`worker/bloodstorage/${donationId}/enddonation`]);
   }
-
 }

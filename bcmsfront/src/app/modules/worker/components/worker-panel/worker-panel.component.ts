@@ -3,7 +3,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 @Component({
   selector: 'app-worker-panel',
   templateUrl: './worker-panel.component.html',
-  styleUrls: ['./worker-panel.component.scss']
+  styleUrls: ['./worker-panel.component.scss'],
 })
 export class WorkerPanelComponent {
   @Output() showOrAddBloodDonators = new EventEmitter<void>();
@@ -30,21 +30,20 @@ export class WorkerPanelComponent {
   public onShowProfileClick(): void {
     this.showProfile.emit();
   }
-  
+
   public onShowDonationsClick(): void {
     this.showDonations.emit();
   }
-  
+
   public onShowRegisteredQueueClick(): void {
     this.showRegisteredQueue.emit();
   }
-  
+
   public onShowBloodExaminedQueueClick(): void {
     this.showBloodExaminedQueue.emit();
   }
-  
+
   public onShowBloodQualifiedQueueClick(): void {
     this.showBloodQualifiedQueue.emit();
   }
-
 }

@@ -3,15 +3,15 @@ import { WorkerClientService } from '../../../clients/worker-client.service';
 import { DonationService } from '../../../services/donation.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DonationQueueRegisteredFacadeService {
-  public registeredQueue$= this.donationService.registeredQueue$;
+  public registeredQueue$ = this.donationService.registeredQueue$;
 
   constructor(
     private donationService: DonationService,
     private workerClient: WorkerClientService
-  ) { }
+  ) {}
 
   public getRegisteredQueue(): void {
     this.workerClient.getRegisteredQueue().subscribe((data) => {

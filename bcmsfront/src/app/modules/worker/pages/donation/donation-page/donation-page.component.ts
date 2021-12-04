@@ -6,16 +6,16 @@ import { DonationFacadeService } from './donation-facade.service';
 @Component({
   selector: 'app-donation-page',
   templateUrl: './donation-page.component.html',
-  styleUrls: ['./donation-page.component.scss']
+  styleUrls: ['./donation-page.component.scss'],
 })
 export class DonationPageComponent implements OnInit {
   public donation$ = this.donationFacade.donation$;
 
   constructor(
-    private donationFacade : DonationFacadeService,
+    private donationFacade: DonationFacadeService,
     private router: Router,
     private route: ActivatedRoute
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     const donationId = this.route.snapshot.paramMap.get('donationId') || '';

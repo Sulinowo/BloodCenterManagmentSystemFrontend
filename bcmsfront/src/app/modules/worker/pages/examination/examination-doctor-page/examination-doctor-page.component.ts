@@ -5,16 +5,16 @@ import { ExaminationDoctorFacadeService } from './examination-doctor-facade.serv
 @Component({
   selector: 'app-examination-doctor-page',
   templateUrl: './examination-doctor-page.component.html',
-  styleUrls: ['./examination-doctor-page.component.scss']
+  styleUrls: ['./examination-doctor-page.component.scss'],
 })
 export class ExaminationDoctorPageComponent implements OnInit {
-
-  constructor(private doctorExaminationFacade: ExaminationDoctorFacadeService) {}
+  constructor(
+    private doctorExaminationFacade: ExaminationDoctorFacadeService
+  ) {}
 
   ngOnInit(): void {}
 
   public onAddDoctorExaminationClick(data: ExaminationPatch): void {
     this.doctorExaminationFacade.onDoctorExaminationAdd(data);
   }
-
 }

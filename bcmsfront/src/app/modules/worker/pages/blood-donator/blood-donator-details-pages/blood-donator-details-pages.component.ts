@@ -14,7 +14,7 @@ export class BloodDonatorDetailsPagesComponent implements OnInit {
   constructor(
     private bloodDonatorDetailsFacade: BloodDonatorDetailsFacadeService,
     private route: ActivatedRoute,
-    private router: Router,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -24,7 +24,7 @@ export class BloodDonatorDetailsPagesComponent implements OnInit {
 
   public onProfileEdit(user: UserData): void {
     const userId = this.route.snapshot.paramMap.get('id') || '';
-    this.bloodDonatorDetailsFacade.editBloodDonatorData(user,parseInt(userId));
+    this.bloodDonatorDetailsFacade.editBloodDonatorData(user, parseInt(userId));
   }
 
   public onShowDonationList() {

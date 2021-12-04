@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { WorkerAccount } from 'src/app/core/models/edit-worker';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class WorkerProfileService {
   public worker$ = new BehaviorSubject(<WorkerAccount>{});

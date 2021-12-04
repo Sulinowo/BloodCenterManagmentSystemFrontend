@@ -14,14 +14,14 @@ export class AddExaminationComponent {
   @Output() onAddExaminationClick = new EventEmitter<Examination>();
 
   public addExaminationForm: FormGroup;
-  
+
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private dialog: MatDialog,
+    private dialog: MatDialog
   ) {
     const donationId = this.route.snapshot.paramMap.get('donationId') || '';
-    
+
     this.addExaminationForm = this.formBuilder.group({
       donationId: [parseInt(donationId)],
       hb: [null, Validators.required],
@@ -45,14 +45,14 @@ export class AddExaminationComponent {
   // }
 
   public onAddExaminationDialog(): void {
-    const dialogRef = this.dialog.open(ConfirmDialogComponent,{
-      data:{
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: {
         message: 'Czy napewno chcesz dodać badania krwii?',
         buttonText: {
           ok: 'Tak',
-          cancel: 'Anuluj'
-        }
-      }
+          cancel: 'Anuluj',
+        },
+      },
     });
 
     dialogRef.afterClosed().subscribe((confirmed: boolean) => {

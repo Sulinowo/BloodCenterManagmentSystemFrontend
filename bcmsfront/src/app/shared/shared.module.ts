@@ -12,8 +12,23 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  declarations: [BloodAmountPipe, DonationsStagePipe, BloodStoragePipe, BloodTypeNamePipePipe, SearchFilterPipe,SearchFilterPipe, ConfirmDialogComponent],
+  declarations: [
+    BloodAmountPipe,
+    DonationsStagePipe,
+    BloodStoragePipe,
+    BloodTypeNamePipePipe,
+    SearchFilterPipe,
+    SearchFilterPipe,
+    ConfirmDialogComponent,
+  ],
   imports: [CommonModule, LayoutModule, MatDialogModule, MatButtonModule],
-  exports: [LayoutPageComponent, BloodAmountPipe, DonationsStagePipe, BloodStoragePipe, BloodTypeNamePipePipe,SearchFilterPipe],
+  exports: [
+    LayoutPageComponent,
+    BloodAmountPipe,
+    DonationsStagePipe,
+    BloodStoragePipe,
+    BloodTypeNamePipePipe,
+    SearchFilterPipe,
+  ],
 })
 export class SharedModule {}

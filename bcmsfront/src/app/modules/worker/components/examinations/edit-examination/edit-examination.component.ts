@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Input, Output, OnChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  OnChanges,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
@@ -9,7 +15,7 @@ import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog
 @Component({
   selector: 'app-edit-examination',
   templateUrl: './edit-examination.component.html',
-  styleUrls: ['./edit-examination.component.scss']
+  styleUrls: ['./edit-examination.component.scss'],
 })
 export class EditExaminationComponent implements OnChanges {
   @Output() onEditExaminationClick = new EventEmitter<EditExamination>();
@@ -20,8 +26,8 @@ export class EditExaminationComponent implements OnChanges {
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private dialog: MatDialog,
-  ) { 
+    private dialog: MatDialog
+  ) {
     const donationId = this.route.snapshot.paramMap.get('donationId') || '';
 
     this.editExaminationForm = this.formBuilder.group({
@@ -50,22 +56,20 @@ export class EditExaminationComponent implements OnChanges {
   }
 
   public onEditExaminationDialog(): void {
-    const dialogRef = this.dialog.open(ConfirmDialogComponent,{
-      data:{
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: {
         message: 'Czy napewno chcesz edytować wyniki badań krwii?',
         buttonText: {
           ok: 'Tak',
-          cancel: 'Anuluj'
-        }
-      }
+          cancel: 'Anuluj',
+        },
+      },
     });
 
     dialogRef.afterClosed().subscribe((confirmed: boolean) => {
-      if (confirmed) { 
+      if (confirmed) {
         this.onEditExaminationClick.emit(this.editExaminationForm.value);
       }
     });
   }
-
-
 }

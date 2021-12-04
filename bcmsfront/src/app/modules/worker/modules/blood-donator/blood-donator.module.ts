@@ -28,14 +28,14 @@ const MATERIAL_ELEMENTS = [
   MatTabsModule,
   MatInputModule,
   MatButtonModule,
-  MatDialogModule
+  MatDialogModule,
 ];
 
 @NgModule({
   declarations: [
-    BloodDonatorPagesComponent, 
-    AddBloodDonatorComponent, 
-    ShowBloodDonatorsComponent, 
+    BloodDonatorPagesComponent,
+    AddBloodDonatorComponent,
+    ShowBloodDonatorsComponent,
     BloodDonatorDetailsPagesComponent,
     BloodDonatorDonationsPageComponent,
     SearchBloodDonatorComponent,
@@ -52,12 +52,12 @@ const MATERIAL_ELEMENTS = [
     ReactiveFormsModule,
     FlexLayoutModule,
     SharedModule,
-    BloodDonatorRoutingModule
+    BloodDonatorRoutingModule,
   ],
   exports: [
-    BloodDonatorPagesComponent, 
-    AddBloodDonatorComponent, 
-    ShowBloodDonatorsComponent, 
+    BloodDonatorPagesComponent,
+    AddBloodDonatorComponent,
+    ShowBloodDonatorsComponent,
     BloodDonatorDetailsPagesComponent,
     BloodDonatorDonationsPageComponent,
     SearchBloodDonatorComponent,
@@ -68,4 +68,4 @@ const MATERIAL_ELEMENTS = [
     DonationDetailsBloodDonatorComponent,
   ],
 })
-export class BloodDonatorModule { }
+export class BloodDonatorModule {}

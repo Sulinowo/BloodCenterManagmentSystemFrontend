@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
   CanActivate,
+  Router,
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
@@ -12,7 +13,7 @@ import { AuthService } from '../services/auth.service';
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  constructor(private auth: AuthService) {}
+  constructor(private auth: AuthService, private router: Router) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -22,10 +23,11 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    const logged = ['informations', 'contact', 'login'];
-    if (logged.includes(route.url.toString())) {
-      if (!this.auth.loggedIn()) {
-        alert('sign in!');
+    const logged = ['login', 'register', 'setpassword'];
+    if (this.auth.loggedIn()) {
+      if (logged.includes(route.url.toString())) {
+        this.router.navigate(['/']);
+        alert('nie masz uprawnień, wyloguj sie przed xD');
         return false;
       }
     }

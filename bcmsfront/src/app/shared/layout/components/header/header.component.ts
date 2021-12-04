@@ -14,6 +14,7 @@ import {
 })
 export class HeaderComponent {
   @Input() loggedIn = false;
+  @Input() role = '';
   @Output() menuClicked = new EventEmitter<void>();
 
   public onMenuClicked(): void {

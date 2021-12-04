@@ -14,7 +14,6 @@ export class DonationsFacadeService {
     private workerClient: WorkerClientService
   ) {}
 
-
   public onGetAllDonations(): void {
     this.workerClient.getAllDonations().subscribe((data) => {
       this.donationService.getAllDonations(data);

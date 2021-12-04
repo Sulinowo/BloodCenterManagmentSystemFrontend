@@ -9,16 +9,16 @@
   <div class="user-data-container">
     <mat-form-field>
       <mat-label>Etap donacji</mat-label>
-      <mat-select matNativeControl  formControlName="stage">
+      <mat-select matNativeControl formControlName="stage">
         <mat-option *ngFor="let stages of stage" [value]="stages.value">
-          {{stages.viewValue}}
+          {{ stages.viewValue }}
         </mat-option>
       </mat-select>
     </mat-form-field>
 
     <mat-form-field>
-        <mat-label>Powód odrzucenia(jeżeli status )</mat-label>
-        <input matInput formControlName="rejectionReason" />
+      <mat-label>Powód odrzucenia(jeżeli status )</mat-label>
+      <input matInput formControlName="rejectionReason" />
     </mat-form-field>
 
     <button

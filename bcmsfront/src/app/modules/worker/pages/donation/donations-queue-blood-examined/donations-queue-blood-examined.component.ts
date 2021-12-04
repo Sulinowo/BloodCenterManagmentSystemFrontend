@@ -6,15 +6,15 @@ import { DonationsQueueBloodExaminedFacadeService } from './donations-queue-bloo
 @Component({
   selector: 'app-donations-queue-blood-examined',
   templateUrl: './donations-queue-blood-examined.component.html',
-  styleUrls: ['./donations-queue-blood-examined.component.scss']
+  styleUrls: ['./donations-queue-blood-examined.component.scss'],
 })
 export class DonationsQueueBloodExaminedComponent implements OnInit {
   public bloodExaminedQueue$ = this.donationFacade.bloodExaminedQueue$;
-   
+
   constructor(
-    private donationFacade : DonationsQueueBloodExaminedFacadeService,
-    private router: Router,
-  ) { }
+    private donationFacade: DonationsQueueBloodExaminedFacadeService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.donationFacade.getBloodExaminedQueue();
@@ -23,5 +23,4 @@ export class DonationsQueueBloodExaminedComponent implements OnInit {
   public onDonationQueueClick(data: DonationGet): void {
     this.router.navigate([`worker/queue/bloodexamined/${data.id}`]);
   }
-
 }

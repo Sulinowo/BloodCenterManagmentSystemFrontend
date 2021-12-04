@@ -4,11 +4,11 @@ import { WorkerClientService } from '../../../clients/worker-client.service';
 import { ExaminationsService } from '../../../services/examinations.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class ExaminationDoctorFacadeService { 
+export class ExaminationDoctorFacadeService {
   public examinationPatch$ = this.examinationService.examinationPatch$;
-  
+
   constructor(
     private examinationService: ExaminationsService,
     private workerClient: WorkerClientService

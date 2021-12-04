@@ -22,26 +22,28 @@
   <ng-container matColumnDef="pesel">
     <th mat-header-cell *matHeaderCellDef>Pesel</th>
     <td mat-cell *matCellDef="let donations">
-      {{ donations.bloodDonator?.pesel || "Brak" }}
+      {{ donations.bloodDonator?.pesel || 'Brak' }}
     </td>
   </ng-container>
 
   <ng-container matColumnDef="firstName">
     <th mat-header-cell *matHeaderCellDef>Imię</th>
     <td mat-cell *matCellDef="let donations">
-      {{ donations.bloodDonator?.user?.firstName || "Brak" }}
+      {{ donations.bloodDonator?.user?.firstName || 'Brak' }}
     </td>
   </ng-container>
 
   <ng-container matColumnDef="surname">
     <th mat-header-cell *matHeaderCellDef>Nazwisko</th>
     <td mat-cell *matCellDef="let donations">
-      {{ donations.bloodDonator?.user?.surname || "Brak" }}
+      {{ donations.bloodDonator?.user?.surname || 'Brak' }}
     </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="columns"></tr>
-  <tr mat-row *matRowDef="let donations; columns: columns"
+  <tr
+    mat-row
+    *matRowDef="let donations; columns: columns"
     (click)="onDonationsClick(donations)"
   ></tr>
 </table>

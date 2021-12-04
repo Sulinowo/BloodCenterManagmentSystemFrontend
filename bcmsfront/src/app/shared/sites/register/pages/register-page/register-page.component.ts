@@ -7,7 +7,7 @@ import { RegisterFacadeService } from './register-facade.service';
   styleUrls: ['./register-page.component.scss'],
 })
 export class RegisterPageComponent implements OnInit {
-  constructor(public registerFacade: RegisterFacadeService) {}
+  constructor(private registerFacade: RegisterFacadeService) {}
 
   ngOnInit(): void {}
 

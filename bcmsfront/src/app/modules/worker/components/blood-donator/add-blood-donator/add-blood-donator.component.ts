@@ -20,10 +20,7 @@ export class AddBloodDonatorComponent {
 
   public addBloodDonatorForm: FormGroup;
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private dialog: MatDialog,
-  ) {
+  constructor(private formBuilder: FormBuilder, private dialog: MatDialog) {
     this.addBloodDonatorForm = this.formBuilder.group({
       firstName: [null, Validators.required],
       surname: [null, Validators.required],
@@ -40,16 +37,15 @@ export class AddBloodDonatorComponent {
   //   console.log(this.addBloodDonatorForm.value);
   // }
 
-
   onAddBloodDonatorDialog() {
-    const dialogRef = this.dialog.open(ConfirmDialogComponent,{
-      data:{
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: {
         message: 'Czy napewno chcesz dodać użytkownika?',
         buttonText: {
           ok: 'Tak',
-          cancel: 'Anuluj'
-        }
-      }
+          cancel: 'Anuluj',
+        },
+      },
     });
 
     dialogRef.afterClosed().subscribe((confirmed: boolean) => {

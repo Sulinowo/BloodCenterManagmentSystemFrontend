@@ -6,15 +6,15 @@ import { DonationQueueRegisteredFacadeService } from './donation-queue-registere
 @Component({
   selector: 'app-donation-queue-registered',
   templateUrl: './donation-queue-registered.component.html',
-  styleUrls: ['./donation-queue-registered.component.scss']
+  styleUrls: ['./donation-queue-registered.component.scss'],
 })
 export class DonationQueueRegisteredComponent implements OnInit {
   public registeredQueue$ = this.donationFacade.registeredQueue$;
-   
+
   constructor(
-    private donationFacade : DonationQueueRegisteredFacadeService,
-    private router: Router,
-  ) { }
+    private donationFacade: DonationQueueRegisteredFacadeService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.donationFacade.getRegisteredQueue();
@@ -23,5 +23,4 @@ export class DonationQueueRegisteredComponent implements OnInit {
   public onDonationQueueClick(data: DonationGet): void {
     this.router.navigate([`worker/queue/registered/${data.id}`]);
   }
-
 }

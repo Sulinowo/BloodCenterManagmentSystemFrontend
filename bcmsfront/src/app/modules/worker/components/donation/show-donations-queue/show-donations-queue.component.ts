@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { DonationGet } from 'src/app/core/models/donation-full';
 
 @Component({
@@ -8,7 +14,7 @@ import { DonationGet } from 'src/app/core/models/donation-full';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ShowDonationsQueueComponent {
-  @Input() dataSource: DonationGet[] ; 
+  @Input() dataSource: DonationGet[];
   @Output() donationQueueClick = new EventEmitter<DonationGet>();
 
   displayedColumns: string[] = [

@@ -17,11 +17,9 @@ export class BloodDonatorFacadeService {
   ) {}
 
   public loadDonators(): void {
-    this.workerClient.getAllBloodDonators().subscribe(
-      (donators: any) => {
-        this.bloodDonatorService.initialize(donators);
-      },
-    );
+    this.workerClient.getAllBloodDonators().subscribe((donators: any) => {
+      this.bloodDonatorService.initialize(donators);
+    });
   }
 
   public addDonator(data: Donator): void {
@@ -36,5 +34,4 @@ export class BloodDonatorFacadeService {
       this.bloodDonatorService.addDonation(data);
     });
   }
-
 }

@@ -1,8 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
@@ -14,6 +10,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 export class NavListComponent {
   @Input() direction: 'row' | 'column' = 'row';
   @Input() loggedIn = false;
+  @Input() role = '';
 
   constructor(public authUser: AuthService) {}
 

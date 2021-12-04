@@ -6,15 +6,15 @@ import { DonationsQueueQualifiedFacadeService } from './donations-queue-qualifie
 @Component({
   selector: 'app-donations-queue-qualified-page',
   templateUrl: './donations-queue-qualified-page.component.html',
-  styleUrls: ['./donations-queue-qualified-page.component.scss']
+  styleUrls: ['./donations-queue-qualified-page.component.scss'],
 })
 export class DonationsQueueQualifiedPageComponent implements OnInit {
   public qualifiedQueue$ = this.donationFacade.qualifiedQueue$;
-   
+
   constructor(
-    private donationFacade : DonationsQueueQualifiedFacadeService,
-    private router: Router,
-  ) { }
+    private donationFacade: DonationsQueueQualifiedFacadeService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.donationFacade.getQualifiedQueue();
@@ -23,5 +23,4 @@ export class DonationsQueueQualifiedPageComponent implements OnInit {
   public onDonationQueueClick(data: DonationGet): void {
     this.router.navigate([`worker/queue/qualified/${data.id}`]);
   }
-
 }

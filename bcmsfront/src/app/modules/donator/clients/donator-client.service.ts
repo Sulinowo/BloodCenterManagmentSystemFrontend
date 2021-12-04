@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Donation } from 'src/app/core/models/donation';
 import { DonationDetails } from 'src/app/core/models/donation-details';
 import { Donator } from 'src/app/core/models/donator';
+import { EditWorker } from 'src/app/core/models/edit-worker';
 import { UserData } from 'src/app/core/models/user-data';
 
 @Injectable({
@@ -32,5 +33,18 @@ export class DonatorClientService {
     return this.httpClient.patch<UserData>(`/api/blooddonators`, {
       ...data,
     });
+  }
+
+  public editAdminProfile(data: EditWorker): Observable<EditWorker> {
+    return this.httpClient.patch<EditWorker>(`/api/users`, { ...data }); //
+  }
+
+  public sendResetPasswordEmail(email: string) {
+    return this.httpClient.post(
+      `http://localhost:4200/api/auth/sendresetpasswordmail`,
+      {
+        email,
+      }
+    );
   }
 }

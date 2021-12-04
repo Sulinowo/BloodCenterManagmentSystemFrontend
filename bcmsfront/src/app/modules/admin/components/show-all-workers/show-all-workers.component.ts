@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Worker } from 'src/app/core/models/worker';
 import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
@@ -13,19 +19,25 @@ export class ShowAllWorkersComponent {
   @Input() dataSource: Worker[];
   @Output() deleteWorkerClick = new EventEmitter<Worker>();
 
-  constructor(private dialog: MatDialog,) {}
+  constructor(private dialog: MatDialog) {}
 
-  displayedColumns: string[] = ['email', 'firstName', 'surname', 'role','delete'];
+  displayedColumns: string[] = [
+    'email',
+    'firstName',
+    'surname',
+    'role',
+    'delete',
+  ];
 
   public onDeleteWorkerDialog(worker: Worker): void {
-    const dialogRef = this.dialog.open(ConfirmDialogComponent,{
-      data:{
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: {
         message: 'Czy napewno chcesz usunąć pracownika?',
         buttonText: {
           ok: 'Tak',
-          cancel: 'Anuluj'
-        }
-      }
+          cancel: 'Anuluj',
+        },
+      },
     });
 
     dialogRef.afterClosed().subscribe((confirmed: boolean) => {
@@ -33,5 +45,5 @@ export class ShowAllWorkersComponent {
         this.deleteWorkerClick.emit(worker);
       }
     });
-  } 
+  }
 }

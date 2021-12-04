@@ -6,17 +6,15 @@ import { BloodStorageEndDonationFacadeService } from './blood-storage-end-donati
 @Component({
   selector: 'app-blood-storage-end-donation-page',
   templateUrl: './blood-storage-end-donation-page.component.html',
-  styleUrls: ['./blood-storage-end-donation-page.component.scss']
+  styleUrls: ['./blood-storage-end-donation-page.component.scss'],
 })
 export class BloodStorageEndDonationPageComponent implements OnInit {
-
   constructor(
     private bloodStorageEndFacade: BloodStorageEndDonationFacadeService,
-    private router: Router,
-  ) { }
+    private router: Router
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   public onAddBloodUnitClick(data: EndDonation): void {
     this.bloodStorageEndFacade.addBloodUnit(data);

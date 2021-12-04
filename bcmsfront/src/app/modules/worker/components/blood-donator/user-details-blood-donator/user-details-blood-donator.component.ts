@@ -27,7 +27,11 @@ export class UserDetailsBloodDonatorComponent implements OnChanges {
 
   public userDataForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private dialog: MatDialog,) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute,
+    private dialog: MatDialog
+  ) {
     this.userDataForm = this.formBuilder.group({
       pesel: [null],
       homeAdress: [null, [Validators.required]],
@@ -60,20 +64,19 @@ export class UserDetailsBloodDonatorComponent implements OnChanges {
     this.userDataForm.get('firstName')?.disable();
   }
 
-  public onShowDonationListClick() { 
-    this.showDonationList.emit(); 
+  public onShowDonationListClick() {
+    this.showDonationList.emit();
   }
 
-
   public onEditProfileDialog(): void {
-    const dialogRef = this.dialog.open(ConfirmDialogComponent,{
-      data:{
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: {
         message: 'Czy napewno chcesz edytować użytkownika?',
         buttonText: {
           ok: 'Tak',
-          cancel: 'Anuluj'
-        }
-      }
+          cancel: 'Anuluj',
+        },
+      },
     });
 
     dialogRef.afterClosed().subscribe((confirmed: boolean) => {

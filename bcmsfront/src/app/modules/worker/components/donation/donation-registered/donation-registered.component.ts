@@ -4,7 +4,7 @@ import { DonationFull } from 'src/app/core/models/donation-full';
 @Component({
   selector: 'app-donation-registered',
   templateUrl: './donation-registered.component.html',
-  styleUrls: ['./donation-registered.component.scss']
+  styleUrls: ['./donation-registered.component.scss'],
 })
 export class DonationRegisteredComponent {
   @Input() dataSource: [DonationFull | null];
@@ -25,7 +25,7 @@ export class DonationRegisteredComponent {
     'bloodTypeName',
     'phoneNumber',
     'homeAdress',
-    'rejectionReason'
+    'rejectionReason',
   ];
 
   public onDetailsClick(): void {

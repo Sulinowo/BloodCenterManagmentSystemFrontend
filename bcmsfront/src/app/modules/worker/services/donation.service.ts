@@ -29,7 +29,7 @@ export class DonationService {
   public getBloodExaminedQueue(data: DonationGet[]): void {
     this.bloodExaminedQueue$.next(data);
   }
-  
+
   public getQualifiedQueue(data: DonationGet[]): void {
     this.qualifiedQueue$.next(data);
   }

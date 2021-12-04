@@ -8,9 +8,8 @@ describe('DonationPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DonationPageComponent ]
-    })
-    .compileComponents();
+      declarations: [DonationPageComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

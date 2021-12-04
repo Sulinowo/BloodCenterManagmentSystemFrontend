@@ -6,12 +6,15 @@ import { ExaminationEditFacadeService } from './examination-edit-facade.service'
 @Component({
   selector: 'app-examination-edit-page',
   templateUrl: './examination-edit-page.component.html',
-  styleUrls: ['./examination-edit-page.component.scss']
+  styleUrls: ['./examination-edit-page.component.scss'],
 })
 export class ExaminationEditPageComponent implements OnInit {
   public examinationDetails$ = this.examinationFacade.examinationDetails$;
 
-  constructor(private examinationFacade: ExaminationEditFacadeService, private route: ActivatedRoute) { }
+  constructor(
+    private examinationFacade: ExaminationEditFacadeService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     const donationId = this.route.snapshot.paramMap.get('donationId') || '';
@@ -21,5 +24,4 @@ export class ExaminationEditPageComponent implements OnInit {
   public onEditExaminationClick(data: EditExamination): void {
     this.examinationFacade.editExamination(data);
   }
-
 }

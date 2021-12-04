@@ -1,11 +1,11 @@
 import { Donator, DonatorDonationGet } from './donator';
 
 export interface DonationFull {
-    id: number;
-    donationDate: Date;
-    stage: string;
-    rejectionReason: string;
-    bloodDonator: Donator;
+  id: number;
+  donationDate: Date;
+  stage: string;
+  rejectionReason: string;
+  bloodDonator: Donator;
 }
 
 export interface DonationGet {

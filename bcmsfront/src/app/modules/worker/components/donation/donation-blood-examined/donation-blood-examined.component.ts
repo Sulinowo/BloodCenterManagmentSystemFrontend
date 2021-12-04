@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { DonationFull } from 'src/app/core/models/donation-full';
 
 @Component({
@@ -24,7 +30,7 @@ export class DonationBloodExaminedComponent {
     'bloodTypeName',
     'phoneNumber',
     'homeAdress',
-    'rejectionReason'
+    'rejectionReason',
   ];
 
   public onDetailsClick(): void {

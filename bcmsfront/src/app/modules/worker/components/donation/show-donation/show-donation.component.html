@@ -5,7 +5,6 @@
   class="mat-elevation-z8"
   [dataSource]="dataSource"
 >
-
   <ng-container matColumnDef="stage">
     <th mat-header-cell *matHeaderCellDef>Etap donacji</th>
     <td mat-cell *matCellDef="let donation">
@@ -16,63 +15,63 @@
   <ng-container matColumnDef="donationDate">
     <th mat-header-cell *matHeaderCellDef>Data donacji</th>
     <td mat-cell *matCellDef="let donation">
-      {{ donation.donationDate || "Brak" }}
+      {{ donation.donationDate || 'Brak' }}
     </td>
   </ng-container>
 
   <ng-container matColumnDef="rejectionReason">
     <th mat-header-cell *matHeaderCellDef>Powód odrzucenia</th>
     <td mat-cell *matCellDef="let donation">
-      {{ (donation.rejectionReason | donationsStagePipe) || "Brak" }}
+      {{ (donation.rejectionReason | donationsStagePipe) || 'Brak' }}
     </td>
   </ng-container>
 
   <ng-container matColumnDef="pesel">
     <th mat-header-cell *matHeaderCellDef>Pesel</th>
     <td mat-cell *matCellDef="let donation">
-      {{ donation.bloodDonator?.pesel || "Brak" }}
+      {{ donation.bloodDonator?.pesel || 'Brak' }}
     </td>
   </ng-container>
 
   <ng-container matColumnDef="homeAdress">
     <th mat-header-cell *matHeaderCellDef>Adres</th>
     <td mat-cell *matCellDef="let donation">
-      {{ donation.bloodDonator?.homeAdress || "Brak" }}
+      {{ donation.bloodDonator?.homeAdress || 'Brak' }}
     </td>
   </ng-container>
 
   <ng-container matColumnDef="phoneNumber">
     <th mat-header-cell *matHeaderCellDef>Numer Tel</th>
     <td mat-cell *matCellDef="let donation">
-      {{ donation.bloodDonator?.phoneNumber || "Brak" }}
+      {{ donation.bloodDonator?.phoneNumber || 'Brak' }}
     </td>
   </ng-container>
 
   <ng-container matColumnDef="bloodTypeName">
     <th mat-header-cell *matHeaderCellDef>Grupa krwi</th>
     <td mat-cell *matCellDef="let donation">
-      {{ donation.bloodDonator?.bloodType?.bloodTypeName || "Brak" }}
+      {{ donation.bloodDonator?.bloodType?.bloodTypeName || 'Brak' }}
     </td>
   </ng-container>
 
   <ng-container matColumnDef="email">
     <th mat-header-cell *matHeaderCellDef>Email</th>
     <td mat-cell *matCellDef="let donation">
-      {{ donation.bloodDonator?.user?.email || "Brak" }}
+      {{ donation.bloodDonator?.user?.email || 'Brak' }}
     </td>
   </ng-container>
 
   <ng-container matColumnDef="firstName">
     <th mat-header-cell *matHeaderCellDef>Imię</th>
     <td mat-cell *matCellDef="let donation">
-      {{ donation.bloodDonator?.user?.firstName || "Brak" }}
+      {{ donation.bloodDonator?.user?.firstName || 'Brak' }}
     </td>
   </ng-container>
 
   <ng-container matColumnDef="surname">
     <th mat-header-cell *matHeaderCellDef>Nazwisko</th>
     <td mat-cell *matCellDef="let donation">
-      {{ donation.bloodDonator?.user?.surname || "Brak" }}
+      {{ donation.bloodDonator?.user?.surname || 'Brak' }}
     </td>
   </ng-container>
 
@@ -80,11 +79,6 @@
   <tr mat-row *matRowDef="let donation; columns: columns"></tr>
 </table>
 
-<button
-  mat-stroked-button
-  color="primary"
-  (click)="onDetailsClick()"
->
+<button mat-stroked-button color="primary" (click)="onDetailsClick()">
   Pokaż szczegóły
 </button>
-

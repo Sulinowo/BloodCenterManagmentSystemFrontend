@@ -8,7 +8,6 @@ import { DonationDetails } from 'src/app/core/models/donation-details';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DonationDetailsBloodDonatorComponent {
-
   @Input() dataSource: DonationDetails | null;
 
   columns: string[] = [

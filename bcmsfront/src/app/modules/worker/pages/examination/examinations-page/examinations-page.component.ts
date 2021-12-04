@@ -8,7 +8,6 @@ import { ExaminationsFacadeService } from './examinations-facade.service';
   styleUrls: ['./examinations-page.component.scss'],
 })
 export class ExaminationsPageComponent implements OnInit {
-
   constructor(private examinationFacade: ExaminationsFacadeService) {}
 
   ngOnInit(): void {}

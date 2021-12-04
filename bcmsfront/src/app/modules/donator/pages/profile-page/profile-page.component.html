@@ -4,6 +4,7 @@
       <app-user-data
         [state]="donator$ | async"
         (profileEdit)="onProfileEdit($event)"
+        (setNewPass)="setNewPassword()"
       ></app-user-data>
     </mat-tab>
     <mat-tab label="Donacje">

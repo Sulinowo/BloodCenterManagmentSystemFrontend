@@ -21,9 +21,9 @@ export class AddBloodUnitComponent {
   public addBloodUnitForm: FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder, 
+    private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private dialog: MatDialog,
+    private dialog: MatDialog
   ) {
     const donationId = this.route.snapshot.paramMap.get('donationId') || '';
 
@@ -39,19 +39,19 @@ export class AddBloodUnitComponent {
   }
 
   afterCovid: Covid[] = [
-    { value:true, viewValue:"Tak" },
-    { value:false, viewValue:"Nie" },
-  ]
+    { value: true, viewValue: 'Tak' },
+    { value: false, viewValue: 'Nie' },
+  ];
 
   public onAddBloodUnitDialog(): void {
-    const dialogRef = this.dialog.open(ConfirmDialogComponent,{
-      data:{
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: {
         message: 'Czy napewno chcesz zakończyć donację?',
         buttonText: {
           ok: 'Tak',
-          cancel: 'Anuluj'
-        }
-      }
+          cancel: 'Anuluj',
+        },
+      },
     });
 
     dialogRef.afterClosed().subscribe((confirmed: boolean) => {

@@ -8,7 +8,11 @@ import { DonationFull, DonationGet } from 'src/app/core/models/donation-full';
 import { DonationPatch } from 'src/app/core/models/donation-patch';
 import { Donator } from 'src/app/core/models/donator';
 import { EditWorker, WorkerAccount } from 'src/app/core/models/edit-worker';
-import { EditExamination, Examination, ExaminationPatch } from 'src/app/core/models/examination';
+import {
+  EditExamination,
+  Examination,
+  ExaminationPatch,
+} from 'src/app/core/models/examination';
 import { UserData } from 'src/app/core/models/user-data';
 
 @Injectable({
@@ -83,7 +87,7 @@ export class WorkerClientService {
   }
 
   public addDonation(userId: number): Observable<DonationFull> {
-    return this.httpClient.post<DonationFull>(`/api/donations/${userId}`, { });
+    return this.httpClient.post<DonationFull>(`/api/donations/${userId}`, {});
   }
 
   public getAllDonations(): Observable<DonationGet[]> {
@@ -116,10 +120,13 @@ export class WorkerClientService {
     }); //
   }
 
-  public editExamination(data: EditExamination) : Observable<EditExamination> {
-    return this.httpClient.patch<EditExamination>(`/api/examinations/fixbloodexamination`,{
-      ...data,
-    });
+  public editExamination(data: EditExamination): Observable<EditExamination> {
+    return this.httpClient.patch<EditExamination>(
+      `/api/examinations/fixbloodexamination`,
+      {
+        ...data,
+      }
+    );
   }
 
   public updateProfileData(data: UserData): Observable<UserData> {
@@ -145,10 +152,23 @@ export class WorkerClientService {
   }
 
   public getWorkerProfile(userId: number): Observable<WorkerAccount> {
-    return this.httpClient.get<WorkerAccount>(`/api/users/${userId}`)
+    return this.httpClient.get<WorkerAccount>(`/api/users/${userId}`);
   }
 
   public editWorkerProfile(data: EditWorker): Observable<EditWorker> {
     return this.httpClient.patch<EditWorker>(`/api/users`, { ...data }); //
+  }
+
+  public editAdminProfile(data: EditWorker): Observable<EditWorker> {
+    return this.httpClient.patch<EditWorker>(`/api/users`, { ...data }); //
+  }
+
+  public sendResetPasswordEmail(email: string) {
+    return this.httpClient.post(
+      `http://localhost:4200/api/auth/sendresetpasswordmail`,
+      {
+        email,
+      }
+    );
   }
 }

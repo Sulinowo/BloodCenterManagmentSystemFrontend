@@ -1,6 +1,5 @@
 <p>donation-queue-registered works!</p>
 <app-show-donations-queue
-    [dataSource]="(registeredQueue$ | async) || []"
-    (donationQueueClick)="onDonationQueueClick($event)"
+  [dataSource]="(registeredQueue$ | async) || []"
+  (donationQueueClick)="onDonationQueueClick($event)"
 ></app-show-donations-queue>
-

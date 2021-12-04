@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { NewWorker } from 'src/app/core/models/add-worker';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AddWorkersService {
   public worker$ = new BehaviorSubject(<NewWorker>{});

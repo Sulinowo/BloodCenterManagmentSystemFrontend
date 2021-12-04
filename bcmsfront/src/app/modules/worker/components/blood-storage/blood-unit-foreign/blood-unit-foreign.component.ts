@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Output,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { BloodStorageForeign } from 'src/app/core/models/bloodstorage';
@@ -20,7 +25,7 @@ export class BloodUnitForeignComponent {
 
   public addForeignBloodUnitForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private dialog: MatDialog,) {
+  constructor(private formBuilder: FormBuilder, private dialog: MatDialog) {
     this.addForeignBloodUnitForm = this.formBuilder.group({
       bloodTypeName: [null, Validators.required],
       foreignBloodUnitId: [null, Validators.required],
@@ -35,19 +40,19 @@ export class BloodUnitForeignComponent {
   }
 
   afterCovid: Covid[] = [
-    { value:true, viewValue:"Tak" },
-    { value:false, viewValue:"Nie" },
-  ]
+    { value: true, viewValue: 'Tak' },
+    { value: false, viewValue: 'Nie' },
+  ];
 
   public onAddBloodUnitDialog(): void {
-    const dialogRef = this.dialog.open(ConfirmDialogComponent,{
-      data:{
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: {
         message: 'Czy napewno chcesz dodać jednostkę krwii?',
         buttonText: {
           ok: 'Tak',
-          cancel: 'Anuluj'
-        }
-      }
+          cancel: 'Anuluj',
+        },
+      },
     });
 
     dialogRef.afterClosed().subscribe((confirmed: boolean) => {
@@ -56,5 +61,4 @@ export class BloodUnitForeignComponent {
       }
     });
   }
-
 }

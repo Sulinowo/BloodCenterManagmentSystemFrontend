@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { EditWorker, WorkerAccount } from 'src/app/core/models/edit-worker';
@@ -14,10 +21,11 @@ export class WorkerProfileComponent implements OnChanges {
   @Input() showEditable = false;
   @Input() state?: WorkerAccount | null;
   @Output() profileEdit = new EventEmitter<EditWorker>();
+  @Output() setNewPass = new EventEmitter<void>();
 
   public workerDataForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private dialog: MatDialog,) {
+  constructor(private formBuilder: FormBuilder, private dialog: MatDialog) {
     this.workerDataForm = this.formBuilder.group({
       email: [null, [Validators.required]],
       firstname: [null],
@@ -43,14 +51,14 @@ export class WorkerProfileComponent implements OnChanges {
   }
 
   public onEditProfileDialog(): void {
-    const dialogRef = this.dialog.open(ConfirmDialogComponent,{
-      data:{
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: {
         message: 'Czy napewno chcesz edytować konto?',
         buttonText: {
           ok: 'Tak',
-          cancel: 'Anuluj'
-        }
-      }
+          cancel: 'Anuluj',
+        },
+      },
     });
 
     dialogRef.afterClosed().subscribe((confirmed: boolean) => {
@@ -58,5 +66,9 @@ export class WorkerProfileComponent implements OnChanges {
         this.profileEdit.emit(this.workerDataForm.value);
       }
     });
+  }
+
+  public onSetNewPasswordClick(): void {
+    this.setNewPass.emit();
   }
 }

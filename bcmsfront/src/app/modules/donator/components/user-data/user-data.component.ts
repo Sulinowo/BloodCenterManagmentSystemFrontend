@@ -22,10 +22,11 @@ export class UserDataComponent implements OnChanges {
   @Input() showEditable = false;
   @Input() state?: Donator | null;
   @Output() profileEdit = new EventEmitter<UserData>();
+  @Output() setNewPass = new EventEmitter<void>();
 
   public userDataForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private dialog: MatDialog,) {
+  constructor(private formBuilder: FormBuilder, private dialog: MatDialog) {
     this.userDataForm = this.formBuilder.group({
       pesel: [null],
       homeAdress: [null, [Validators.required]],
@@ -59,14 +60,14 @@ export class UserDataComponent implements OnChanges {
   }
 
   public onEditProfileDialog(): void {
-    const dialogRef = this.dialog.open(ConfirmDialogComponent,{
-      data:{
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: {
         message: 'Czy napewno chcesz edytować konto?',
         buttonText: {
           ok: 'Tak',
-          cancel: 'Anuluj'
-        }
-      }
+          cancel: 'Anuluj',
+        },
+      },
     });
 
     dialogRef.afterClosed().subscribe((confirmed: boolean) => {
@@ -76,5 +77,7 @@ export class UserDataComponent implements OnChanges {
     });
   }
 
-
+  public onSetNewPasswordClick(): void {
+    this.setNewPass.emit();
+  }
 }

@@ -5,17 +5,17 @@ import { BloodStorageEndDonationPageComponent } from '../../pages/blood-storage/
 import { BloodStoragePageComponent } from '../../pages/blood-storage/blood-storage-page/blood-storage-page.component';
 
 const routes: Routes = [
-  { 
-    path: `bloodstorage`, 
-    component: BloodStoragePageComponent
+  {
+    path: `bloodstorage`,
+    component: BloodStoragePageComponent,
   },
-  { 
-    path: `bloodstorage/addforeignbloodunit`, 
-    component: BloodStorageAddForeignBloodPageComponent
+  {
+    path: `bloodstorage/addforeignbloodunit`,
+    component: BloodStorageAddForeignBloodPageComponent,
   },
-  { 
-    path: `bloodstorage/:donationId/enddonation`, 
-    component: BloodStorageEndDonationPageComponent
+  {
+    path: `bloodstorage/:donationId/enddonation`,
+    component: BloodStorageEndDonationPageComponent,
   },
 ];
 
@@ -23,4 +23,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class BloodStorageRoutingModule { }
+export class BloodStorageRoutingModule {}

@@ -3,7 +3,7 @@ import { Worker } from 'src/app/core/models/worker';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AdminService {
   public workers$ = new BehaviorSubject<Worker[]>([] as Worker[]);
@@ -12,7 +12,7 @@ export class AdminService {
   public initializeWorkers(workers: Worker[]): void {
     this.workers$.next(workers);
   }
-  
+
   public deleteWorker(worker: Worker): void {
     this.deleteWorker$.next(worker);
   }

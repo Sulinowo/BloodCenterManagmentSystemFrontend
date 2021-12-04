@@ -23,13 +23,16 @@ export class ShowBloodDonatorsComponent {
 
   searchText: string;
 
-  displayedColumns: string[] = ['imie', 'nazwisko', 'pesel','donacja','edycja'];
+  displayedColumns: string[] = [
+    'imie',
+    'nazwisko',
+    'pesel',
+    'donacja',
+    'edycja',
+  ];
   public searchBloodDonatorForm: FormGroup;
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private dialog: MatDialog,
-  ) {
+  constructor(private formBuilder: FormBuilder, private dialog: MatDialog) {
     this.searchBloodDonatorForm = this.formBuilder.group({
       pesel: [null],
     });
@@ -42,19 +45,19 @@ export class ShowBloodDonatorsComponent {
 
   public onAddDonationClick(donator: Donator): void {
     this.addDonationClick.emit(donator);
-    console.log("hey",donator);
+    console.log('hey', donator);
   }
 
-
   onAddDonationDialog(donator: Donator) {
-    const dialogRef = this.dialog.open(ConfirmDialogComponent,{
-      data:{
-        message: 'Czy napewno chcesz zarejestrować donacje dla tego użytkownika?',
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: {
+        message:
+          'Czy napewno chcesz zarejestrować donacje dla tego użytkownika?',
         buttonText: {
           ok: 'Tak',
-          cancel: 'Anuluj'
-        }
-      }
+          cancel: 'Anuluj',
+        },
+      },
     });
 
     dialogRef.afterClosed().subscribe((confirmed: boolean) => {

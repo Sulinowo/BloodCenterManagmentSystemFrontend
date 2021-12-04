@@ -4,18 +4,19 @@ import { WorkerClientService } from '../../../clients/worker-client.service';
 import { BloodStorageService } from '../../../services/blood-storage.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BloodStorageEndDonationFacadeService {
-
   constructor(
     private bloodStorageService: BloodStorageService,
     private workerClient: WorkerClientService
-  ) { }
+  ) {}
 
   public addBloodUnit(data: EndDonation): void {
-    this.workerClient.addBloodUnitToStorage(data.donationId,data.isAfterCovid).subscribe((data) => {
-      this.bloodStorageService.addBloodUnit(data);
-    });
+    this.workerClient
+      .addBloodUnitToStorage(data.donationId, data.isAfterCovid)
+      .subscribe((data) => {
+        this.bloodStorageService.addBloodUnit(data);
+      });
   }
 }

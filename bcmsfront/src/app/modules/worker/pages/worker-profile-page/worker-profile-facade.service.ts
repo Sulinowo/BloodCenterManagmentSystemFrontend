@@ -5,7 +5,7 @@ import { WorkerClientService } from '../../clients/worker-client.service';
 import { WorkerProfileService } from '../../services/worker-profile.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class WorkerProfileFacadeService {
   public worker$ = this.profileService.worker$;
@@ -13,14 +13,13 @@ export class WorkerProfileFacadeService {
   constructor(
     private profileService: WorkerProfileService,
     private workerClient: WorkerClientService,
-    private auth: AuthService,
+    private auth: AuthService
   ) {}
 
-
   public loadWorkerProfile(userId: number): void {
-    this.workerClient.getWorkerProfile(this.auth.getData('UserId')).subscribe(
-      (data) => this.profileService.initialize(data)
-    );
+    this.workerClient
+      .getWorkerProfile(this.auth.getData('UserId'))
+      .subscribe((data) => this.profileService.initialize(data));
   }
 
   public editWorkerProfile(data: EditWorker): void {

@@ -5,17 +5,19 @@ import { RegisteredDonationFacadeService } from './registered-donation-facade.se
 @Component({
   selector: 'app-registered-donation-page',
   templateUrl: './registered-donation-page.component.html',
-  styleUrls: ['./registered-donation-page.component.scss']
+  styleUrls: ['./registered-donation-page.component.scss'],
 })
 export class RegisteredDonationPageComponent implements OnInit {
   public donation$ = this.registeredDonationFacade.donation$;
-  public isExaminationNullable$ = this.registeredDonationFacade.isExaminationNullable$;
-  public isExaminationNullable2$ = this.registeredDonationFacade.isExaminationNullable2$;
+  public isExaminationNullable$ =
+    this.registeredDonationFacade.isExaminationNullable$;
+  public isExaminationNullable2$ =
+    this.registeredDonationFacade.isExaminationNullable2$;
   constructor(
-    private registeredDonationFacade : RegisteredDonationFacadeService,
+    private registeredDonationFacade: RegisteredDonationFacadeService,
     private router: Router,
     private route: ActivatedRoute
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     const donationId = this.route.snapshot.paramMap.get('donationId') || '';
@@ -29,7 +31,9 @@ export class RegisteredDonationPageComponent implements OnInit {
 
   public onExamiationAddClick(): void {
     const donationId = this.route.snapshot.paramMap.get('donationId') || '';
-    this.router.navigate([`worker/queue/registered/${donationId}/addexamination`]);
+    this.router.navigate([
+      `worker/queue/registered/${donationId}/addexamination`,
+    ]);
   }
 
   public onStatusChangeClick(): void {
@@ -39,6 +43,8 @@ export class RegisteredDonationPageComponent implements OnInit {
 
   public onExaminationEditClick(): void {
     const donationId = this.route.snapshot.paramMap.get('donationId') || '';
-    this.router.navigate([`worker/queue/registered/${donationId}/editexamination`]);
+    this.router.navigate([
+      `worker/queue/registered/${donationId}/editexamination`,
+    ]);
   }
 }

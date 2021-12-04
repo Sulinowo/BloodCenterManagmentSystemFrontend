@@ -3,7 +3,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 @Component({
   selector: 'app-admin-panel',
   templateUrl: './admin-panel.component.html',
-  styleUrls: ['./admin-panel.component.scss']
+  styleUrls: ['./admin-panel.component.scss'],
 })
 export class AdminPanelComponent {
   @Output() addAdmin = new EventEmitter<void>();

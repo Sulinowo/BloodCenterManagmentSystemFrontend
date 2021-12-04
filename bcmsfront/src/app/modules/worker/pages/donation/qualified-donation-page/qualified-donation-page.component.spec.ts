@@ -8,9 +8,8 @@ describe('QualifiedDonationPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ QualifiedDonationPageComponent ]
-    })
-    .compileComponents();
+      declarations: [QualifiedDonationPageComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

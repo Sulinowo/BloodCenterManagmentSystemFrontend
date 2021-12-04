@@ -1,25 +1,30 @@
-import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
+import {
+  HttpEvent,
+  HttpHandler,
+  HttpInterceptor,
+  HttpRequest,
+} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { SpinnerService } from './spinner.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class SpinnerInterceptorService implements HttpInterceptor{
+export class SpinnerInterceptorService implements HttpInterceptor {
+  constructor(public spinnerService: SpinnerService) {}
 
-  constructor(public spinnerService: SpinnerService) { }
-
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+  intercept(
+    req: HttpRequest<any>,
+    next: HttpHandler
+  ): Observable<HttpEvent<any>> {
     this.spinnerService.isLoading$.next(true);
 
     return next.handle(req).pipe(
-      finalize(
-        () => {
-          this.spinnerService.isLoading$.next(false);
-        }
-      )
+      finalize(() => {
+        this.spinnerService.isLoading$.next(false);
+      })
     );
   }
 }

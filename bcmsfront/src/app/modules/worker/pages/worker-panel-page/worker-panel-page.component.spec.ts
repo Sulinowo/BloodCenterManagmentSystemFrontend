@@ -8,9 +8,8 @@ describe('WorkerPanelPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WorkerPanelPageComponent ]
-    })
-    .compileComponents();
+      declarations: [WorkerPanelPageComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

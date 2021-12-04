@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { EditWorker } from 'src/app/core/models/edit-worker';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { WorkerProfileFacadeService } from './worker-profile-facade.service';
@@ -6,14 +7,15 @@ import { WorkerProfileFacadeService } from './worker-profile-facade.service';
 @Component({
   selector: 'app-worker-profile-page',
   templateUrl: './worker-profile-page.component.html',
-  styleUrls: ['./worker-profile-page.component.scss']
+  styleUrls: ['./worker-profile-page.component.scss'],
 })
 export class WorkerProfilePageComponent implements OnInit {
   public worker$ = this.workerProfileFacade.worker$;
 
   constructor(
     private workerProfileFacade: WorkerProfileFacadeService,
-    private auth: AuthService
+    private auth: AuthService,
+    private router: Router
   ) {}
 
   public ngOnInit(): void {
@@ -22,5 +24,9 @@ export class WorkerProfilePageComponent implements OnInit {
 
   public editWorkerProfile(user: EditWorker): void {
     this.workerProfileFacade.editWorkerProfile(user);
+  }
+
+  public setNewPassword() {
+    this.router.navigate(['/admin/resetpassword']);
   }
 }

@@ -83,4 +83,4 @@ const MATERIAL_ELEMENTS = [
     QualifiedDonationPageComponent,
   ],
 })
-export class DonationModule { }
+export class DonationModule {}

@@ -54,7 +54,10 @@
       (click)="onEditProfileDialog()"
       [disabled]="userDataForm.invalid"
     >
-      Save
+      Zapisz
     </button>
   </div>
 </form>
+<button mat-flat-button color="primary" (click)="onSetNewPasswordClick()">
+  Zmień hasło
+</button>

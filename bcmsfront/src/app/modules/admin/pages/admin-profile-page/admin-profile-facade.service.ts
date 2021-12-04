@@ -5,7 +5,7 @@ import { AdminClientService } from '../../clients/admin-client.service';
 import { AdminProfileService } from '../../services/admin-profile.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AdminProfileFacadeService {
   public admin$ = this.profileService.admin$;
@@ -13,14 +13,13 @@ export class AdminProfileFacadeService {
   constructor(
     private profileService: AdminProfileService,
     private workerClient: AdminClientService,
-    private auth: AuthService,
+    private auth: AuthService
   ) {}
 
-
   public loadAdminProfile(userId: number): void {
-    this.workerClient.getAdminProfile(this.auth.getData('UserId')).subscribe(
-      (data) => this.profileService.initialize(data)
-    );
+    this.workerClient
+      .getAdminProfile(this.auth.getData('UserId'))
+      .subscribe((data) => this.profileService.initialize(data));
   }
 
   public editAdminProfile(data: EditWorker): void {

@@ -1,4 +1,4 @@
 export interface EndDonation {
-    donationId: number,
-    isAfterCovid: boolean,
+  donationId: number;
+  isAfterCovid: boolean;
 }

@@ -9,11 +9,11 @@ import { DonationsFacadeService } from './donations-facade.service';
   styleUrls: ['./donations-page.component.scss'],
 })
 export class DonationsPageComponent implements OnInit {
-  public allDonations$ = this.donationFacade.allDonations$; 
+  public allDonations$ = this.donationFacade.allDonations$;
 
   constructor(
-    private donationFacade : DonationsFacadeService,
-    private router: Router,
+    private donationFacade: DonationsFacadeService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {

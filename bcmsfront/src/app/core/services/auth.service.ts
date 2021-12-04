@@ -102,7 +102,8 @@ export class AuthService {
   }
 
   public getRole(): string {
-    return this.user.value.data!.Role || false;
+    const result = this.user.value.data;
+    return result ? result.Role : '';
   }
 
   public getData(key: keyof UserDeatils): any {

@@ -1,10 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'bloodTypeNamePipe'
+  name: 'bloodTypeNamePipe',
 })
 export class BloodTypeNamePipePipe implements PipeTransform {
-
   transform(value: number): string {
     if (value == 1) {
       return '0Rh+';
@@ -24,5 +23,4 @@ export class BloodTypeNamePipePipe implements PipeTransform {
       return 'ABRh-';
     }
   }
-
 }

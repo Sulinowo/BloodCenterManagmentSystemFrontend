@@ -2,28 +2,32 @@
   <h2>Wyszukaj krwiodawcę po peselu</h2>
   <mat-form-field appearance="standard">
     <mat-label>Wyszukaj</mat-label>
-    <input matInput [(ngModel)]="searchText"/>
+    <input matInput [(ngModel)]="searchText" />
   </mat-form-field>
 </div>
 <div>
   <!-- {{ dataSource | json }} -->
-  <table mat-table class="mat-elevation-z8" [dataSource]="dataSource | searchFilter:searchText">
+  <table
+    mat-table
+    class="mat-elevation-z8"
+    [dataSource]="dataSource | searchFilter: searchText"
+  >
     <ng-container matColumnDef="imie">
       <th mat-header-cell *matHeaderCellDef>Imię</th>
       <td mat-cell *matCellDef="let donators">
-        {{ donators.user?.firstName || "brak danych" }}
+        {{ donators.user?.firstName || 'brak danych' }}
       </td>
     </ng-container>
     <ng-container matColumnDef="nazwisko">
       <th mat-header-cell *matHeaderCellDef>Nazwisko</th>
       <td mat-cell *matCellDef="let donators">
-        {{ donators.user?.surname || "brak danych" }}
+        {{ donators.user?.surname || 'brak danych' }}
       </td>
     </ng-container>
     <ng-container matColumnDef="pesel">
       <th mat-header-cell *matHeaderCellDef>Pesel</th>
       <td mat-cell *matCellDef="let donators">
-        {{ donators.pesel || "brak danych" }}
+        {{ donators.pesel || 'brak danych' }}
       </td>
     </ng-container>
 
@@ -31,12 +35,12 @@
       <th mat-header-cell *matHeaderCellDef>Zarejestruj donacje</th>
       <td mat-cell *matCellDef="let donators" class="on-hover-td">
         <mat-icon
-        class="action"
-        (click)="onAddDonationDialog(donators)"
-        matTooltip="Zarejestruj tego użytkownika"
-        matTooltipPosition="right"
-        >add</mat-icon
-      >
+          class="action"
+          (click)="onAddDonationDialog(donators)"
+          matTooltip="Zarejestruj tego użytkownika"
+          matTooltipPosition="right"
+          >add</mat-icon
+        >
       </td>
     </ng-container>
 
@@ -44,20 +48,17 @@
       <th mat-header-cell *matHeaderCellDef>Edytuj użytkownika</th>
       <td mat-cell *matCellDef="let donators" class="on-hover-td">
         <mat-icon
-        class="action"
-        [routerLink]="donators.user.id"
-        (click)="donatorListClick(donators)"
-        matTooltip="Edytuj tego użytkownika"
-        matTooltipPosition="right"
-        >edit</mat-icon
-      >
+          class="action"
+          [routerLink]="donators.user.id"
+          (click)="donatorListClick(donators)"
+          matTooltip="Edytuj tego użytkownika"
+          matTooltipPosition="right"
+          >edit</mat-icon
+        >
       </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr
-      mat-row
-      *matRowDef="let donator; columns: displayedColumns"  
-    ></tr>
+    <tr mat-row *matRowDef="let donator; columns: displayedColumns"></tr>
   </table>
 </div>

@@ -17,6 +17,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { ResetPasswordPageComponent } from './pages/reset-password-page/reset-password-page.component';
 
 const MATERIAL_MODULES = [
   MatFormFieldModule,
@@ -37,6 +39,8 @@ const MATERIAL_MODULES = [
     EditAccountComponent,
     UserDataComponent,
     UserDonationsComponent,
+    ResetPasswordComponent,
+    ResetPasswordPageComponent,
   ],
   imports: [
     CommonModule,

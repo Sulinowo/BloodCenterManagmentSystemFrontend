@@ -22,9 +22,11 @@ export class BloodDonatorDonationsPageComponent implements OnInit {
     const userId = this.route.snapshot.paramMap.get('userId') || '';
     this.bloodDonatorDonationsFacade.loadDonationsData(parseInt(userId));
   }
-  
+
   public onDonationClick(donation: Donation) {
     const userId = this.route.snapshot.paramMap.get('userId') || '';
-    this.router.navigate([`worker/blooddonators/${userId}/donations/${donation.id}/details`]);
+    this.router.navigate([
+      `worker/blooddonators/${userId}/donations/${donation.id}/details`,
+    ]);
   }
 }

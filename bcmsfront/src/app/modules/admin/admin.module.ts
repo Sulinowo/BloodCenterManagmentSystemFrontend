@@ -22,6 +22,8 @@ import { AdminProfileComponent } from './components/admin-profile/admin-profile.
 import { EditAdminProfileComponent } from './components/edit-admin-profile/edit-admin-profile.component';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 import { AdminPanelPageComponent } from './pages/admin-panel-page/admin-panel-page.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { ResetPasswordPageComponent } from './pages/reset-password-page/reset-password-page.component';
 
 const MATERIAL_MODULES = [
   MatFormFieldModule,
@@ -46,7 +48,9 @@ const MATERIAL_MODULES = [
     AdminProfileComponent,
     EditAdminProfileComponent,
     AdminPanelComponent,
-    AdminPanelPageComponent
+    AdminPanelPageComponent,
+    ResetPasswordComponent,
+    ResetPasswordPageComponent,
   ],
   imports: [
     CommonModule,
@@ -56,6 +60,6 @@ const MATERIAL_MODULES = [
     ReactiveFormsModule,
     AdminRoutingModule,
     ...MATERIAL_MODULES,
-  ]
+  ],
 })
-export class AdminModule { }
+export class AdminModule {}

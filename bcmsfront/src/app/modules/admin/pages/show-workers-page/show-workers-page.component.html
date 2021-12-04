@@ -1,5 +1,5 @@
 <p>show-workers-page works!</p>
 <app-show-all-workers
-    [dataSource]="(workers$ | async) || []"
-    (deleteWorkerClick)="onDeleteWorker($event)"
+  [dataSource]="(workers$ | async) || []"
+  (deleteWorkerClick)="onDeleteWorker($event)"
 ></app-show-all-workers>

@@ -1,7 +1,8 @@
 <p>admin-profile-page works!</p>
 <div class="profile-page-container">
-    <app-admin-profile
-        [state]="admin$ | async"
-        (profileEdit)="editAdminProfile($event)"
-    ></app-admin-profile> 
+  <app-admin-profile
+    [state]="admin$ | async"
+    (profileEdit)="editAdminProfile($event)"
+    (setNewPass)="setNewPassword()"
+  ></app-admin-profile>
 </div>

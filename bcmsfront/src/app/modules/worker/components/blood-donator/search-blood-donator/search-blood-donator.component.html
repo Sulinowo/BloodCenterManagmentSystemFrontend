@@ -34,7 +34,9 @@
     </ng-container>
     <ng-container matColumnDef="grupaKrwii">
       <th mat-header-cell *matHeaderCellDef>Grupa Krwii</th>
-      <td mat-cell *matCellDef="let donators">{{ donators.bloodType?.bloodTypeName }}</td>
+      <td mat-cell *matCellDef="let donators">
+        {{ donators.bloodType?.bloodTypeName }}
+      </td>
     </ng-container>
     <ng-container matColumnDef="iloscOddanejKrwii">
       <th mat-header-cell *matHeaderCellDef>Ilość oddanej krwii</th>

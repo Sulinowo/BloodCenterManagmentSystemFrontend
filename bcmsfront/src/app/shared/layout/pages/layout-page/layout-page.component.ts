@@ -18,15 +18,15 @@ export class LayoutPageComponent implements OnInit, OnDestroy {
   public isLoading$ = this.spinner.isLoading$;
 
   public loggedIn = false;
+  public role = '';
+
   private test!: Subscription;
-  constructor(
-    public auth: AuthService,
-    public spinner: SpinnerService
-  ) {}
+  constructor(public auth: AuthService, public spinner: SpinnerService) {}
 
   public ngOnInit(): void {
-    this.auth.user.subscribe((test) => {
+    this.auth.user.subscribe(() => {
       this.loggedIn = this.auth.loggedIn();
+      this.role = this.auth.getRole();
     });
   }
 

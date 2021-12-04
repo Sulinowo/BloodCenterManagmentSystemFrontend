@@ -26,6 +26,8 @@ import { WorkerProfileComponent } from './components/worker-profile/worker-profi
 import { EditWorkerProfileComponent } from './components/edit-worker-profile/edit-worker-profile.component';
 import { WorkerPanelComponent } from './components/worker-panel/worker-panel.component';
 import { WorkerPanelPageComponent } from './pages/worker-panel-page/worker-panel-page.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { ResetPasswordPageComponent } from './pages/reset-password-page/reset-password-page.component';
 
 const MATERIAL_ELEMENTS = [
   MatTableModule,
@@ -51,9 +53,11 @@ const MATERIAL_ELEMENTS = [
     EditWorkerProfileComponent,
     WorkerPanelComponent,
     WorkerPanelPageComponent,
+    ResetPasswordComponent,
+    ResetPasswordPageComponent,
   ],
   imports: [
-    CommonModule, 
+    CommonModule,
     WorkerRoutingModule,
     FormsModule,
     ReactiveFormsModule,
@@ -62,7 +66,7 @@ const MATERIAL_ELEMENTS = [
     MATERIAL_ELEMENTS,
     BloodDonatorModule,
     BloodStorageModule,
-    DonationModule
+    DonationModule,
   ],
 })
 export class WorkerModule {}

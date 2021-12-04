@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from "@angular/router";
+import { RouterModule, Routes } from '@angular/router';
 import { BloodDonatorDonationDetailsPageComponent } from '../../pages/blood-donator/blood-donator-donation-details-page/blood-donator-donation-details-page.component';
 import { BloodExaminedDonationPageComponent } from '../../pages/donation/blood-examined-donation-page/blood-examined-donation-page.component';
 import { DonationPageComponent } from '../../pages/donation/donation-page/donation-page.component';
@@ -15,57 +15,57 @@ import { ExaminationEditPageComponent } from '../../pages/examination/examinatio
 import { ExaminationsPageComponent } from '../../pages/examination/examinations-page/examinations-page.component';
 
 const routes: Routes = [
-  { 
-    path: `donations`, 
-    component: DonationsPageComponent
+  {
+    path: `donations`,
+    component: DonationsPageComponent,
   },
-  { 
-    path: `donations/:donationId`, 
-    component: DonationPageComponent
+  {
+    path: `donations/:donationId`,
+    component: DonationPageComponent,
   },
-  { 
-    path: `donations/:donationId/details`, 
-    component: BloodDonatorDonationDetailsPageComponent
+  {
+    path: `donations/:donationId/details`,
+    component: BloodDonatorDonationDetailsPageComponent,
   },
-  { 
-    path: `queue/registered`, 
-    component: DonationQueueRegisteredComponent
+  {
+    path: `queue/registered`,
+    component: DonationQueueRegisteredComponent,
   },
-  { 
-    path: `queue/registered/:donationId`, 
-    component: RegisteredDonationPageComponent
+  {
+    path: `queue/registered/:donationId`,
+    component: RegisteredDonationPageComponent,
   },
-  { 
-    path: `queue/registered/:donationId/addexamination`, 
-    component: ExaminationsPageComponent
+  {
+    path: `queue/registered/:donationId/addexamination`,
+    component: ExaminationsPageComponent,
   },
-  { 
-    path: `queue/registered/:donationId/editexamination`, 
-    component: ExaminationEditPageComponent
+  {
+    path: `queue/registered/:donationId/editexamination`,
+    component: ExaminationEditPageComponent,
   },
-  { 
-    path: `queue/bloodexamined`, 
-    component: DonationsQueueBloodExaminedComponent
+  {
+    path: `queue/bloodexamined`,
+    component: DonationsQueueBloodExaminedComponent,
   },
-  { 
-    path: `queue/bloodexamined/:donationId`, 
-    component: BloodExaminedDonationPageComponent
+  {
+    path: `queue/bloodexamined/:donationId`,
+    component: BloodExaminedDonationPageComponent,
   },
-  { 
-    path: `queue/bloodexamined/:donationId/adddoctorexamination`, 
-    component: ExaminationDoctorPageComponent
+  {
+    path: `queue/bloodexamined/:donationId/adddoctorexamination`,
+    component: ExaminationDoctorPageComponent,
   },
-  { 
-    path: `queue/qualified`, 
-    component: DonationsQueueQualifiedPageComponent
+  {
+    path: `queue/qualified`,
+    component: DonationsQueueQualifiedPageComponent,
   },
-  { 
-    path: `queue/qualified/:donationId`, 
-    component: QualifiedDonationPageComponent
+  {
+    path: `queue/qualified/:donationId`,
+    component: QualifiedDonationPageComponent,
   },
-  { 
-    path: `donation/:donationId/changestatus`, 
-    component: DonationStatusPageComponent
+  {
+    path: `donation/:donationId/changestatus`,
+    component: DonationStatusPageComponent,
   },
 ];
 
@@ -73,4 +73,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class DonationsRoutingModule { }
+export class DonationsRoutingModule {}

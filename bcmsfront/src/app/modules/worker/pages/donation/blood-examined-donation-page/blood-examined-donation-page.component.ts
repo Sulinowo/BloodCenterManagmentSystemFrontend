@@ -5,21 +5,21 @@ import { BloodExaminedDonationFacadeService } from './blood-examined-donation-fa
 @Component({
   selector: 'app-blood-examined-donation-page',
   templateUrl: './blood-examined-donation-page.component.html',
-  styleUrls: ['./blood-examined-donation-page.component.scss']
+  styleUrls: ['./blood-examined-donation-page.component.scss'],
 })
 export class BloodExaminedDonationPageComponent implements OnInit {
   public donation$ = this.bloodExaminedDonationFacade.donation$;
-  public isExaminationNullable$ = this.bloodExaminedDonationFacade.isExaminationNullable$;
+  public isExaminationNullable$ =
+    this.bloodExaminedDonationFacade.isExaminationNullable$;
   constructor(
-    private bloodExaminedDonationFacade : BloodExaminedDonationFacadeService,
+    private bloodExaminedDonationFacade: BloodExaminedDonationFacadeService,
     private router: Router,
     private route: ActivatedRoute
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     const donationId = this.route.snapshot.paramMap.get('donationId') || '';
     this.bloodExaminedDonationFacade.loadDonation(parseInt(donationId) || -1);
-
   }
 
   public onDetailsClick(): void {
@@ -29,12 +29,13 @@ export class BloodExaminedDonationPageComponent implements OnInit {
 
   public onDoctorExamiationAddClick(): void {
     const donationId = this.route.snapshot.paramMap.get('donationId') || '';
-    this.router.navigate([`worker/queue/bloodexamined/${donationId}/adddoctorexamination`]);
+    this.router.navigate([
+      `worker/queue/bloodexamined/${donationId}/adddoctorexamination`,
+    ]);
   }
 
   public onStatusChangeClick(): void {
     const donationId = this.route.snapshot.paramMap.get('donationId') || '';
     this.router.navigate([`worker/donation/${donationId}/changestatus`]);
   }
-
 }
