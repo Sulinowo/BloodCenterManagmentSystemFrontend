@@ -1,13 +1,11 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  OnInit,
   Output,
   EventEmitter,
 } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { VerifyEmail } from 'src/app/core/models/verify-email';
 
 @Component({
   selector: 'app-register',
@@ -15,8 +13,11 @@ import { VerifyEmail } from 'src/app/core/models/verify-email';
   styleUrls: ['./register.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
   @Output() onEmailClicked = new EventEmitter<string>();
+
+  hide = true;
+  email = new FormControl('', [Validators.required, Validators.email]);
 
   public sendMailForm: FormGroup;
 
@@ -30,15 +31,15 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    // this.route.queryParams.subscribe((queryParams: VerifyEmail) => {
-    //   const parsedParams = this.patientFacade.parseQueryParams(queryParams);
-    //   this.filters = { ...parsedParams };
-    //   this.patientFacade.loadVisits(this.pageOptions, this.filters);
-    // });
-  }
-
   public onEmailClick(): void {
     this.onEmailClicked.emit(this.sendMailForm.value.email);
+  }
+
+  public getErrorMessage() {
+    if (this.email.hasError('required')) {
+      return 'Musisz wprowadzić adres email';
+    }
+
+    return this.email.hasError('email') ? 'Nie poprawny adres email' : '';
   }
 }

@@ -27,6 +27,6 @@ export class WorkerProfilePageComponent implements OnInit {
   }
 
   public setNewPassword() {
-    this.router.navigate(['/admin/resetpassword']);
+    this.router.navigate(['worker/resetpassword']);
   }
 }

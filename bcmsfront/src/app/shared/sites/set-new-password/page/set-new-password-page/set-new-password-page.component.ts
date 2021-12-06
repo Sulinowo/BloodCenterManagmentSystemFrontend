@@ -19,7 +19,7 @@ export class SetNewPasswordPageComponent {
 
     if (email !== undefined && code !== undefined)
       this.setPasswordFacade.setOtherDetails(email, code);
-    else alert('Coś nie działa!');
+    else ;
   }
 
   public onSetPasswordClicked(password: string) {

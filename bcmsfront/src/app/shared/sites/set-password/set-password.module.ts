@@ -8,6 +8,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { SetPasswordRoutingModule } from './set-password-routing.module';
 import { SetPasswordPageComponent } from './pages/set-password-page/set-password-page.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [SetPasswordComponent, SetPasswordPageComponent],
@@ -19,6 +22,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatInputModule,
     MatFormFieldModule,
     MatTooltipModule,
+    MatCardModule,
+    MatButtonModule,
+    FlexLayoutModule,
   ],
 })
 export class SetPasswordModule {}

@@ -1,13 +1,33 @@
-<form [formGroup]="sendMailForm">
-  <mat-form-field>
-    <mat-label>E-mail</mat-label>
-    <input matInput type="email" formControlName="email" />
-  </mat-form-field>
-  <button
-    mat-flat-button
-    [disabled]="sendMailForm.invalid"
-    (click)="onEmailClick()"
-  >
-    <span>Prześlij</span>
-  </button>
-</form>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Rejestracja</mat-card-title>
+    <mat-card-subtitle>Wprowadź email który podałeś w trakcie zakładania konta</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form [formGroup]="sendMailForm">
+      <div>
+        <mat-form-field fxLayout="column" fxFlex="100%">
+          <mat-label>E-mail</mat-label>
+          <input matInput type="email" formControlName="email" />
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+    
+    <div>
+      <button
+        fxFlex="100%"
+        mat-stroked-button
+        color="primary"
+        [disabled]="sendMailForm.invalid"
+        (click)="onEmailClick()"
+      >
+        <span>Prześlij</span>
+      </button>
+    </div>
+    
+  </mat-card-content>
+  
+</mat-card>
+

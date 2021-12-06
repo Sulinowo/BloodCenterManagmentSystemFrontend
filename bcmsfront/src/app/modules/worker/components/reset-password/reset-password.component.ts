@@ -23,11 +23,6 @@ export class ResetPasswordComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.route.queryParams.subscribe((queryParams: VerifyEmail) => {
-    //   const parsedParams = this.patientFacade.parseQueryParams(queryParams);
-    //   this.filters = { ...parsedParams };
-    //   this.patientFacade.loadVisits(this.pageOptions, this.filters);
-    // });
   }
 
   public onEmailClick(): void {
