@@ -24,6 +24,7 @@ import { AdminPanelComponent } from './components/admin-panel/admin-panel.compon
 import { AdminPanelPageComponent } from './pages/admin-panel-page/admin-panel-page.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ResetPasswordPageComponent } from './pages/reset-password-page/reset-password-page.component';
+import { MatCardModule } from '@angular/material/card';
 
 const MATERIAL_MODULES = [
   MatFormFieldModule,
@@ -34,6 +35,7 @@ const MATERIAL_MODULES = [
   MatButtonModule,
   MatTableModule,
   MatDialogModule,
+  MatCardModule,
 ];
 
 @NgModule({

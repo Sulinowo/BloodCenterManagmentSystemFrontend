@@ -21,6 +21,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { BloodDonatorRoutingModule } from './blood-donator-routing.module';
 import { DonationDetailsBloodDonatorComponent } from '../../components/blood-donator/donation-details-blood-donator/donation-details-blood-donator.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
 
 const MATERIAL_ELEMENTS = [
   MatTableModule,
@@ -29,6 +30,7 @@ const MATERIAL_ELEMENTS = [
   MatInputModule,
   MatButtonModule,
   MatDialogModule,
+  MatCardModule,
 ];
 
 @NgModule({

@@ -1,72 +1,128 @@
-<p>add-examination works!</p>
-<form
-  [formGroup]="addExaminationForm"
-  fxLayout="column"
-  class="add-examination-form"
->
-  <h2>Formularz dodawania badań</h2>
-
-  <div class="user-data-container">
-    <mat-form-field>
-      <mat-label>HB</mat-label>
-      <input type="number" matInput formControlName="hb" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>HT</mat-label>
-      <input type="number" matInput formControlName="ht" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>RBC</mat-label>
-      <input type="number" matInput formControlName="rbc" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>WBC</mat-label>
-      <input type="number" matInput formControlName="wbc" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>PLT</mat-label>
-      <input type="number" matInput formControlName="plt" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>MCH</mat-label>
-      <input type="number" matInput formControlName="mch" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>MCHC</mat-label>
-      <input type="number" matInput formControlName="mchc" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>MCV</mat-label>
-      <input type="number" matInput formControlName="mcv" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>NE</mat-label>
-      <input type="number" matInput formControlName="ne" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>EO</mat-label>
-      <input type="number" matInput formControlName="eo" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>BA</mat-label>
-      <input type="number" matInput formControlName="ba" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>LY</mat-label>
-      <input type="number" matInput formControlName="ly" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>MO</mat-label>
-      <input type="number" matInput formControlName="mo" />
-    </mat-form-field>
-
-    <button
-      mat-stroked-button
-      color="primary"
-      (click)="onAddExaminationDialog()"
-      [disabled]="addExaminationForm.invalid"
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Formularz dodawania badania krwii</mat-card-title>
+    <mat-card-subtitle>Wrowadź wyniki z badania krwii</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form
+      [formGroup]="addExaminationForm"
+      fxLayout="column"
+      class="add-examination-form"
     >
-      Dodaj badania
-    </button>
-  </div>
-</form>
+      <div class="user-data-container" fxLayout="column" fxFlex="100%">
+        <div
+          fxLayout="column"
+          fxLayout.gt-sm="row"
+          fxFlex="100%"
+          fxLayoutAlign="space-between"
+        >
+          <mat-form-field>
+            <mat-label>HB</mat-label>
+            <input type="number" matInput formControlName="hb" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>HT</mat-label>
+            <input type="number" matInput formControlName="ht" />
+          </mat-form-field>
+        </div>
+        <div
+          fxLayout="column"
+          fxLayout.gt-sm="row"
+          fxFlex="100%"
+          fxLayoutAlign="space-between"
+        >
+          <mat-form-field>
+            <mat-label>WBC</mat-label>
+            <input type="number" matInput formControlName="wbc" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>RBC</mat-label>
+            <input type="number" matInput formControlName="rbc" />
+          </mat-form-field>
+        </div>
+        <div
+          fxLayout="column"
+          fxLayout.gt-sm="row"
+          fxFlex="100%"
+          fxLayoutAlign="space-between"
+        >
+          <mat-form-field>
+            <mat-label>PLT</mat-label>
+            <input type="number" matInput formControlName="plt" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>MCH</mat-label>
+            <input type="number" matInput formControlName="mch" />
+          </mat-form-field>
+        </div>
+        <div
+          fxLayout="column"
+          fxLayout.gt-sm="row"
+          fxFlex="100%"
+          fxLayoutAlign="space-between"
+        >
+          <mat-form-field>
+            <mat-label>MCHC</mat-label>
+            <input type="number" matInput formControlName="mchc" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>MCV</mat-label>
+            <input type="number" matInput formControlName="mcv" />
+          </mat-form-field>
+        </div>
+        <div
+          fxLayout="column"
+          fxLayout.gt-sm="row"
+          fxFlex="100%"
+          fxLayoutAlign="space-between"
+        >
+          <mat-form-field>
+            <mat-label>NE</mat-label>
+            <input type="number" matInput formControlName="ne" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>EO</mat-label>
+            <input type="number" matInput formControlName="eo" />
+          </mat-form-field>
+        </div>
+        <div
+          fxLayout="column"
+          fxLayout.gt-sm="row"
+          fxFlex="100%"
+          fxLayoutAlign="space-between"
+        >
+          <mat-form-field>
+            <mat-label>BA</mat-label>
+            <input type="number" matInput formControlName="ba" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>LY</mat-label>
+            <input type="number" matInput formControlName="ly" />
+          </mat-form-field>
+        </div>
+        <div
+          fxLayout="column"
+          fxLayout.gt-sm="row"
+          fxFlex="100%"
+          fxLayoutAlign="space-between"
+        >
+          <mat-form-field>
+            <mat-label>MO</mat-label>
+            <input type="number" matInput formControlName="mo" />
+          </mat-form-field>
+        </div>
+
+        <div class="button-container" fxLayout="column">
+          <button
+            mat-stroked-button
+            color="primary"
+            (click)="onAddExaminationDialog()"
+            [disabled]="addExaminationForm.invalid"
+          >
+            Dodaj badania
+          </button>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

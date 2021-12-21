@@ -14,7 +14,6 @@ const routes: Routes = [
   { path: 'donations', component: DonationsPageComponent },
   { path: 'profile', component: WorkerProfilePageComponent },
   { path: 'panel', component: WorkerPanelPageComponent },
-  
 ];
 
 @NgModule({

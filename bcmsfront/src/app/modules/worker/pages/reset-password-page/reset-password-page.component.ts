@@ -8,7 +8,10 @@ import { ResetPasswordFacadeService } from 'src/app/modules/donator/pages/reset-
   styleUrls: ['./reset-password-page.component.scss'],
 })
 export class ResetPasswordPageComponent implements OnInit {
-  constructor(private resetPasswordFacade: ResetPasswordFacadeService, private router: Router) {}
+  constructor(
+    private resetPasswordFacade: ResetPasswordFacadeService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {}
 

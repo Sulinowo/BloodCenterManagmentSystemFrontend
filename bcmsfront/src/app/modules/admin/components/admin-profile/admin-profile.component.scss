@@ -2,6 +2,11 @@ input:disabled {
   color: black;
 }
 
+input:enabled {
+  background-color: rgba($color: green, $alpha: 0.1);
+  border-bottom: 20px;
+}
+
 .edit-data-container {
   width: 100%;
 }

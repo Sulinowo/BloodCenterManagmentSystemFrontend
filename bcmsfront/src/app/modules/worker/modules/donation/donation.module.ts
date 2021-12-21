@@ -26,6 +26,8 @@ import { DonationQualifiedComponent } from '../../components/donation/donation-q
 import { DonationChangeStatusPageComponent } from '../../pages/donation/donation-change-status-page/donation-change-status-page.component';
 import { QualifiedDonationPageComponent } from '../../pages/donation/qualified-donation-page/qualified-donation-page.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const MATERIAL_ELEMENTS = [
   MatTableModule,
@@ -35,6 +37,7 @@ const MATERIAL_ELEMENTS = [
   MatButtonModule,
   MatSelectModule,
   MatDialogModule,
+  MatCardModule,
 ];
 
 @NgModule({
@@ -61,6 +64,7 @@ const MATERIAL_ELEMENTS = [
     DonationsRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    FlexLayoutModule,
     MATERIAL_ELEMENTS,
     SharedModule,
   ],

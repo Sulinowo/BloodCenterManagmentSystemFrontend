@@ -1,5 +1,16 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+} from '@angular/core';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { AuthService } from '../../../../../core/services/auth.service';
 
 @Component({
@@ -9,7 +20,7 @@ import { AuthService } from '../../../../../core/services/auth.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent implements OnInit {
-  @Output() onRegister =  new EventEmitter<void>();
+  @Output() onRegister = new EventEmitter<void>();
 
   hide = true;
 
@@ -20,7 +31,6 @@ export class LoginComponent implements OnInit {
       email: [null, [Validators.required, Validators.email]],
       password: [null, Validators.required],
     });
-    
   }
 
   public ngOnInit(): void {
@@ -40,7 +50,7 @@ export class LoginComponent implements OnInit {
 
   password = new FormControl('', [Validators.required]);
   email = new FormControl('', [Validators.required, Validators.email]);
-  
+
   public getErrorMessage() {
     if (this.email.hasError('required')) {
       return 'Musisz wprowadzić adres email';

@@ -17,6 +17,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { BloodStorageEndDonationPageComponent } from '../../pages/blood-storage/blood-storage-end-donation-page/blood-storage-end-donation-page.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const MATERIAL_ELEMENTS = [
   MatTableModule,
@@ -26,6 +28,8 @@ const MATERIAL_ELEMENTS = [
   MatButtonModule,
   MatSelectModule,
   MatPaginatorModule,
+  MatDialogModule,
+  MatCardModule,
 ];
 
 @NgModule({
@@ -44,6 +48,7 @@ const MATERIAL_ELEMENTS = [
     BloodStorageRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    FlexLayoutModule,
   ],
   exports: [
     BloodStoragePageComponent,

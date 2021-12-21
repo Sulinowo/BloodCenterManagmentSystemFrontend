@@ -7,40 +7,53 @@
       class="edit-button"
     ></app-edit-worker-profile>
   </div>
-  <div class="worker-data-container">
-    <mat-form-field>
-      <mat-label>E-mail</mat-label>
-      <input matInput formControlName="email" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Imię</mat-label>
-      <input matInput formControlName="firstname" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Nazwisko</mat-label>
-      <input matInput formControlName="surname" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Rola</mat-label>
-      <input matInput formControlName="role" />
-    </mat-form-field>
-  </div>
-
   <div
-    class="save-edit-button-wrapper"
-    fxLayoutAlign="end"
-    [fxHide]="showEditable"
+    class="worker-data-container"
+    fxLayoutGap.gt-sm="5%"
+    fxLayoutGap.lt-sm="0%"
+    fxLayout.lt-md="column"
+    fxLayout.gt-sm="row"
   >
-    <button
-      mat-flat-button
-      color="primary"
-      (click)="onEditProfileDialog()"
-      [disabled]="workerDataForm.invalid"
+    <div fxLayout="column" fxFlex.gt-sm="50%">
+      <mat-form-field>
+        <mat-label>Imię</mat-label>
+        <input matInput formControlName="firstname" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>E-mail</mat-label>
+        <input matInput formControlName="email" />
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxFlex.gt-sm="50%">
+      <mat-form-field>
+        <mat-label>Nazwisko</mat-label>
+        <input matInput formControlName="surname" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Rola</mat-label>
+        <input matInput formControlName="role" />
+      </mat-form-field>
+    </div>
+  </div>
+  <div fxLayout="row">
+    <div fxGap="5%" fxLayoutAlign="start center" fxFlex="100%">
+      <button mat-flat-button color="primary" (click)="onSetNewPasswordClick()">
+        Zmień hasło
+      </button>
+    </div>
+    <div
+      class="save-edit-button-wrapper"
+      fxLayoutAlign="end"
+      [fxHide]="showEditable"
     >
-      Zapisz
-    </button>
+      <button
+        mat-flat-button
+        color="primary"
+        (click)="onEditProfileDialog()"
+        [disabled]="workerDataForm.invalid"
+      >
+        Zapisz
+      </button>
+    </div>
   </div>
 </form>
-<button mat-flat-button color="primary" (click)="onSetNewPasswordClick()">
-  Zmień hasło
-</button>

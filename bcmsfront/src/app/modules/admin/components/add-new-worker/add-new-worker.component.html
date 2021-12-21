@@ -1,31 +1,39 @@
-<form [formGroup]="addWorkerForm" fxLayout="column" class="add-worker-form">
-  <h2>Formularz dodania Pracownika</h2>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Formularz dodania Pracownika</mat-card-title>
+    <mat-card-subtitle>Wprowadź dane aby dodać pracownika</mat-card-subtitle>
+  </mat-card-header>
 
-  <div class="add-worker-container">
-    <mat-form-field>
-      <mat-label>E-mail</mat-label>
-      <input matInput formControlName="email" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Hasło</mat-label>
-      <input type="password" matInput formControlName="password" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Imię</mat-label>
-      <input matInput formControlName="firstName" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Nazwisko</mat-label>
-      <input matInput formControlName="surname" />
-    </mat-form-field>
-
-    <button
-      mat-stroked-button
-      color="primary"
-      (click)="onAddWorkerDialog()"
-      [disabled]="addWorkerForm.invalid"
-    >
-      Dodaj pracownika
-    </button>
-  </div>
-</form>
+  <mat-card-content>
+    <form [formGroup]="addWorkerForm" fxLayout="column" class="add-worker-form">
+      <div class="add-worker-container" fxLayout="column" fxFlex="100%">
+        <mat-form-field>
+          <mat-label>E-mail</mat-label>
+          <input matInput formControlName="email" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Hasło</mat-label>
+          <input type="password" matInput formControlName="password" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Imię</mat-label>
+          <input matInput formControlName="firstName" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Nazwisko</mat-label>
+          <input matInput formControlName="surname" />
+        </mat-form-field>
+        <div class="button-container" fxLayout="column">
+          <button
+            mat-stroked-button
+            color="primary"
+            (click)="onAddWorkerDialog()"
+            [disabled]="addWorkerForm.invalid"
+          >
+            Dodaj pracownika
+          </button>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

@@ -1,7 +1,10 @@
 <mat-card>
   <mat-card-header>
     <mat-card-title>Rejestracja</mat-card-title>
-    <mat-card-subtitle>Wprowadź email który podałeś w trakcie zakładania konta</mat-card-subtitle>
+    <mat-card-subtitle
+      >Wprowadź email który podałeś w trakcie zakładania
+      konta</mat-card-subtitle
+    >
   </mat-card-header>
 
   <mat-card-content>
@@ -10,11 +13,11 @@
         <mat-form-field fxLayout="column" fxFlex="100%">
           <mat-label>E-mail</mat-label>
           <input matInput type="email" formControlName="email" />
-          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+          <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
         </mat-form-field>
       </div>
     </form>
-    
+
     <div>
       <button
         fxFlex="100%"
@@ -26,8 +29,5 @@
         <span>Prześlij</span>
       </button>
     </div>
-    
   </mat-card-content>
-  
 </mat-card>
-

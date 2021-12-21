@@ -1,3 +1,25 @@
 input:disabled {
   color: black;
 }
+
+input:enabled {
+  background-color: rgba($color: green, $alpha: 0.1);
+  border-bottom: 20px;
+}
+
+.edit-data-container {
+  width: 100%;
+}
+
+.user-data-form {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.edit-button {
+  margin: 32px 0;
+}
+
+h2 {
+  margin: 32px 10px;
+}

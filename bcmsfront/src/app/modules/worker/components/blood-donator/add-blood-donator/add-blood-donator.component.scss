@@ -1,0 +1,17 @@
+mat-card {
+  margin: 0 auto;
+  margin-top: calc(50vh - 128px - 190px);
+  max-width: 400px;
+  word-wrap: break-word;
+  margin-bottom: 2vh;
+}
+
+.button-container {
+  button {
+    margin-top: 5px;
+  }
+}
+
+mat-form-field {
+  margin-top: 5px;
+}

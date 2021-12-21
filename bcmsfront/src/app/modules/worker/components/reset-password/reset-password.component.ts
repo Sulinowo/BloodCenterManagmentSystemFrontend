@@ -22,8 +22,7 @@ export class ResetPasswordComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   public onEmailClick(): void {
     this.onEmailClicked.emit(this.sendMailForm.value.email);

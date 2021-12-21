@@ -19,6 +19,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ResetPasswordPageComponent } from './pages/reset-password-page/reset-password-page.component';
+import { MatCardModule } from '@angular/material/card';
 
 const MATERIAL_MODULES = [
   MatFormFieldModule,
@@ -29,6 +30,7 @@ const MATERIAL_MODULES = [
   MatButtonModule,
   MatTableModule,
   MatDialogModule,
+  MatCardModule,
 ];
 
 @NgModule({

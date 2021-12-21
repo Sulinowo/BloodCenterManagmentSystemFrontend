@@ -1,28 +1,36 @@
-<p>add-blood-unit works!</p>
-<form
-  [formGroup]="addBloodUnitForm"
-  fxLayout="column"
-  class="add-blood-unit-form"
->
-  <h2>Formularz kończenia donacji</h2>
-
-  <div class="user-data-container">
-    <mat-form-field>
-      <mat-label>Po Covid?</mat-label>
-      <mat-select matNativeControl formControlName="isAfterCovid">
-        <mat-option *ngFor="let covid of afterCovid" [value]="covid.value">
-          {{ covid.viewValue }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <button
-      mat-stroked-button
-      color="primary"
-      (click)="onAddBloodUnitDialog()"
-      [disabled]="addBloodUnitForm.invalid"
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Formularz kończenia donacji</mat-card-title>
+    <mat-card-subtitle
+      >Wybierz dostępną opcję i zakończ donację</mat-card-subtitle
     >
-      Zakończ donację
-    </button>
-  </div>
-</form>
+  </mat-card-header>
+  <mat-card-content>
+    <form
+      [formGroup]="addBloodUnitForm"
+      fxLayout="column"
+      class="add-blood-unit-form"
+    >
+      <div class="user-data-container" fxLayout="column" fxFlex="100%">
+        <mat-form-field>
+          <mat-label>Po Covid?</mat-label>
+          <mat-select matNativeControl formControlName="isAfterCovid">
+            <mat-option *ngFor="let covid of afterCovid" [value]="covid.value">
+              {{ covid.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="button-container" fxLayout="column">
+          <button
+            mat-stroked-button
+            color="primary"
+            (click)="onAddBloodUnitDialog()"
+            [disabled]="addBloodUnitForm.invalid"
+          >
+            Zakończ donację
+          </button>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

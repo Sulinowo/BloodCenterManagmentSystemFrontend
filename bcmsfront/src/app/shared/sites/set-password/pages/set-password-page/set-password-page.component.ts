@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class SetPasswordPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
-    private setPasswordFacade: SetPasswordFacadeService,
+    private setPasswordFacade: SetPasswordFacadeService
   ) {}
 
   public ngOnInit() {
@@ -20,7 +20,7 @@ export class SetPasswordPageComponent implements OnInit {
 
     if (email !== undefined && code !== undefined)
       this.setPasswordFacade.setOtherDetails(email, code);
-    else ;
+    else;
   }
 
   public onSetPasswordClicked(password: string) {
