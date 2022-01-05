@@ -13,8 +13,15 @@
     >
       <div class="user-data-container" fxLayout="column" fxFlex="100%">
         <mat-form-field>
-          <mat-label>Nazwa grupy krwi</mat-label>
-          <input matInput formControlName="bloodTypeName" />
+          <mat-label>Grupa krwii</mat-label>
+          <mat-select matNativeControl formControlName="bloodTypeName">
+            <mat-option
+              *ngFor="let bloodType of bloodTypeName"
+              [value]="bloodType.value"
+            >
+              {{ bloodType.viewValue }}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
         <mat-form-field>
           <mat-label>Identyfikator banku krwi</mat-label>

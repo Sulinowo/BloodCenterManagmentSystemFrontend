@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BloodStorage } from 'src/app/core/models/bloodstorage';
 import { BloodStorageFacadeService } from './blood-storage-facade.service';
@@ -7,6 +7,7 @@ import { BloodStorageFacadeService } from './blood-storage-facade.service';
   selector: 'app-blood-storage-page',
   templateUrl: './blood-storage-page.component.html',
   styleUrls: ['./blood-storage-page.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BloodStoragePageComponent implements OnInit {
   public bloodUnits$ = this.bloodStorageFacade.bloodUnits$;

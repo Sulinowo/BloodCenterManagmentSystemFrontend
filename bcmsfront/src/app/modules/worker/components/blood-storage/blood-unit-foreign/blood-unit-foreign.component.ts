@@ -9,6 +9,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { BloodStorageForeign } from 'src/app/core/models/bloodstorage';
 import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
 
+interface BloodType {
+  value: string;
+  viewValue: string;
+}
+
 interface Covid {
   value: boolean;
   viewValue: string;
@@ -24,6 +29,17 @@ export class BloodUnitForeignComponent {
   @Output() onAddBloodUnitClick = new EventEmitter<BloodStorageForeign>();
 
   public addForeignBloodUnitForm: FormGroup;
+
+  bloodTypeName: BloodType[] = [
+    { value: '0Rh+', viewValue: '0Rh+' },
+    { value: '0Rh-', viewValue: '0Rh-' },
+    { value: 'ARh+', viewValue: 'ARh+' },
+    { value: 'ARh-', viewValue: 'ARh-' },
+    { value: 'BRh+', viewValue: 'BRh+' },
+    { value: 'BRh-', viewValue: 'BRh-' },
+    { value: 'ABRh+', viewValue: 'ABRh+' },
+    { value: 'ABRh-', viewValue: 'ABRh-' },
+  ];
 
   constructor(private formBuilder: FormBuilder, private dialog: MatDialog) {
     this.addForeignBloodUnitForm = this.formBuilder.group({

@@ -15,8 +15,10 @@ export class DonationsStagePipe implements PipeTransform {
       return 'Porzucony';
     } else if (value === 'donation finished') {
       return 'Zakończony';
-    } else {
+    } else if (value === 'not qualified') {
       return 'Niezakwalifikowany';
+    } else {
+      return value;
     }
   }
 }

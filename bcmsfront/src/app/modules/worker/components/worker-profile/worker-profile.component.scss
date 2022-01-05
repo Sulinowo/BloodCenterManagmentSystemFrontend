@@ -23,3 +23,14 @@ input:enabled {
 h2 {
   margin: 32px 10px;
 }
+
+.role-container {
+  background-image: linear-gradient(
+    to right,
+    black 20%,
+    rgba(255, 255, 255, 0) 0%
+  );
+  background-position: bottom;
+  background-size: 4px 1px;
+  background-repeat: repeat-x;
+}

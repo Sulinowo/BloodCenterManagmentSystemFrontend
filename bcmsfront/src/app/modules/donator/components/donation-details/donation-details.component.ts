@@ -10,10 +10,17 @@ import { DonationDetails } from '../../../../core/models/donation-details';
 export class DonationDetailsComponent {
   @Input() dataSource: DonationDetails | null;
 
-  columns: string[] = [
+  columnsOne: string[] = [
     'stage',
     'donationDate',
     'rejectionReason',
+    'bloodPressureUpper',
+    'bloodPressureLower',
+    'height',
+    'weight',
+  ];
+
+  columnsTwo: string[] = [
     'hb',
     'ht',
     'rbc',
@@ -27,9 +34,5 @@ export class DonationDetailsComponent {
     'ba',
     'ly',
     'mo',
-    'bloodPressureUpper',
-    'bloodPressureLower',
-    'height',
-    'weight',
   ];
 }

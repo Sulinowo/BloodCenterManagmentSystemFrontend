@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { DonationDetails } from 'src/app/core/models/donation-details';
 
 @Component({
@@ -10,10 +15,17 @@ import { DonationDetails } from 'src/app/core/models/donation-details';
 export class DonationDetailsBloodDonatorComponent {
   @Input() dataSource: DonationDetails | null;
 
-  columns: string[] = [
+  columnsOne: string[] = [
     'stage',
     'donationDate',
     'rejectionReason',
+    'bloodPressureUpper',
+    'bloodPressureLower',
+    'height',
+    'weight',
+  ];
+
+  columnsTwo: string[] = [
     'hb',
     'ht',
     'rbc',
@@ -27,9 +39,5 @@ export class DonationDetailsBloodDonatorComponent {
     'ba',
     'ly',
     'mo',
-    'bloodPressureUpper',
-    'bloodPressureLower',
-    'height',
-    'weight',
   ];
 }

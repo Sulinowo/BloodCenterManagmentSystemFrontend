@@ -1,6 +1,10 @@
 table {
+  min-width: 1000px;
   width: 100%;
-  margin-top: 10px;
+}
+
+.table-container {
+  overflow: scroll;
 }
 
 .mat-row:hover .mat-cell {
@@ -18,4 +22,8 @@ table {
 }
 .mat-cell {
   width: 25%;
+}
+
+h2 {
+  margin: 25px 0;
 }

@@ -22,6 +22,7 @@ import { BloodDonatorRoutingModule } from './blood-donator-routing.module';
 import { DonationDetailsBloodDonatorComponent } from '../../components/blood-donator/donation-details-blood-donator/donation-details-blood-donator.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
 
 const MATERIAL_ELEMENTS = [
   MatTableModule,
@@ -31,6 +32,7 @@ const MATERIAL_ELEMENTS = [
   MatButtonModule,
   MatDialogModule,
   MatCardModule,
+  MatSelectModule,
 ];
 
 @NgModule({

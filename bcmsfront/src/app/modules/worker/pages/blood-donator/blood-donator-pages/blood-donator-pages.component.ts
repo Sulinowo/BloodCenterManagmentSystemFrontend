@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Donator } from 'src/app/core/models/donator';
 import { BloodDonatorFacadeService } from './blood-donator-facade.service';
 
@@ -11,7 +12,10 @@ import { BloodDonatorFacadeService } from './blood-donator-facade.service';
 export class BloodDonatorPagesComponent implements OnInit {
   public donators$ = this.bloodDonatorFacade.donators$;
 
-  constructor(private bloodDonatorFacade: BloodDonatorFacadeService) {}
+  constructor(
+    private bloodDonatorFacade: BloodDonatorFacadeService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.bloodDonatorFacade.loadDonators();
@@ -20,6 +24,7 @@ export class BloodDonatorPagesComponent implements OnInit {
 
   public addDonator(data: Donator): void {
     this.bloodDonatorFacade.addDonator(data);
+    this.bloodDonatorFacade.loadDonators();
   }
 
   public onAddDonationClick(data: Donator): void {

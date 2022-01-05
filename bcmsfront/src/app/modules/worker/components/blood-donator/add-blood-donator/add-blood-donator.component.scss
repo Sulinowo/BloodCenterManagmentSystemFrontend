@@ -1,9 +1,13 @@
 mat-card {
   margin: 0 auto;
-  margin-top: calc(50vh - 128px - 190px);
+  margin-top: 25px;
   max-width: 400px;
   word-wrap: break-word;
   margin-bottom: 2vh;
+}
+
+.mobile-card {
+  margin-top: calc(50vh - 128px - 190px);
 }
 
 .button-container {

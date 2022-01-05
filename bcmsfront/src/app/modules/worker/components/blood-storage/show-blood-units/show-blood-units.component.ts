@@ -21,7 +21,6 @@ export class ShowBloodUnitsComponent {
 
   displayedColumns: string[] = [
     'lokalizacja',
-    'dostepnosc',
     'covid',
     'grupaKrwii',
     'ustawNiedostepny',

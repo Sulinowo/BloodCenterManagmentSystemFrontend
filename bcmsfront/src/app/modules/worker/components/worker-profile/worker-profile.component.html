@@ -29,10 +29,10 @@
         <mat-label>Nazwisko</mat-label>
         <input matInput formControlName="surname" />
       </mat-form-field>
-      <mat-form-field>
-        <mat-label>Rola</mat-label>
-        <input matInput formControlName="role" />
-      </mat-form-field>
+      <mat-label>Rola</mat-label>
+      <div class="role-container">
+        {{ state?.role === 'Worker' ? 'Pracownik' : '' }}
+      </div>
     </div>
   </div>
   <div fxLayout="row">

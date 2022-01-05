@@ -1,6 +1,20 @@
-table {
+.tableOne {
   margin-top: 25px;
+  min-width: 1000px;
   width: 100%;
+  table-layout: auto;
+}
+
+.table-container {
+  overflow: scroll;
+}
+
+.tableTwo {
+  margin-top: 25px;
+  min-width: 1000px;
+  width: 100%;
+  table-layout: fixed;
+  overflow-wrap: break-word;
 }
 
 .mat-header-cell {
@@ -12,6 +26,6 @@ table {
   height: 40px;
 }
 
-.mat-cell {
-  width: 25%;
+h2 {
+  margin: 25px 0;
 }

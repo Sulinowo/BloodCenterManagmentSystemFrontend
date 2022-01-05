@@ -6,7 +6,6 @@ import {
   Output,
 } from '@angular/core';
 import { Donation } from 'src/app/core/models/donation';
-import { DonationDetails } from 'src/app/core/models/donation-details';
 
 @Component({
   selector: 'app-user-donations',

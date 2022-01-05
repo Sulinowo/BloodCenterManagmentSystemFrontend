@@ -1,5 +1,5 @@
 export interface Examination {
-  donationId: number;
+  donationId?: number;
   hb: number;
   ht: number;
   rbc: number;

@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class.lt-md="mobile-card">
   <mat-card-header>
     <mat-card-title>Formularz dodania krwiodawcy</mat-card-title>
     <mat-card-subtitle>Wpisz dane krwiodawcy</mat-card-subtitle>
@@ -36,7 +36,14 @@
         </mat-form-field>
         <mat-form-field>
           <mat-label>Grupa krwii</mat-label>
-          <input matInput formControlName="bloodTypeName" />
+          <mat-select matNativeControl formControlName="bloodTypeName">
+            <mat-option
+              *ngFor="let bloodType of bloodTypeName"
+              [value]="bloodType.value"
+            >
+              {{ bloodType.viewValue }}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
         <div class="button-container" fxLayout="column">
           <button

@@ -9,6 +9,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { Donator } from 'src/app/core/models/donator';
 import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
 
+interface BloodType {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-add-blood-donator',
   templateUrl: './add-blood-donator.component.html',
@@ -32,10 +37,16 @@ export class AddBloodDonatorComponent {
     });
   }
 
-  // public onAddBloodDonator(): void {
-  //   this.onAddDonator.emit(this.addBloodDonatorForm.value);
-  //   console.log(this.addBloodDonatorForm.value);
-  // }
+  bloodTypeName: BloodType[] = [
+    { value: '0Rh+', viewValue: '0Rh+' },
+    { value: '0Rh-', viewValue: '0Rh-' },
+    { value: 'ARh+', viewValue: 'ARh+' },
+    { value: 'ARh-', viewValue: 'ARh-' },
+    { value: 'BRh+', viewValue: 'BRh+' },
+    { value: 'BRh-', viewValue: 'BRh-' },
+    { value: 'ABRh+', viewValue: 'ABRh+' },
+    { value: 'ABRh-', viewValue: 'ABRh-' },
+  ];
 
   onAddBloodDonatorDialog() {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {

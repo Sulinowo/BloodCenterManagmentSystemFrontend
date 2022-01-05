@@ -35,6 +35,7 @@ export class BloodStorageFacadeService {
       .setBloodUnitNotAvailable(bloodUnitId)
       .subscribe((data) => {
         this.bloodStorageService.setBloodUnitNotAvailable(data);
+        this.loadBloodUnits();
       });
   }
 }

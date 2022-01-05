@@ -10,6 +10,7 @@ import { SearchFilterPipe } from './pipe/search-filter.pipe';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { RolePipe } from './pipe/role.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
     SearchFilterPipe,
     SearchFilterPipe,
     ConfirmDialogComponent,
+    RolePipe,
   ],
   imports: [CommonModule, LayoutModule, MatDialogModule, MatButtonModule],
   exports: [
@@ -29,6 +31,7 @@ import { MatButtonModule } from '@angular/material/button';
     BloodStoragePipe,
     BloodTypeNamePipePipe,
     SearchFilterPipe,
+    RolePipe,
   ],
 })
 export class SharedModule {}

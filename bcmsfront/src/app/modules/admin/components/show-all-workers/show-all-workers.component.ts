@@ -22,10 +22,10 @@ export class ShowAllWorkersComponent {
   constructor(private dialog: MatDialog) {}
 
   displayedColumns: string[] = [
-    'email',
     'firstName',
     'surname',
     'role',
+    'email',
     'delete',
   ];
 

@@ -33,6 +33,6 @@ export class ProfilePageComponent implements OnInit {
   }
 
   public setNewPassword() {
-    this.router.navigate(['/resetpassword']);
+    this.router.navigate(['profile/resetpassword']);
   }
 }
