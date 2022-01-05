@@ -44,8 +44,8 @@ export class BloodUnitForeignComponent {
   constructor(private formBuilder: FormBuilder, private dialog: MatDialog) {
     this.addForeignBloodUnitForm = this.formBuilder.group({
       bloodTypeName: [null, Validators.required],
-      foreignBloodUnitId: [null, Validators.required],
-      bloodUnitLocation: [null, Validators.required],
+      foreignBloodUnitId: [null],
+      bloodUnitLocation: [null],
       isAfterCovid: [null, Validators.required],
     });
   }
