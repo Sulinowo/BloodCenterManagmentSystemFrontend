@@ -40,10 +40,6 @@ export class AddExaminationComponent {
     });
   }
 
-  // public onAddExamination(): void {
-  //   this.onAddExaminationClick.emit(this.addExaminationForm.value);
-  // }
-
   public onAddExaminationDialog(): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: {

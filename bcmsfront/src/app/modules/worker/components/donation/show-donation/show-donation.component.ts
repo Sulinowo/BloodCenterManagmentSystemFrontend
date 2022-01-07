@@ -5,7 +5,6 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { DonationDetails } from 'src/app/core/models/donation-details';
 import { DonationFull } from 'src/app/core/models/donation-full';
 
 @Component({

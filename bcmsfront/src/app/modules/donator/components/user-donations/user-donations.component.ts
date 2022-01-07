@@ -23,6 +23,5 @@ export class UserDonationsComponent {
 
   public donationListClick(donation: Donation): void {
     this.donationClick.emit(donation);
-    console.log('siema', donation);
   }
 }

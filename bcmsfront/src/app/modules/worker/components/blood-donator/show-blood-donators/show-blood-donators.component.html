@@ -2,7 +2,7 @@
   <h2>Wyszukaj krwiodawcę po peselu</h2>
   <mat-form-field appearance="standard">
     <mat-label>Wyszukaj</mat-label>
-    <input matInput [(ngModel)]="searchText" />
+    <input matInput [(ngModel)]="searchText" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" />
   </mat-form-field>
 </div>
 <div class="table-container">

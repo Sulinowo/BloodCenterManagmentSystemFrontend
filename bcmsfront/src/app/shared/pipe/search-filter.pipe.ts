@@ -1,17 +1,12 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { Donator } from 'src/app/core/models/donator';
 
 @Pipe({
   name: 'searchFilter',
 })
 export class SearchFilterPipe implements PipeTransform {
-  transform(value: any, args?: any): any {
-    if (!value) return null;
-    if (!args) return value;
-
-    args = args.toLowerCase();
-    debugger;
-    return value.filter((item: any) => {
-      return JSON.stringify(item).toLowerCase().includes(args);
-    });
+  transform(donators: Donator[], searchText: string) {
+    return donators.filter(donator =>( 
+      donator.pesel.indexOf(searchText) !== -1));
   }
 }

@@ -17,7 +17,7 @@
     <button class="nav-item" mat-flat-button>Informacje</button>
   </a>
   <a routerLink="/donationprocess">
-    <button class="nav-item" mat-flat-button>Proces oddawania krwii</button>
+    <button class="nav-item" mat-flat-button>Proces donacji</button>
   </a>
 
   <ng-container *ngIf="loggedIn; then user; else guest"></ng-container>
@@ -29,17 +29,14 @@
   </ng-template>
 
   <ng-template #user>
-    <!--donator-->
     <a *ngIf="['Donator', 'User'].includes(role)" routerLink="/profile">
       <button class="nav-item" mat-flat-button>Profil</button>
     </a>
-    <!--worker-->
     <a *ngIf="['Worker'].includes(role)" routerLink="/worker/panel">
       <button class="nav-item" mat-flat-button>Panel pracownika</button>
     </a>
-    <!--admin-->
     <a *ngIf="['Admin'].includes(role)" routerLink="/admin/panel">
-      <button class="nav-item" mat-flat-button>Panel administratora</button>
+      <button class="nav-item" mat-flat-button>Panel admina</button>
     </a>
     <a routerLink="/">
       <button class="nav-item" mat-flat-button (click)="onLogoutClick()">

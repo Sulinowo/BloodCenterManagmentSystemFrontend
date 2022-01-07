@@ -1,10 +1,11 @@
 table {
   min-width: 1000px;
   width: 100%;
+  
 }
 
 .table-container {
-  overflow: scroll;
+  overflow: auto;
 }
 
 .on-hover-td:hover {

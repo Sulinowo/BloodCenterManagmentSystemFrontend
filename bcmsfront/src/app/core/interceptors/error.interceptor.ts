@@ -29,10 +29,8 @@ export class ErrorInterceptor implements HttpInterceptor {
           /^(\/api\/)/i.test(request.url) &&
           [401, 403, 500].includes(error.status)
         ) {
-          console.log('api error (logout)', error);
           this.auth.logout();
         } else {
-          console.log(error);
           const messages =
             error.error !== null
               ? error.error.map(
@@ -43,7 +41,7 @@ export class ErrorInterceptor implements HttpInterceptor {
               : '';
           const message =
             messages.length === 0
-              ? 'API samo nie wie czemu nie działa.'
+              ? 'API error.'
               : messages.join(',');
 
           this.matSnackBar.open(`API ERROR: ${message}`, 'Close', {
@@ -51,7 +49,6 @@ export class ErrorInterceptor implements HttpInterceptor {
           });
 
           if (request.method !== 'POST')
-            // includes
             this.router.navigate(['']);
         }
         return throwError(error);

@@ -19,7 +19,6 @@ export class BloodDonatorPagesComponent implements OnInit {
 
   ngOnInit(): void {
     this.bloodDonatorFacade.loadDonators();
-    this.donators$.subscribe((data) => console.log('nowe dane', data));
   }
 
   public addDonator(data: Donator): void {

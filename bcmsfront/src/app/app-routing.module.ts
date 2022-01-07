@@ -69,7 +69,6 @@ const routes: Routes = [
       ),
     canActivate: [AuthGuard],
   },
-  //donator
   {
     path: 'profile',
     loadChildren: () =>
@@ -79,8 +78,6 @@ const routes: Routes = [
       roles: ['Donator', 'User'],
     },
   },
-
-  //worker
   {
     path: 'worker',
     loadChildren: () =>
@@ -90,8 +87,6 @@ const routes: Routes = [
       roles: ['Worker'],
     },
   },
-
-  //admin
   {
     path: 'admin',
     loadChildren: () =>

@@ -18,5 +18,6 @@ export class BloodStorageEndDonationPageComponent implements OnInit {
 
   public onAddBloodUnitClick(data: EndDonation): void {
     this.bloodStorageEndFacade.addBloodUnit(data);
+    this.router.navigate(['/worker/bloodstorage']);
   }
 }

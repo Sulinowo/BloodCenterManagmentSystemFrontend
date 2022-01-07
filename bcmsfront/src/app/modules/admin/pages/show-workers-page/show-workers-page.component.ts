@@ -15,7 +15,6 @@ export class ShowWorkersPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.showWorkersFacade.loadWorkers();
-    this.workers$.subscribe((data) => console.log('nowe dane111', data));
   }
 
   public onDeleteWorker(worker: Worker): void {

@@ -22,13 +22,5 @@ export class SetNewPasswordFacadeService {
   ) {
     this.userEmail = userEmail;
     this.code = code;
-
-    this.adminClient.verifyCode(code || '').subscribe(
-      (data) => {},
-      (err) => {
-        console.log(err);
-        // this.router.navigate(['/'])
-      }
-    );
   }
 }

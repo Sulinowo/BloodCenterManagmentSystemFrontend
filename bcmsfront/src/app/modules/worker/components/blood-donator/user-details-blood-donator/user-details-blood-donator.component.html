@@ -52,10 +52,10 @@
       </mat-form-field>
     </div>
   </div>
-  <div fxLayout="row">
-    <div fxGap="5%" fxLayoutAlign="start center" fxFlex="100%">
+  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="2%">
+    <div fxGap="5%" fxLayoutAlign="start center" fxLayoutAlign.lt-md="center" fxFlex="100%">
       <button
-        mat-flat-button
+        mat-stroked-button
         color="primary"
         (click)="onShowDonationListClick()"
       >
@@ -65,10 +65,11 @@
     <div
       class="save-edit-button-wrapper"
       fxLayoutAlign="end"
+      fxLayoutAlign.lt-md="center"
       [fxHide]="showEditable"
     >
       <button
-        mat-flat-button
+        mat-stroked-button
         color="primary"
         (click)="onEditProfileDialog()"
         [disabled]="userDataForm.invalid"

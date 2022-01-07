@@ -34,11 +34,9 @@ export class LoginComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    if (this.auth.loggedIn()) console.log(`role: ${this.auth.getRole()}`);
   }
 
   public onLoginClicked(): void {
-    console.log(this.loginForm.value);
     this.auth
       .login(this.loginForm.value['email'], this.loginForm.value['password'])
       .subscribe();

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -7,7 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './reset-password.component.html',
   styleUrls: ['./reset-password.component.scss'],
 })
-export class ResetPasswordComponent implements OnInit {
+export class ResetPasswordComponent {
   @Output() onEmailClicked = new EventEmitter<string>();
 
   public sendMailForm: FormGroup;
@@ -20,14 +20,6 @@ export class ResetPasswordComponent implements OnInit {
     this.sendMailForm = this.formBuilder.group({
       email: [null, [Validators.required, Validators.email]],
     });
-  }
-
-  ngOnInit(): void {
-    // this.route.queryParams.subscribe((queryParams: VerifyEmail) => {
-    //   const parsedParams = this.patientFacade.parseQueryParams(queryParams);
-    //   this.filters = { ...parsedParams };
-    //   this.patientFacade.loadVisits(this.pageOptions, this.filters);
-    // });
   }
 
   public onEmailClick(): void {

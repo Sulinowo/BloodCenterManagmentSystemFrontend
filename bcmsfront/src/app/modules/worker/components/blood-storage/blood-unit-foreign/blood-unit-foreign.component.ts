@@ -52,7 +52,6 @@ export class BloodUnitForeignComponent {
 
   public onAddBloodUnit(): void {
     this.onAddBloodUnitClick.emit(this.addForeignBloodUnitForm.value);
-    console.log(this.addForeignBloodUnitForm.value);
   }
 
   afterCovid: Covid[] = [

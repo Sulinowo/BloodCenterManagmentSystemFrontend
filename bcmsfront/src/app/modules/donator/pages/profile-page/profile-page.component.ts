@@ -28,10 +28,6 @@ export class ProfilePageComponent implements OnInit {
     this.profileFacade.editProfile(user);
   }
 
-  public onDonationClick(donation: Donation) {
-    console.log(donation);
-  }
-
   public setNewPassword() {
     this.router.navigate(['profile/resetpassword']);
   }

@@ -22,11 +22,11 @@ export class WorkerClientService {
   constructor(private httpClient: HttpClient) {}
 
   public getBloodDonatorByID(id: number): Observable<Donator> {
-    return this.httpClient.get<Donator>(`/api/blooddonators/${id}`); //
+    return this.httpClient.get<Donator>(`/api/blooddonators/${id}`);
   }
 
   public getAllBloodDonators(): Observable<Donator[]> {
-    return this.httpClient.get<Donator[]>(`/api/blooddonators`); //
+    return this.httpClient.get<Donator[]>(`/api/blooddonators`);
   }
 
   public addDonator(data: any): Observable<Donator> {
@@ -40,13 +40,13 @@ export class WorkerClientService {
         firstname: data.firstName,
         surname: data.surname,
       },
-    }); //
+    });
   }
 
   public getBloodDonatorDonations(userId: number): Observable<Donation[]> {
     return this.httpClient.get<Donation[]>(
       `/api/blooddonators/${userId}/donations`
-    ); //
+    );
   }
 
   public addBloodUnitToStorage(
@@ -56,11 +56,11 @@ export class WorkerClientService {
     return this.httpClient.post<BloodStorage>(`/api/bloodstorages`, {
       donationId,
       isAfterCovid,
-    }); //
+    });
   }
 
   public getAllAvailableBloodUnit(): Observable<BloodStorage[]> {
-    return this.httpClient.get<BloodStorage[]>(`/api/bloodstorages`); //
+    return this.httpClient.get<BloodStorage[]>(`/api/bloodstorages`);
   }
 
   public addBloodUnitFromForeignBloodBank(
@@ -74,7 +74,7 @@ export class WorkerClientService {
       foreignBloodUnitId,
       bloodUnitLocation,
       isAfterCovid,
-    }); //
+    });
   }
 
   public setBloodUnitNotAvailable(
@@ -83,7 +83,7 @@ export class WorkerClientService {
     return this.httpClient.patch<BloodStorage>(
       `/api/bloodstorages/${bloodUnitId}`,
       {}
-    ); //
+    );
   }
 
   public addDonation(userId: number): Observable<DonationFull> {
@@ -101,7 +101,7 @@ export class WorkerClientService {
   public getDonationDetails(donationId: number): Observable<DonationDetails> {
     return this.httpClient.get<DonationDetails>(
       `/api/donations/${donationId}/details`
-    ); //
+    );
   }
 
   public getDonation(donationId: number): Observable<DonationFull> {
@@ -109,7 +109,7 @@ export class WorkerClientService {
   }
 
   public addExamination(data: Examination): Observable<Examination> {
-    return this.httpClient.post<Examination>(`/api/examinations`, { ...data }); //
+    return this.httpClient.post<Examination>(`/api/examinations`, { ...data });
   }
 
   public addExaminationPatch(
@@ -117,7 +117,7 @@ export class WorkerClientService {
   ): Observable<ExaminationPatch> {
     return this.httpClient.patch<ExaminationPatch>(`/api/examinations`, {
       ...data,
-    }); //
+    });
   }
 
   public editExamination(data: EditExamination): Observable<EditExamination> {
@@ -130,7 +130,7 @@ export class WorkerClientService {
   }
 
   public updateProfileData(data: UserData): Observable<UserData> {
-    return this.httpClient.patch<UserData>(`/api/blooddonators`, { ...data }); //
+    return this.httpClient.patch<UserData>(`/api/blooddonators`, { ...data }); 
   }
 
   public getRegisteredQueue(): Observable<DonationGet[]> {
@@ -156,11 +156,11 @@ export class WorkerClientService {
   }
 
   public editWorkerProfile(data: EditWorker): Observable<EditWorker> {
-    return this.httpClient.patch<EditWorker>(`/api/users`, { ...data }); //
+    return this.httpClient.patch<EditWorker>(`/api/users`, { ...data });
   }
 
   public editAdminProfile(data: EditWorker): Observable<EditWorker> {
-    return this.httpClient.patch<EditWorker>(`/api/users`, { ...data }); //
+    return this.httpClient.patch<EditWorker>(`/api/users`, { ...data });
   }
 
   public sendResetPasswordEmail(email: string) {

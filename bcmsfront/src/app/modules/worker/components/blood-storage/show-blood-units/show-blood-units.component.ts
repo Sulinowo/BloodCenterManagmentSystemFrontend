@@ -20,6 +20,7 @@ export class ShowBloodUnitsComponent {
   @Output() bloodUnitClick = new EventEmitter<BloodStorage>();
 
   displayedColumns: string[] = [
+    'id',
     'lokalizacja',
     'covid',
     'grupaKrwii',

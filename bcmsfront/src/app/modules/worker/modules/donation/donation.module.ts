@@ -28,6 +28,7 @@ import { QualifiedDonationPageComponent } from '../../pages/donation/qualified-d
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatSortModule } from '@angular/material/sort';
 
 const MATERIAL_ELEMENTS = [
   MatTableModule,
@@ -38,6 +39,7 @@ const MATERIAL_ELEMENTS = [
   MatSelectModule,
   MatDialogModule,
   MatCardModule,
+  MatSortModule,
 ];
 
 @NgModule({

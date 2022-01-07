@@ -89,7 +89,7 @@
   <button
     mat-stroked-button
     color="primary"
-    [fxHide]="!mozna"
+    [fxHide]="!editable"
     (click)="onExamiationAddClick()"
   >
     Dodaj wyniki badania krwii
@@ -98,7 +98,7 @@
   <button
     mat-stroked-button
     color="primary"
-    [fxHide]="mozna"
+    [fxHide]="editable"
     (click)="onExamiationEditClick()"
   >
     Edytuj wyniki badania krwii

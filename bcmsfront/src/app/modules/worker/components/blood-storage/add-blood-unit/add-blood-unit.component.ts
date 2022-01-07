@@ -35,7 +35,6 @@ export class AddBloodUnitComponent {
 
   public onAddBloodUnit(): void {
     this.onAddBloodUnitClick.emit(this.addBloodUnitForm.value);
-    console.log(this.addBloodUnitForm.value);
   }
 
   afterCovid: Covid[] = [

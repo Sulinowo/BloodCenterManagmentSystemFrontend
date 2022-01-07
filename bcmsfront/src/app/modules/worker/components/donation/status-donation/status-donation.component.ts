@@ -34,11 +34,6 @@ export class StatusDonationComponent {
     });
   }
 
-  // public onChangeStatus(): void {
-  //   this.onChangeStatusClick.emit(this.changeStatusForm.value);
-  //   console.log(this.changeStatusForm.value);
-  // }
-
   stage: Stage[] = [
     { value: 'registered', viewValue: 'Zarejestrowany' },
     { value: 'blood examined', viewValue: 'Krew zbadana' },

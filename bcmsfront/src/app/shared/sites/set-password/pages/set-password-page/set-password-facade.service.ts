@@ -20,14 +20,6 @@ export class SetPasswordFacadeService {
   ) {
     this.userEmail = userEmail;
     this.code = code;
-
-    this.setPasswordClient.verifyCode(code || '').subscribe(
-      (data) => {},
-      (err) => {
-        console.log(err);
-        // this.router.navigate(['/'])
-      }
-    );
   }
 
   public setPassword(password: string) {

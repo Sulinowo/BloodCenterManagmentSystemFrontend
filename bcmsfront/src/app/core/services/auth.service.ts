@@ -20,11 +20,10 @@ export class AuthService {
     this.user = new BehaviorSubject<User>(
       JSON.parse(localStorage.getItem('user') || '{}')
     );
-    if (this.user.value) console.log('read localStorage', this.user.value);
+    if (this.user.value)
 
     if (this.loggedIn()) {
       this.startRefreshToken();
-      console.log('logged');
     }
   }
 
@@ -38,7 +37,6 @@ export class AuthService {
         map((user) => {
           this.readToken(user);
           this.startRefreshToken();
-          console.log('login', user, this.user.value);
           this.router.navigate(['/']).then();
         })
       );
@@ -79,16 +77,13 @@ export class AuthService {
       if (this.timer) clearTimeout(this.timer);
 
       this.timer = setTimeout(() => this.refreshToken(), timeout);
-      console.log('new timer', expires, timeout);
     }
   }
 
   public refreshToken(next = true): void {
-    console.log('start refresh token');
     this.http.post<Response>('/api/auth/regeneratetoken', {}).subscribe(
       (user) => {
         this.readToken(user);
-        console.log('token refresed', user, this.user.value);
         this.startRefreshToken();
       },
       (error) => {

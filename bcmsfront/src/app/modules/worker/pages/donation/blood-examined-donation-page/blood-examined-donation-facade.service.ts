@@ -16,7 +16,7 @@ export class BloodExaminedDonationFacadeService {
         Object.keys(x).length === 0 ||
         x.resultOfExamination === null ||
         x.resultOfExamination.height === 0
-      ); // 0 zamiast null
+      );
     })
   );
   constructor(

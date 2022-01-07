@@ -5,7 +5,6 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Donator } from 'src/app/core/models/donator';
 import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
@@ -30,22 +29,18 @@ export class ShowBloodDonatorsComponent {
     'donacja',
     'edycja',
   ];
-  public searchBloodDonatorForm: FormGroup;
+  
 
-  constructor(private formBuilder: FormBuilder, private dialog: MatDialog) {
-    this.searchBloodDonatorForm = this.formBuilder.group({
-      pesel: [null],
-    });
+  constructor(private dialog: MatDialog) {
+    this.searchText = '';
   }
 
   public donatorListClick(donator: Donator): void {
     this.donatorClick.emit(donator);
-    console.log('siema', donator);
   }
 
   public onAddDonationClick(donator: Donator): void {
     this.addDonationClick.emit(donator);
-    console.log('hey', donator);
   }
 
   onAddDonationDialog(donator: Donator) {

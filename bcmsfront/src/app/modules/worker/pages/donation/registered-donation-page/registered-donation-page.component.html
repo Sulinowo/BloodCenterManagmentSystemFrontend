@@ -1,7 +1,7 @@
 <app-donation-registered
   [dataSource]="[donation$ | async]"
-  [mozna]="(isExaminationNullable$ | async)! || false"
-  [mozna2]="(isExaminationNullable$ | async)! || false"
+  [editable]="(isExaminationNullable$ | async)! || false"
+  [editable2]="(isExaminationNullable$ | async)! || false"
   (detailsClick)="onDetailsClick()"
   (examinationAddClick)="onExamiationAddClick()"
   (statusChangeClick)="onStatusChangeClick()"
