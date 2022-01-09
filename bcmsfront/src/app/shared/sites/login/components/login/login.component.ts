@@ -2,7 +2,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
-  OnInit,
   Output,
 } from '@angular/core';
 import {
@@ -19,8 +18,9 @@ import { AuthService } from '../../../../../core/services/auth.service';
   styleUrls: ['./login.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   @Output() onRegister = new EventEmitter<void>();
+  @Output() onRememberPassword = new EventEmitter<void>();
 
   hide = true;
 
@@ -33,9 +33,6 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  public ngOnInit(): void {
-  }
-
   public onLoginClicked(): void {
     this.auth
       .login(this.loginForm.value['email'], this.loginForm.value['password'])
@@ -44,6 +41,10 @@ export class LoginComponent implements OnInit {
 
   public onRegisterClick(): void {
     this.onRegister.emit();
+  }
+
+  public onRememberPasswordClick(): void {
+    this.onRememberPassword.emit();
   }
 
   password = new FormControl('', [Validators.required]);

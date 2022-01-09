@@ -1,13 +1,62 @@
-<p>admin-panel works!</p>
-<button mat-stroked-button color="primary" (click)="onAddAdminClick()">
-  Dodaj nowego administratora
-</button>
-<button mat-stroked-button color="primary" (click)="onAddWorkerClick()">
-  Dodaj nowego pracownika
-</button>
-<button mat-stroked-button color="primary" (click)="onShowWorkersClick()">
-  Wyświetl wszystkich użytkowników
-</button>
-<button mat-stroked-button color="primary" (click)="onShowProfileClick()">
-  Wyświetl swój profil
-</button>
+<h2>Panel administratora</h2>
+<div
+  fxLayout="space-between"
+  fxLayout.lt-md="column"
+  class.lt-md="admin-panel-mobile-container"
+  class="admin-panel-container"
+>
+  <mat-card class="panel-card">
+    <mat-card-title-group>
+      <mat-card-title>Dodaj nowego administratora</mat-card-title>
+      <mat-card-subtitle
+        >Możliwość dodania nowego administratora</mat-card-subtitle
+      >
+    </mat-card-title-group>
+    <mat-card-content>
+      <button mat-stroked-button color="primary" (click)="onAddAdminClick()">
+        <mat-icon>person_add</mat-icon>
+      </button>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="panel-card">
+    <mat-card-title-group>
+      <mat-card-title>Dodaj nowego pracownika</mat-card-title>
+      <mat-card-subtitle>Możliwość dodania nowego pracownika</mat-card-subtitle>
+    </mat-card-title-group>
+    <mat-card-content>
+      <button mat-stroked-button color="primary" (click)="onAddWorkerClick()">
+        <mat-icon>person_add</mat-icon>
+      </button>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="panel-card">
+    <mat-card-title-group>
+      <mat-card-title>Wyświetl wszystkich pracowników</mat-card-title>
+      <mat-card-subtitle
+        >Możliwość wyświetlenia wszystkich pracowników</mat-card-subtitle
+      >
+    </mat-card-title-group>
+    <mat-card-content>
+      <button mat-stroked-button color="primary" (click)="onShowWorkersClick()">
+        <mat-icon>group</mat-icon>
+      </button>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="panel-card">
+    <mat-card-title-group>
+      <mat-card-title>Wyświetl swój profil użytkownika</mat-card-title>
+      <mat-card-subtitle
+        >Możliwość wyświetlenia swoich danych oraz edycji
+        konta</mat-card-subtitle
+      >
+    </mat-card-title-group>
+    <mat-card-content>
+      <button mat-stroked-button color="primary" (click)="onShowProfileClick()">
+        <mat-icon>person</mat-icon>
+      </button>
+    </mat-card-content>
+  </mat-card>
+</div>

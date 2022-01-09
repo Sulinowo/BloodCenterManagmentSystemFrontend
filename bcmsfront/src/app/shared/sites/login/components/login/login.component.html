@@ -11,7 +11,12 @@
       <div class="form-container" fxLayout="column" fxFlex="100%">
         <mat-form-field>
           <mat-label>E-mail</mat-label>
-          <input matInput type="text" formControlName="email" autoFocus={true}/>
+          <input
+            matInput
+            type="text"
+            formControlName="email"
+            autoFocus="{true}"
+          />
           <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
         </mat-form-field>
         <mat-form-field>
@@ -54,6 +59,14 @@
         (click)="onRegisterClick()"
       >
         Zarejestruj się
+      </button>
+      <button
+        fxFlex="100%"
+        mat-stroked-button
+        color="primary"
+        (click)="onRememberPasswordClick()"
+      >
+        Zapomniałeś hasła?
       </button>
     </div>
   </mat-card-content>

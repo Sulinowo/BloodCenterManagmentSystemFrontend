@@ -15,7 +15,11 @@
       <div class="user-data-container" fxLayout="column" fxFlex="100%">
         <mat-form-field>
           <mat-label>Grupa krwii</mat-label>
-          <mat-select matNativeControl formControlName="bloodTypeName" autoFocus={true}>
+          <mat-select
+            matNativeControl
+            formControlName="bloodTypeName"
+            autoFocus="{true}"
+          >
             <mat-option
               *ngFor="let bloodType of bloodTypeName"
               [value]="bloodType.value"

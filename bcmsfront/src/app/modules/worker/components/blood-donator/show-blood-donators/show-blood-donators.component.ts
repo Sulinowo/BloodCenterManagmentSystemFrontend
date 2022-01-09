@@ -29,7 +29,6 @@ export class ShowBloodDonatorsComponent {
     'donacja',
     'edycja',
   ];
-  
 
   constructor(private dialog: MatDialog) {
     this.searchText = '';

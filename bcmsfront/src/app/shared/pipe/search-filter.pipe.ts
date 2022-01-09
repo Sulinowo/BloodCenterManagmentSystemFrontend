@@ -6,7 +6,8 @@ import { Donator } from 'src/app/core/models/donator';
 })
 export class SearchFilterPipe implements PipeTransform {
   transform(donators: Donator[], searchText: string) {
-    return donators.filter(donator =>( 
-      donator.pesel.indexOf(searchText) !== -1));
+    return donators.filter(
+      (donator) => donator.pesel.indexOf(searchText) !== -1
+    );
   }
 }

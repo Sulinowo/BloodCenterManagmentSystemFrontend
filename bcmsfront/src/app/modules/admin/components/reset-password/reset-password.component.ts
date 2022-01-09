@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-reset-password',
@@ -12,11 +11,7 @@ export class ResetPasswordComponent {
 
   public sendMailForm: FormGroup;
 
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private formBuilder: FormBuilder
-  ) {
+  constructor(private formBuilder: FormBuilder) {
     this.sendMailForm = this.formBuilder.group({
       email: [null, [Validators.required, Validators.email]],
     });

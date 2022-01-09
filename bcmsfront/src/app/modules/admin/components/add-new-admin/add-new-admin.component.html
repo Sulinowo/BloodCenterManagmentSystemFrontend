@@ -6,7 +6,12 @@
     >
   </mat-card-header>
   <mat-card-content>
-    <form [formGroup]="addAdminForm" fxLayout="column" class="add-admin-form" autocomplete="off">
+    <form
+      [formGroup]="addAdminForm"
+      fxLayout="column"
+      class="add-admin-form"
+      autocomplete="off"
+    >
       <div class="add-admin-container" fxLayout="column" fxFlex="100%">
         <mat-form-field>
           <mat-label>Imię</mat-label>
@@ -22,7 +27,12 @@
         </mat-form-field>
         <mat-form-field>
           <mat-label>Hasło</mat-label>
-          <input type="password" matInput formControlName="password" autocomplete="false" />
+          <input
+            type="password"
+            matInput
+            formControlName="password"
+            autocomplete="false"
+          />
         </mat-form-field>
         <div class="button-container" fxLayout="column">
           <button

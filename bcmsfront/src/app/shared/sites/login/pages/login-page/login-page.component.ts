@@ -13,4 +13,8 @@ export class LoginPageComponent {
   public onRegisterClick(): void {
     this.router.navigate(['/register']);
   }
+
+  public onRememberPasswordClick(): void {
+    this.router.navigate(['/resetpassword']);
+  }
 }

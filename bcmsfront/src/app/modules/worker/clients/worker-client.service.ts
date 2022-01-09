@@ -130,7 +130,7 @@ export class WorkerClientService {
   }
 
   public updateProfileData(data: UserData): Observable<UserData> {
-    return this.httpClient.patch<UserData>(`/api/blooddonators`, { ...data }); 
+    return this.httpClient.patch<UserData>(`/api/blooddonators`, { ...data });
   }
 
   public getRegisteredQueue(): Observable<DonationGet[]> {

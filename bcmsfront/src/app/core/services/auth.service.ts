@@ -21,10 +21,9 @@ export class AuthService {
       JSON.parse(localStorage.getItem('user') || '{}')
     );
     if (this.user.value)
-
-    if (this.loggedIn()) {
-      this.startRefreshToken();
-    }
+      if (this.loggedIn()) {
+        this.startRefreshToken();
+      }
   }
 
   public login(email: string, password: string): Observable<void> {

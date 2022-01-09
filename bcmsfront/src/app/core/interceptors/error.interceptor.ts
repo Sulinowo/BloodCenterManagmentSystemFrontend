@@ -40,16 +40,13 @@ export class ErrorInterceptor implements HttpInterceptor {
                 )
               : '';
           const message =
-            messages.length === 0
-              ? 'API error.'
-              : messages.join(',');
+            messages.length === 0 ? 'API error.' : messages.join(',');
 
           this.matSnackBar.open(`API ERROR: ${message}`, 'Close', {
             duration: 15 * 1000,
           });
 
-          if (request.method !== 'POST')
-            this.router.navigate(['']);
+          if (request.method !== 'POST') this.router.navigate(['']);
         }
         return throwError(error);
       })
