@@ -19,8 +19,6 @@ export class DonationQualifiedComponent {
     'firstName',
     'surname',
     'bloodTypeName',
-    'phoneNumber',
-    'homeAdress',
     'rejectionReason',
   ];
 

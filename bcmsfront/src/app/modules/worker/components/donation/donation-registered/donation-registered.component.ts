@@ -23,8 +23,6 @@ export class DonationRegisteredComponent {
     'firstName',
     'surname',
     'bloodTypeName',
-    'phoneNumber',
-    'homeAdress',
     'rejectionReason',
   ];
 
