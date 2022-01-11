@@ -25,8 +25,6 @@ export class ShowDonationComponent {
     'firstName',
     'surname',
     'bloodTypeName',
-    'phoneNumber',
-    'homeAdress',
     'rejectionReason',
   ];
 
