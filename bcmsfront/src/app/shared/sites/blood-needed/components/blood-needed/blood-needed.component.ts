@@ -9,4 +9,6 @@ import { BloodType } from 'src/app/core/models/blood-type';
 })
 export class BloodNeededComponent {
   @Input() bloodAmount: any;
+
+  public currentDate = Date.now();
 }
