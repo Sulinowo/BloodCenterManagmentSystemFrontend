@@ -162,4 +162,12 @@
     <tr mat-header-row *matHeaderRowDef="columnsTwo"></tr>
     <tr mat-row *matRowDef="let donationTwo; columns: columnsTwo"></tr>
   </table>
+
+  <h1
+    fxLayoutAlign="center center"
+    *matNoDataRow
+    class="no-visits"
+  >
+    Brak donacji
+  </h1>
 </div>
