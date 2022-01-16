@@ -30,4 +30,9 @@ export class QualifiedDonationPageComponent implements OnInit {
     const donationId = this.route.snapshot.paramMap.get('donationId') || '';
     this.router.navigate([`worker/bloodstorage/${donationId}/enddonation`]);
   }
+
+  public onStatusChangeClick(): void {
+    const donationId = this.route.snapshot.paramMap.get('donationId') || '';
+    this.router.navigate([`worker/donation/${donationId}/changestatus`]);
+  }
 }

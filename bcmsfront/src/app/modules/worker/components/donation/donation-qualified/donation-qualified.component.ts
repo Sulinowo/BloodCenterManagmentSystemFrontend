@@ -9,6 +9,7 @@ import { DonationFull } from 'src/app/core/models/donation-full';
 export class DonationQualifiedComponent {
   @Input() dataSource: [DonationFull | null];
   @Output() detailsClick = new EventEmitter();
+  @Output() statusChangeClick = new EventEmitter();
   @Output() donationEndClick = new EventEmitter();
 
   columns: string[] = [
@@ -28,5 +29,9 @@ export class DonationQualifiedComponent {
 
   public onDonationEndClick(): void {
     this.donationEndClick.emit();
+  }
+
+  public onStatusChangeClick(): void {
+    this.statusChangeClick.emit();
   }
 }
