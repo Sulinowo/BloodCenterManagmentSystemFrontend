@@ -30,7 +30,7 @@ export class AddBloodDonatorComponent {
       firstName: [null, Validators.required],
       surname: [null, Validators.required],
       pesel: [null, Validators.required],
-      email: [null, Validators.required],
+      email: [null],
       phoneNumber: [null, Validators.required],
       homeAdress: [null, Validators.required],
       bloodTypeName: [null, Validators.required],
