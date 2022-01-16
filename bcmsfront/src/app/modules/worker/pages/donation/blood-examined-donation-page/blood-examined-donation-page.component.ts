@@ -11,6 +11,7 @@ export class BloodExaminedDonationPageComponent implements OnInit {
   public donation$ = this.bloodExaminedDonationFacade.donation$;
   public isExaminationNullable$ =
     this.bloodExaminedDonationFacade.isExaminationNullable$;
+
   constructor(
     private bloodExaminedDonationFacade: BloodExaminedDonationFacadeService,
     private router: Router,
@@ -31,6 +32,13 @@ export class BloodExaminedDonationPageComponent implements OnInit {
     const donationId = this.route.snapshot.paramMap.get('donationId') || '';
     this.router.navigate([
       `worker/queue/bloodexamined/${donationId}/adddoctorexamination`,
+    ]);
+  }
+
+  public onDoctorExamiationEditClick(): void {
+    const donationId = this.route.snapshot.paramMap.get('donationId') || '';
+    this.router.navigate([
+      `worker/queue/bloodexamined/${donationId}/editdoctorexamination`,
     ]);
   }
 

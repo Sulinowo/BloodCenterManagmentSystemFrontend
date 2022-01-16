@@ -46,7 +46,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'resetpassword',
+    path: 'resetpass',
     loadChildren: () =>
       import('./shared/sites/reset-password/reset-password.module').then(
         (m) => m.ResetPasswordModule
@@ -66,6 +66,14 @@ const routes: Routes = [
     loadChildren: () =>
       import('./shared/sites/set-password/set-password.module').then(
         (m) => m.SetPasswordModule
+      ),
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'setnewpassword',
+    loadChildren: () =>
+      import('./shared/sites/set-new-password/set-new-password.module').then(
+        (m) => m.SetNewPasswordModule
       ),
     canActivate: [AuthGuard],
   },

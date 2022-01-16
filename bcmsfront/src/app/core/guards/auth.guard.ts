@@ -27,7 +27,7 @@ export class AuthGuard implements CanActivate {
     if (this.auth.loggedIn()) {
       if (logged.includes(route.url.toString())) {
         this.router.navigate(['/']);
-        alert('nie masz uprawnień, wyloguj sie przed xD');
+        alert('Nie masz uprawnień, wyloguj sie przed');
         return false;
       }
     }

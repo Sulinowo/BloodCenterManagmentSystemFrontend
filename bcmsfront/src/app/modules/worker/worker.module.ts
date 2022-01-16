@@ -29,6 +29,8 @@ import { WorkerPanelPageComponent } from './pages/worker-panel-page/worker-panel
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ResetPasswordPageComponent } from './pages/reset-password-page/reset-password-page.component';
 import { MatCardModule } from '@angular/material/card';
+import { ExaminationDoctorEditPageComponent } from './pages/examination/examination-doctor-edit-page/examination-doctor-edit-page.component';
+import { EditDoctorExaminationComponent } from './components/examinations/edit-doctor-examination/edit-doctor-examination.component';
 
 const MATERIAL_ELEMENTS = [
   MatTableModule,
@@ -57,6 +59,8 @@ const MATERIAL_ELEMENTS = [
     WorkerPanelPageComponent,
     ResetPasswordComponent,
     ResetPasswordPageComponent,
+    ExaminationDoctorEditPageComponent,
+    EditDoctorExaminationComponent,
   ],
   imports: [
     CommonModule,

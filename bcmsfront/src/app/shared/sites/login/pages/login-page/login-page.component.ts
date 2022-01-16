@@ -15,6 +15,6 @@ export class LoginPageComponent {
   }
 
   public onRememberPasswordClick(): void {
-    this.router.navigate(['/resetpassword']);
+    this.router.navigate(['/resetpass']);
   }
 }

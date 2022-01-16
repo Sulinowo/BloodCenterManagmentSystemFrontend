@@ -18,6 +18,7 @@ export class DonationBloodExaminedComponent {
   @Input() editable = false;
   @Output() detailsClick = new EventEmitter();
   @Output() doctorExamiationAddClick = new EventEmitter();
+  @Output() doctorExamiationEditClick = new EventEmitter();
   @Output() statusChangeClick = new EventEmitter();
 
   columns: string[] = [
@@ -37,6 +38,10 @@ export class DonationBloodExaminedComponent {
 
   public onDoctorExamiationAddClick(): void {
     this.doctorExamiationAddClick.emit();
+  }
+
+  public onDoctorExamiationEditClick(): void {
+    this.doctorExamiationEditClick.emit();
   }
 
   public onStatusChangeClick(): void {
