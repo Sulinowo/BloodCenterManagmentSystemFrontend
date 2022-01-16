@@ -38,7 +38,7 @@ export class UserDetailsBloodDonatorComponent implements OnChanges {
       phoneNumber: [null, [Validators.required]],
       ammountOfBloodDonated: [null],
       bloodTypeName: [null],
-      email: [null, [Validators.required]],
+      email: [null],
       firstName: [null],
       surname: [null],
     });
