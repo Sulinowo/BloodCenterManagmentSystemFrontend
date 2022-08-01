@@ -1,0 +1,42 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Formularz zmiany statusu donacji</mat-card-title>
+    <mat-card-subtitle
+      >Wybierz etap oraz jeżeli jest to wymagane wprowadź
+      powód</mat-card-subtitle
+    >
+  </mat-card-header>
+  <mat-card-content>
+    <form
+      [formGroup]="changeStatusForm"
+      fxLayout="column"
+      class="add-foreign-blood-unit-form"
+    >
+      <div class="user-data-container" fxLayout="column" fxFlex="100%">
+        <mat-form-field>
+          <mat-label>Etap donacji</mat-label>
+          <mat-select matNativeControl formControlName="stage">
+            <mat-option *ngFor="let stages of stage" [value]="stages.value">
+              {{ stages.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Powód odrzucenia</mat-label>
+          <input matInput formControlName="rejectionReason" />
+        </mat-form-field>
+
+        <div class="button-container" fxLayout="column">
+          <button
+            mat-stroked-button
+            color="primary"
+            (click)="onChangeStatusDialog()"
+            [disabled]="changeStatusForm.invalid"
+          >
+            Zmień status
+          </button>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

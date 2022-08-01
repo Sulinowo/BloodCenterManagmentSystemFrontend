@@ -1,0 +1,7 @@
+<div class="profile-page-container">
+  <app-admin-profile
+    [state]="admin$ | async"
+    (profileEdit)="editAdminProfile($event)"
+    (setNewPass)="setNewPassword()"
+  ></app-admin-profile>
+</div>

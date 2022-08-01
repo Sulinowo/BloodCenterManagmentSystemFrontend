@@ -1,0 +1,86 @@
+<form [formGroup]="userDataForm" fxLayout="column" class="user-data-form">
+  <div class="edit-data-container" fxLayout="row" fxLayoutAlign="center">
+    <h2>Dane użytkownika</h2>
+    <app-edit-account-blood-donator
+      (editClicked)="onEditClicked()"
+      fxLayoutAlign="center center"
+      class="edit-button"
+    ></app-edit-account-blood-donator>
+  </div>
+
+  <div
+    class="user-data-container"
+    fxLayoutGap.gt-sm="5%"
+    fxLayoutGap.lt-sm="0%"
+    fxLayout.lt-md="column"
+    fxLayout.gt-sm="row"
+  >
+    <div fxLayout="column" fxFlex.gt-sm="50%">
+      <mat-form-field>
+        <mat-label>Imię</mat-label>
+        <input matInput formControlName="firstName" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Nazwisko</mat-label>
+        <input matInput formControlName="surname" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Pesel</mat-label>
+        <input matInput formControlName="pesel" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>E-mail</mat-label>
+        <input matInput formControlName="email" />
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxFlex.gt-sm="50%">
+      <mat-form-field>
+        <mat-label>Numer telefonu</mat-label>
+        <input matInput formControlName="phoneNumber" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Adres</mat-label>
+        <input matInput formControlName="homeAdress" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Ilość oddanej krwii</mat-label>
+        <input matInput formControlName="ammountOfBloodDonated" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Grupa krwii</mat-label>
+        <input matInput formControlName="bloodTypeName" />
+      </mat-form-field>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="2%">
+    <div
+      fxGap="5%"
+      fxLayoutAlign="start center"
+      fxLayoutAlign.lt-md="center"
+      fxFlex="100%"
+    >
+      <button
+        mat-stroked-button
+        color="primary"
+        (click)="onShowDonationListClick()"
+      >
+        Wyświetl listę donacji użytkownika
+      </button>
+    </div>
+    <div
+      class="save-edit-button-wrapper"
+      fxLayoutAlign="end"
+      fxLayoutAlign.lt-md="center"
+      [fxHide]="showEditable"
+    >
+      <button
+        mat-stroked-button
+        color="primary"
+        (click)="onEditProfileDialog()"
+        [disabled]="userDataForm.invalid"
+      >
+        Zapisz
+      </button>
+    </div>
+  </div>
+</form>

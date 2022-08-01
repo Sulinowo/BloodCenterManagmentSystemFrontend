@@ -1,0 +1,31 @@
+<h2 fxLayoutAlign="center">Twoje donacje</h2>
+<div class="table-container">
+  <table mat-table class="mat-elevation-z8" [dataSource]="dataSource">
+    <ng-container matColumnDef="dataDonacji">
+      <th mat-header-cell *matHeaderCellDef>Data donacji</th>
+      <td mat-cell *matCellDef="let donation">
+        {{ donation.donationDate | date: ' dd.MM.YYYY HH:mm:ss' }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="etapDonacji">
+      <th mat-header-cell *matHeaderCellDef>Etap donacji</th>
+      <td mat-cell *matCellDef="let donation">
+        {{ donation.stage | donationsStagePipe }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="powodOdrzuceniaDonacji">
+      <th mat-header-cell *matHeaderCellDef>Powód odrzucenia donacji</th>
+      <td mat-cell *matCellDef="let donation">
+        {{ (donation.rejectionReason | donationsStagePipe) || 'Brak' }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr
+      mat-row
+      *matRowDef="let donation; columns: columns"
+      [routerLink]="donation.id"
+      (click)="donationListClick(donation)"
+    ></tr>
+  </table>
+</div>

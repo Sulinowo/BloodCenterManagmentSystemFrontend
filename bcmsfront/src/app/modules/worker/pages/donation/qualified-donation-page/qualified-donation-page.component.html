@@ -1,0 +1,6 @@
+<app-donation-qualified
+  [dataSource]="[donation$ | async]"
+  (detailsClick)="onDetailsClick()"
+  (donationEndClick)="onEndDonationClick()"
+  (statusChangeClick)="onStatusChangeClick()"
+></app-donation-qualified>

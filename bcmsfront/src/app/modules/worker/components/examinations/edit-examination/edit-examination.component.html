@@ -1,0 +1,127 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Formularz edytowania badania krwii</mat-card-title>
+    <mat-card-subtitle>Edytuj wyniki badania krwii</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form
+      [formGroup]="editExaminationForm"
+      fxLayout="column"
+      class="edit-examination-form"
+    >
+      <div class="user-data-container" fxLayout="column" fxFlex="100%">
+        <div
+          fxLayout="column"
+          fxLayout.gt-sm="row"
+          fxFlex="100%"
+          fxLayoutAlign="space-between"
+        >
+          <mat-form-field>
+            <mat-label>HB</mat-label>
+            <input type="number" matInput formControlName="hb" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>HT</mat-label>
+            <input type="number" matInput formControlName="ht" />
+          </mat-form-field>
+        </div>
+        <div
+          fxLayout="column"
+          fxLayout.gt-sm="row"
+          fxFlex="100%"
+          fxLayoutAlign="space-between"
+        >
+          <mat-form-field>
+            <mat-label>RBC</mat-label>
+            <input type="number" matInput formControlName="rbc" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>WBC</mat-label>
+            <input type="number" matInput formControlName="wbc" />
+          </mat-form-field>
+        </div>
+        <div
+          fxLayout="column"
+          fxLayout.gt-sm="row"
+          fxFlex="100%"
+          fxLayoutAlign="space-between"
+        >
+          <mat-form-field>
+            <mat-label>PLT</mat-label>
+            <input type="number" matInput formControlName="plt" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>MCH</mat-label>
+            <input type="number" matInput formControlName="mch" />
+          </mat-form-field>
+        </div>
+        <div
+          fxLayout="column"
+          fxLayout.gt-sm="row"
+          fxFlex="100%"
+          fxLayoutAlign="space-between"
+        >
+          <mat-form-field>
+            <mat-label>MCHC</mat-label>
+            <input type="number" matInput formControlName="mchc" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>MCV</mat-label>
+            <input type="number" matInput formControlName="mcv" />
+          </mat-form-field>
+        </div>
+        <div
+          fxLayout="column"
+          fxLayout.gt-sm="row"
+          fxFlex="100%"
+          fxLayoutAlign="space-between"
+        >
+          <mat-form-field>
+            <mat-label>NE</mat-label>
+            <input type="number" matInput formControlName="ne" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>EO</mat-label>
+            <input type="number" matInput formControlName="eo" />
+          </mat-form-field>
+        </div>
+        <div
+          fxLayout="column"
+          fxLayout.gt-sm="row"
+          fxFlex="100%"
+          fxLayoutAlign="space-between"
+        >
+          <mat-form-field>
+            <mat-label>BA</mat-label>
+            <input type="number" matInput formControlName="ba" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>LY</mat-label>
+            <input type="number" matInput formControlName="ly" />
+          </mat-form-field>
+        </div>
+        <div
+          fxLayout="column"
+          fxLayout.gt-sm="row"
+          fxFlex="100%"
+          fxLayoutAlign="space-between"
+        >
+          <mat-form-field>
+            <mat-label>MO</mat-label>
+            <input type="number" matInput formControlName="mo" />
+          </mat-form-field>
+        </div>
+        <div class="button-container" fxLayout="column">
+          <button
+            mat-stroked-button
+            color="primary"
+            (click)="onEditExaminationDialog()"
+            [disabled]="editExaminationForm.invalid"
+          >
+            Edytuj badania
+          </button>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

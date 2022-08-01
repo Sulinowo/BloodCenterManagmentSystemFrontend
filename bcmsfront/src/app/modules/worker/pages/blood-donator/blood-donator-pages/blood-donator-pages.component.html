@@ -1,0 +1,13 @@
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="Lista Krwiodawców">
+    <app-show-blood-donators
+      [dataSource]="(donators$ | async) || []"
+      (addDonationClick)="onAddDonationClick($event)"
+    ></app-show-blood-donators>
+  </mat-tab>
+  <mat-tab label="Dodawanie krwiodawcy">
+    <app-add-blood-donator
+      (onAddDonator)="addDonator($event)"
+    ></app-add-blood-donator>
+  </mat-tab>
+</mat-tab-group>

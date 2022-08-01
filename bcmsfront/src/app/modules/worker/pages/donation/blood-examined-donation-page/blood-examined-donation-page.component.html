@@ -1,0 +1,8 @@
+<app-donation-blood-examined
+  [dataSource]="[donation$ | async]"
+  [editable]="(isExaminationNullable$ | async)! || false"
+  (detailsClick)="onDetailsClick()"
+  (doctorExamiationAddClick)="onDoctorExamiationAddClick()"
+  (doctorExamiationEditClick)="onDoctorExamiationEditClick()"
+  (statusChangeClick)="onStatusChangeClick()"
+></app-donation-blood-examined>

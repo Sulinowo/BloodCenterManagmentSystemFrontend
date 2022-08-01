@@ -1,0 +1,4 @@
+<app-show-donations-blood-donator
+  [dataSource]="(bloodDonatorDonations$ | async) || []"
+  (donationClick)="onDonationClick($event)"
+></app-show-donations-blood-donator>

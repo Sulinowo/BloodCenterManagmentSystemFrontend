@@ -1,0 +1,9 @@
+<app-donation-registered
+  [dataSource]="[donation$ | async]"
+  [editable]="(isExaminationNullable$ | async)! || false"
+  [editable2]="(isExaminationNullable$ | async)! || false"
+  (detailsClick)="onDetailsClick()"
+  (examinationAddClick)="onExamiationAddClick()"
+  (statusChangeClick)="onStatusChangeClick()"
+  (examinationEditClick)="onExaminationEditClick()"
+></app-donation-registered>

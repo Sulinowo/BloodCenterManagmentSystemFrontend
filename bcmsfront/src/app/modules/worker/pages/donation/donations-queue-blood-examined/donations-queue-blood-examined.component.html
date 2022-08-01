@@ -1,0 +1,4 @@
+<app-show-donations-queue
+  [dataSource]="(bloodExaminedQueue$ | async) || []"
+  (donationQueueClick)="onDonationQueueClick($event)"
+></app-show-donations-queue>

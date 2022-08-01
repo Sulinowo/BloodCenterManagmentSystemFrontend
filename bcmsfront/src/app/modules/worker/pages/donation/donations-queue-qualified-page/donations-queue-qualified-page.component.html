@@ -1,0 +1,4 @@
+<app-show-donations-queue
+  [dataSource]="(qualifiedQueue$ | async) || []"
+  (donationQueueClick)="onDonationQueueClick($event)"
+></app-show-donations-queue>

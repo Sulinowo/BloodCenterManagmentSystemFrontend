@@ -1,0 +1,7 @@
+<div class="profile-page-container">
+  <app-worker-profile
+    [state]="worker$ | async"
+    (profileEdit)="editWorkerProfile($event)"
+    (setNewPass)="setNewPassword()"
+  ></app-worker-profile>
+</div>

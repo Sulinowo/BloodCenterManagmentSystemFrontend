@@ -1,0 +1,47 @@
+<div
+  class="nav-menu-items"
+  [class.nav-list-column]="isColumnDirection"
+  [fxLayout]="direction"
+  [fxLayoutAlign]="isColumnDirection ? 'start start' : 'center center'"
+>
+  <a routerLink="/">
+    <button class="nav-item" mat-flat-button>Strona Główna</button>
+  </a>
+  <a routerLink="/contact">
+    <button class="nav-item" mat-flat-button>Kontakt</button>
+  </a>
+  <a routerLink="/bloodneeded">
+    <button class="nav-item" mat-flat-button>Potrzebna krew</button>
+  </a>
+  <a routerLink="/informations">
+    <button class="nav-item" mat-flat-button>Informacje</button>
+  </a>
+  <a routerLink="/donationprocess">
+    <button class="nav-item" mat-flat-button>Proces donacji</button>
+  </a>
+
+  <ng-container *ngIf="loggedIn; then user; else guest"></ng-container>
+
+  <ng-template #guest>
+    <a routerLink="/login">
+      <button class="nav-item" mat-flat-button>Zaloguj się</button>
+    </a>
+  </ng-template>
+
+  <ng-template #user>
+    <a *ngIf="['Donator', 'User'].includes(role)" routerLink="/profile">
+      <button class="nav-item" mat-flat-button>Profil</button>
+    </a>
+    <a *ngIf="['Worker'].includes(role)" routerLink="/worker/panel">
+      <button class="nav-item" mat-flat-button>Panel pracownika</button>
+    </a>
+    <a *ngIf="['Admin'].includes(role)" routerLink="/admin/panel">
+      <button class="nav-item" mat-flat-button>Panel admina</button>
+    </a>
+    <a routerLink="/">
+      <button class="nav-item" mat-flat-button (click)="onLogoutClick()">
+        Wyloguj się
+      </button>
+    </a>
+  </ng-template>
+</div>

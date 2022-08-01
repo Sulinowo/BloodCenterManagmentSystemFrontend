@@ -1,0 +1,62 @@
+<mat-card class.lt-md="mobile-card">
+  <mat-card-header>
+    <mat-card-title>Formularz dodania krwiodawcy</mat-card-title>
+    <mat-card-subtitle>Wpisz dane krwiodawcy</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form
+      [formGroup]="addBloodDonatorForm"
+      fxLayout="column"
+      class="add-blood-donator-form"
+      autocomplete="off"
+    >
+      <div class="user-data-container" fxLayout="column" fxFlex="100%">
+        <mat-form-field>
+          <mat-label>Imię</mat-label>
+          <input matInput formControlName="firstName" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Nazwisko</mat-label>
+          <input matInput formControlName="surname" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Pesel</mat-label>
+          <input matInput formControlName="pesel" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>E-mail</mat-label>
+          <input matInput formControlName="email" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Numer telefonu</mat-label>
+          <input matInput formControlName="phoneNumber" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Adres</mat-label>
+          <input matInput formControlName="homeAdress" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Grupa krwii</mat-label>
+          <mat-select matNativeControl formControlName="bloodTypeName">
+            <mat-option
+              *ngFor="let bloodType of bloodTypeName"
+              [value]="bloodType.value"
+            >
+              {{ bloodType.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="button-container" fxLayout="column">
+          <button
+            mat-stroked-button
+            color="primary"
+            (click)="onAddBloodDonatorDialog()"
+            [disabled]="addBloodDonatorForm.invalid"
+          >
+            Dodaj krwiodawcę
+          </button>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

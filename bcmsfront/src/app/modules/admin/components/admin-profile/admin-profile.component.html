@@ -1,0 +1,63 @@
+<form [formGroup]="adminDataForm" fxLayout="column" class="admin-data-form">
+  <div class="edit-data-container" fxLayout="row" fxLayoutAlign="center">
+    <h2>Twoje dane</h2>
+    <app-edit-admin-profile
+      (editClicked)="onEditClicked()"
+      fxLayoutAlign="center center"
+      class="edit-button"
+    ></app-edit-admin-profile>
+  </div>
+  <div
+    class="admin-data-container"
+    fxLayoutGap.gt-sm="5%"
+    fxLayoutGap.lt-sm="0%"
+    fxLayout.lt-md="column"
+    fxLayout.gt-sm="row"
+  >
+    <div fxLayout="column" fxFlex.gt-sm="50%">
+      <mat-form-field>
+        <mat-label>Imię</mat-label>
+        <input matInput formControlName="firstname" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>E-mail</mat-label>
+        <input matInput formControlName="email" />
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxFlex.gt-sm="50%">
+      <mat-form-field>
+        <mat-label>Nazwisko</mat-label>
+        <input matInput formControlName="surname" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Rola</mat-label>
+        <input matInput formControlName="role" />
+      </mat-form-field>
+    </div>
+  </div>
+  <div fxLayout="row">
+    <div fxGap="5%" fxLayoutAlign="start center" fxFlex="100%">
+      <button
+        mat-stroked-button
+        color="primary"
+        (click)="onSetNewPasswordClick()"
+      >
+        Zmień hasło
+      </button>
+    </div>
+    <div
+      class="save-edit-button-wrapper"
+      fxLayoutAlign="end"
+      [fxHide]="showEditable"
+    >
+      <button
+        mat-stroked-button
+        color="primary"
+        (click)="onEditProfileDialog()"
+        [disabled]="adminDataForm.invalid"
+      >
+        Zapisz
+      </button>
+    </div>
+  </div>
+</form>

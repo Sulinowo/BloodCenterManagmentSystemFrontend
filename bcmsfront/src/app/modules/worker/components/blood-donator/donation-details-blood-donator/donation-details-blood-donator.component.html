@@ -1,0 +1,165 @@
+<h2 fxLayoutAlign="center">Szczegóły donacji</h2>
+<div class="table-container">
+  <table
+    *ngIf="dataSource !== null"
+    mat-table
+    class="mat-elevation-z8 tableOne"
+    [dataSource]="[dataSource]"
+  >
+    <ng-container matColumnDef="stage">
+      <th mat-header-cell *matHeaderCellDef>Etap donacji</th>
+      <td mat-cell *matCellDef="let donationDetails">
+        {{ donationDetails.stage | donationsStagePipe }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="donationDate">
+      <th mat-header-cell *matHeaderCellDef>Data donacji</th>
+      <td mat-cell *matCellDef="let donationDetails">
+        {{ donationDetails.donationDate | date: ' dd.MM.YYYY HH:mm:ss' }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="rejectionReason">
+      <th mat-header-cell *matHeaderCellDef>Powód odrzucenia donacji</th>
+      <td mat-cell *matCellDef="let donationDetails">
+        {{ (donationDetails.rejectionReason | donationsStagePipe) || 'Brak' }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="bloodPressureUpper">
+      <th mat-header-cell *matHeaderCellDef>Górne ciśnienie krwi</th>
+      <td mat-cell *matCellDef="let donationDetails">
+        {{ donationDetails.resultOfExamination?.bloodPressureUpper || 'Brak' }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="bloodPressureLower">
+      <th mat-header-cell *matHeaderCellDef>Niższe ciśnienie krwi</th>
+      <td mat-cell *matCellDef="let donationDetails">
+        {{ donationDetails.resultOfExamination?.bloodPressureLower || 'Brak' }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="height">
+      <th mat-header-cell *matHeaderCellDef>Wzrost</th>
+      <td mat-cell *matCellDef="let donationDetails">
+        {{ donationDetails.resultOfExamination?.height || 'Brak' }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef>Waga</th>
+      <td mat-cell *matCellDef="let donationDetails">
+        {{ donationDetails.resultOfExamination?.weight || 'Brak' }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsOne"></tr>
+    <tr mat-row *matRowDef="let donation; columns: columnsOne"></tr>
+  </table>
+</div>
+
+<h2 fxLayoutAlign="center">Wyniki badania krwii</h2>
+<div class="table-container">
+  <table
+    *ngIf="dataSource !== null"
+    mat-table
+    class="mat-elevation-z8 tableTwo"
+    [dataSource]="[dataSource]"
+  >
+    <ng-container matColumnDef="hb">
+      <th mat-header-cell *matHeaderCellDef>HB</th>
+      <td mat-cell *matCellDef="let donationDetails">
+        {{ donationDetails.resultOfExamination?.hb || 'Brak' }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ht">
+      <th mat-header-cell *matHeaderCellDef>HT</th>
+      <td mat-cell *matCellDef="let donationDetails">
+        {{ donationDetails.resultOfExamination?.ht || 'Brak' }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="rbc">
+      <th mat-header-cell *matHeaderCellDef>RBC</th>
+      <td mat-cell *matCellDef="let donationDetails">
+        {{ donationDetails.resultOfExamination?.rbc || 'Brak' }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="wbc">
+      <th mat-header-cell *matHeaderCellDef>WBC</th>
+      <td mat-cell *matCellDef="let donationDetails">
+        {{ donationDetails.resultOfExamination?.wbc || 'Brak' }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="plt">
+      <th mat-header-cell *matHeaderCellDef>PLT</th>
+      <td mat-cell *matCellDef="let donationDetails">
+        {{ donationDetails.resultOfExamination?.plt || 'Brak' }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="mch">
+      <th mat-header-cell *matHeaderCellDef>MCH</th>
+      <td mat-cell *matCellDef="let donationDetails">
+        {{ donationDetails.resultOfExamination?.mch || 'Brak' }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="mchc">
+      <th mat-header-cell *matHeaderCellDef>MCHC</th>
+      <td mat-cell *matCellDef="let donationDetails">
+        {{ donationDetails.resultOfExamination?.mchc || 'Brak' }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="mcv">
+      <th mat-header-cell *matHeaderCellDef>MCV</th>
+      <td mat-cell *matCellDef="let donationDetails">
+        {{ donationDetails.resultOfExamination?.mcv || 'Brak' }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ne">
+      <th mat-header-cell *matHeaderCellDef>NE</th>
+      <td mat-cell *matCellDef="let donationDetails">
+        {{ donationDetails.resultOfExamination?.ne || 'Brak' }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="eo">
+      <th mat-header-cell *matHeaderCellDef>EO</th>
+      <td mat-cell *matCellDef="let donationDetails">
+        {{ donationDetails.resultOfExamination?.eo || 'Brak' }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ba">
+      <th mat-header-cell *matHeaderCellDef>BA</th>
+      <td mat-cell *matCellDef="let donationDetails">
+        {{ donationDetails.resultOfExamination?.ba || 'Brak' }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ly">
+      <th mat-header-cell *matHeaderCellDef>LY</th>
+      <td mat-cell *matCellDef="let donationDetails">
+        {{ donationDetails.resultOfExamination?.ly || 'Brak' }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="mo">
+      <th mat-header-cell *matHeaderCellDef>MO</th>
+      <td mat-cell *matCellDef="let donationDetails">
+        {{ donationDetails.resultOfExamination?.mo || 'Brak' }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsTwo"></tr>
+    <tr mat-row *matRowDef="let donationTwo; columns: columnsTwo"></tr>
+  </table>
+</div>

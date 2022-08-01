@@ -1,0 +1,74 @@
+<div class="blood-needed-container">
+  <div>
+    <h1>Zapotrzebowanie na krew</h1>
+    <h2>{{ currentDate | date: 'dd.MM.YYYY' }}</h2>
+  </div>
+
+  <div
+    fxLayout="row"
+    fxLayout.lt-md="column"
+    fxLayoutAlign.lt-md="center center"
+    fxLayoutAlign="space-between"
+  >
+    <div
+      fxLayout="column"
+      class="blood-state-container"
+      *ngFor="let blood of bloodAmount"
+    >
+      <div fxLayoutAlign="center">
+        <img
+          src="{{ blood.ammountOfBloodInBank | bloodAmountPipe }}"
+          width="50px"
+          height="60px"
+        />
+      </div>
+      <div>Grupa krwii: {{ blood.bloodTypeName }}</div>
+    </div>
+  </div>
+
+  <div class="legend-container">
+    <h2>Stan zapasów - Legenda</h2>
+    <div fxLayout="row" fxLayoutAlign="space-between">
+      <div>
+        <div fxLayoutAlign="center">
+          <img
+            src="https://i.imgur.com/l7rAJeL.png"
+            width="30px"
+            height="40px"
+          />
+        </div>
+        <p>Bardzo niski</p>
+      </div>
+      <div>
+        <div fxLayoutAlign="center">
+          <img
+            src="https://i.imgur.com/DU6TJ4D.png"
+            width="30px"
+            height="40px"
+          />
+        </div>
+        <p>Niski</p>
+      </div>
+      <div>
+        <div fxLayoutAlign="center">
+          <img
+            src="https://i.imgur.com/AZ0HDeh.png"
+            width="30px"
+            height="40px"
+          />
+        </div>
+        <p>Średni</p>
+      </div>
+      <div>
+        <div fxLayoutAlign="center">
+          <img
+            src="https://i.imgur.com/KEEiUE9.png"
+            width="30px"
+            height="40px"
+          />
+        </div>
+        <p>Wysoki</p>
+      </div>
+    </div>
+  </div>
+</div>

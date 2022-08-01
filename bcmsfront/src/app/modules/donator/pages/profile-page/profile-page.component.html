@@ -1,0 +1,18 @@
+<div class="profile-page-container">
+  <mat-tab-group mat-align-tabs="center">
+    <mat-tab label="Dane użytkownika">
+      <app-user-data
+        [state]="donator$ | async"
+        (profileEdit)="onProfileEdit($event)"
+        (setNewPass)="setNewPassword()"
+      ></app-user-data>
+    </mat-tab>
+    <mat-tab label="Donacje">
+      <div class="donations-list-container">
+        <app-user-donations
+          [dataSource]="(donations$ | async) || []"
+        ></app-user-donations>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
